@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Please update the test case below to test the endpoint.
  */
 
-namespace OpenAPI\Client\Test\Api;
+namespace MatthewBaggett\Docker\Api\Test\Api;
 
 use PHPUnit\Framework\TestCase;
 

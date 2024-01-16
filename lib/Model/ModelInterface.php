@@ -30,7 +30,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
 /**
  * Interface abstracting model access.

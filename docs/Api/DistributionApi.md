@@ -1,4 +1,4 @@
-# OpenAPI\Client\DistributionApi
+# MatthewBaggett\Docker\Api\DistributionApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -10,7 +10,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `distributionInspect()`
 
 ```php
-distributionInspect($name): \OpenAPI\Client\Model\DistributionInspect
+distributionInspect($name): \MatthewBaggett\Docker\Api\Model\DistributionInspect
 ```
 
 Get image information from the registry
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DistributionApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\DistributionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -48,7 +48,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DistributionInspect**](../Model/DistributionInspect.md)
+[**\MatthewBaggett\Docker\Api\Model\DistributionInspect**](../Model/DistributionInspect.md)
 
 ### Authorization
 

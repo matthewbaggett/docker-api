@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace MatthewBaggett\Docker\Api\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -38,10 +38,10 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ApiException;
+use MatthewBaggett\Docker\Api\Configuration;
+use MatthewBaggett\Docker\Api\HeaderSelector;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Utils;
 
@@ -199,7 +199,7 @@ class SessionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -209,7 +209,7 @@ class SessionApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

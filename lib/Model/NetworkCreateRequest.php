@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * NetworkCreateRequest Class Doc Comment.
@@ -68,7 +68,7 @@ class NetworkCreateRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
         'internal'        => 'bool',
         'attachable'      => 'bool',
         'ingress'         => 'bool',
-        'ipam'            => '\OpenAPI\Client\Model\IPAM',
+        'ipam'            => '\MatthewBaggett\Docker\Api\Model\IPAM',
         'enable_ipv6'     => 'bool',
         'options'         => 'array<string,string>',
         'labels'          => 'array<string,string>',

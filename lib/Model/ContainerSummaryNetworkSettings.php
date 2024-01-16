@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ContainerSummaryNetworkSettings Class Doc Comment.
@@ -64,7 +64,7 @@ class ContainerSummaryNetworkSettings implements ModelInterface, \ArrayAccess, \
      * @var string[]
      */
     protected static $openAPITypes = [
-        'networks' => 'array<string,\OpenAPI\Client\Model\EndpointSettings>',
+        'networks' => 'array<string,\MatthewBaggett\Docker\Api\Model\EndpointSettings>',
     ];
 
     /**
@@ -285,7 +285,7 @@ class ContainerSummaryNetworkSettings implements ModelInterface, \ArrayAccess, \
     /**
      * Gets networks.
      *
-     * @return null|array<string,\OpenAPI\Client\Model\EndpointSettings>
+     * @return null|array<string,\MatthewBaggett\Docker\Api\Model\EndpointSettings>
      */
     public function getNetworks()
     {
@@ -295,7 +295,7 @@ class ContainerSummaryNetworkSettings implements ModelInterface, \ArrayAccess, \
     /**
      * Sets networks.
      *
-     * @param null|array<string,\OpenAPI\Client\Model\EndpointSettings> $networks networks
+     * @param null|array<string,\MatthewBaggett\Docker\Api\Model\EndpointSettings> $networks networks
      *
      * @return self
      */

@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * DistributionInspect Class Doc Comment.
@@ -64,8 +64,8 @@ class DistributionInspect implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $openAPITypes = [
-        'descriptor' => '\OpenAPI\Client\Model\OCIDescriptor',
-        'platforms'  => '\OpenAPI\Client\Model\OCIPlatform[]',
+        'descriptor' => '\MatthewBaggett\Docker\Api\Model\OCIDescriptor',
+        'platforms'  => '\MatthewBaggett\Docker\Api\Model\OCIPlatform[]',
     ];
 
     /**
@@ -328,7 +328,7 @@ class DistributionInspect implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Gets platforms.
      *
-     * @return \OpenAPI\Client\Model\OCIPlatform[]
+     * @return \MatthewBaggett\Docker\Api\Model\OCIPlatform[]
      */
     public function getPlatforms()
     {
@@ -338,7 +338,7 @@ class DistributionInspect implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets platforms.
      *
-     * @param \OpenAPI\Client\Model\OCIPlatform[] $platforms an array containing all platforms supported by the image
+     * @param \MatthewBaggett\Docker\Api\Model\OCIPlatform[] $platforms an array containing all platforms supported by the image
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# OpenAPI\Client\TaskApi
+# MatthewBaggett\Docker\Api\TaskApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -12,7 +12,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `taskInspect()`
 
 ```php
-taskInspect($id): \OpenAPI\Client\Model\Task
+taskInspect($id): \MatthewBaggett\Docker\Api\Model\Task
 ```
 
 Inspect a task
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TaskApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\TaskApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -48,7 +48,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Task**](../Model/Task.md)
+[**\MatthewBaggett\Docker\Api\Model\Task**](../Model/Task.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ No authorization required
 ## `taskList()`
 
 ```php
-taskList($filters): \OpenAPI\Client\Model\Task[]
+taskList($filters): \MatthewBaggett\Docker\Api\Model\Task[]
 ```
 
 List tasks
@@ -79,7 +79,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TaskApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\TaskApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -102,7 +102,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Task[]**](../Model/Task.md)
+[**\MatthewBaggett\Docker\Api\Model\Task[]**](../Model/Task.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TaskApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\TaskApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()

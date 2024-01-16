@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ConfigSpec Class Doc Comment.
@@ -65,7 +65,7 @@ class ConfigSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
         'name'       => 'string',
         'labels'     => 'array<string,string>',
         'data'       => 'string',
-        'templating' => '\OpenAPI\Client\Model\Driver',
+        'templating' => '\MatthewBaggett\Docker\Api\Model\Driver',
     ];
 
     /**

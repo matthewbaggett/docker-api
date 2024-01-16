@@ -1,4 +1,4 @@
-# OpenAPI\Client\NodeApi
+# MatthewBaggett\Docker\Api\NodeApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -26,7 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NodeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NodeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -68,7 +68,7 @@ No authorization required
 ## `nodeInspect()`
 
 ```php
-nodeInspect($id): \OpenAPI\Client\Model\Node
+nodeInspect($id): \MatthewBaggett\Docker\Api\Model\Node
 ```
 
 Inspect a node
@@ -81,7 +81,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NodeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NodeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -104,7 +104,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Node**](../Model/Node.md)
+[**\MatthewBaggett\Docker\Api\Model\Node**](../Model/Node.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ No authorization required
 ## `nodeList()`
 
 ```php
-nodeList($filters): \OpenAPI\Client\Model\Node[]
+nodeList($filters): \MatthewBaggett\Docker\Api\Model\Node[]
 ```
 
 List nodes
@@ -135,7 +135,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NodeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NodeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -158,7 +158,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Node[]**](../Model/Node.md)
+[**\MatthewBaggett\Docker\Api\Model\Node[]**](../Model/Node.md)
 
 ### Authorization
 
@@ -189,14 +189,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NodeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NodeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | The ID of the node
 $version = 56; // int | The version number of the node object being updated. This is required to avoid conflicting writes.
-$body = new \OpenAPI\Client\Model\NodeSpec(); // \OpenAPI\Client\Model\NodeSpec
+$body = new \MatthewBaggett\Docker\Api\Model\NodeSpec(); // \MatthewBaggett\Docker\Api\Model\NodeSpec
 
 try {
     $apiInstance->nodeUpdate($id, $version, $body);
@@ -211,7 +211,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| The ID of the node | |
 | **version** | **int**| The version number of the node object being updated. This is required to avoid conflicting writes. | |
-| **body** | [**\OpenAPI\Client\Model\NodeSpec**](../Model/NodeSpec.md)|  | [optional] |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\NodeSpec**](../Model/NodeSpec.md)|  | [optional] |
 
 ### Return type
 

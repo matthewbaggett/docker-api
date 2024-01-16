@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ContainerCreateRequest Class Doc Comment.
@@ -74,7 +74,7 @@ class ContainerCreateRequest implements ModelInterface, \ArrayAccess, \JsonSeria
         'stdin_once'        => 'bool',
         'env'               => 'string[]',
         'cmd'               => 'string[]',
-        'healthcheck'       => '\OpenAPI\Client\Model\HealthConfig',
+        'healthcheck'       => '\MatthewBaggett\Docker\Api\Model\HealthConfig',
         'args_escaped'      => 'bool',
         'image'             => 'string',
         'volumes'           => 'array<string,object>',
@@ -87,8 +87,8 @@ class ContainerCreateRequest implements ModelInterface, \ArrayAccess, \JsonSeria
         'stop_signal'       => 'string',
         'stop_timeout'      => 'int',
         'shell'             => 'string[]',
-        'host_config'       => '\OpenAPI\Client\Model\HostConfig',
-        'networking_config' => '\OpenAPI\Client\Model\NetworkingConfig',
+        'host_config'       => '\MatthewBaggett\Docker\Api\Model\HostConfig',
+        'networking_config' => '\MatthewBaggett\Docker\Api\Model\NetworkingConfig',
     ];
 
     /**

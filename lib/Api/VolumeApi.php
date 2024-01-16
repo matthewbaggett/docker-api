@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace MatthewBaggett\Docker\Api\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -38,14 +38,14 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ApiException;
+use MatthewBaggett\Docker\Api\Configuration;
+use MatthewBaggett\Docker\Api\HeaderSelector;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Utils;
-use OpenAPI\Client\Model\VolumeCreateOptions;
-use OpenAPI\Client\Model\VolumeUpdateRequest;
+use MatthewBaggett\Docker\Api\Model\VolumeCreateOptions;
+use MatthewBaggett\Docker\Api\Model\VolumeUpdateRequest;
 
 /**
  * VolumeApi Class Doc Comment.
@@ -151,7 +151,7 @@ class VolumeApi
      * @param VolumeCreateOptions $volume_config Volume configuration (required)
      * @param string              $contentType   The value for the Content-Type header. Check self::contentTypes['volumeCreate'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\Volume
+     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Volume
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -171,7 +171,7 @@ class VolumeApi
      * @param VolumeCreateOptions $volume_config Volume configuration (required)
      * @param string              $contentType   The value for the Content-Type header. Check self::contentTypes['volumeCreate'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\Volume|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\Volume|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -218,11 +218,11 @@ class VolumeApi
 
             switch ($statusCode) {
                 case 201:
-                    if ('\OpenAPI\Client\Model\Volume' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\Volume' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Volume' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\Volume' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -240,17 +240,17 @@ class VolumeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Volume', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Volume', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -268,13 +268,13 @@ class VolumeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Volume';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\Volume';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -306,7 +306,7 @@ class VolumeApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Volume',
+                        '\MatthewBaggett\Docker\Api\Model\Volume',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -316,7 +316,7 @@ class VolumeApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -363,7 +363,7 @@ class VolumeApi
      */
     public function volumeCreateAsyncWithHttpInfo($volume_config, string $contentType = self::contentTypes['volumeCreate'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Volume';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\Volume';
         $request    = $this->volumeCreateRequest($volume_config, $contentType);
 
         return $this->client
@@ -566,7 +566,7 @@ class VolumeApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -576,7 +576,7 @@ class VolumeApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -586,7 +586,7 @@ class VolumeApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -767,7 +767,7 @@ class VolumeApi
      * @param string $name        Volume name or ID (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['volumeInspect'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\Volume
+     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Volume
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -787,7 +787,7 @@ class VolumeApi
      * @param string $name        Volume name or ID (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['volumeInspect'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\Volume|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\Volume|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -834,11 +834,11 @@ class VolumeApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Volume' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\Volume' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Volume' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\Volume' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -856,17 +856,17 @@ class VolumeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Volume', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Volume', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -884,17 +884,17 @@ class VolumeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -912,13 +912,13 @@ class VolumeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Volume';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\Volume';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -950,7 +950,7 @@ class VolumeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Volume',
+                        '\MatthewBaggett\Docker\Api\Model\Volume',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -960,7 +960,7 @@ class VolumeApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -970,7 +970,7 @@ class VolumeApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1017,7 +1017,7 @@ class VolumeApi
      */
     public function volumeInspectAsyncWithHttpInfo($name, string $contentType = self::contentTypes['volumeInspect'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Volume';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\Volume';
         $request    = $this->volumeInspectRequest($name, $contentType);
 
         return $this->client
@@ -1153,7 +1153,7 @@ class VolumeApi
      * @param string $filters     JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the volumes list. Available filters:  - &#x60;dangling&#x3D;&lt;boolean&gt;&#x60; When set to &#x60;true&#x60; (or &#x60;1&#x60;), returns all    volumes that are not in use by a container. When set to &#x60;false&#x60;    (or &#x60;0&#x60;), only volumes that are in use by one or more    containers are returned. - &#x60;driver&#x3D;&lt;volume-driver-name&gt;&#x60; Matches volumes based on their driver. - &#x60;label&#x3D;&lt;key&gt;&#x60; or &#x60;label&#x3D;&lt;key&gt;:&lt;value&gt;&#x60; Matches volumes based on    the presence of a &#x60;label&#x60; alone or a &#x60;label&#x60; and a value. - &#x60;name&#x3D;&lt;volume-name&gt;&#x60; Matches all or part of a volume name. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['volumeList'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\VolumeListResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\VolumeListResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1173,7 +1173,7 @@ class VolumeApi
      * @param string $filters     JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the volumes list. Available filters:  - &#x60;dangling&#x3D;&lt;boolean&gt;&#x60; When set to &#x60;true&#x60; (or &#x60;1&#x60;), returns all    volumes that are not in use by a container. When set to &#x60;false&#x60;    (or &#x60;0&#x60;), only volumes that are in use by one or more    containers are returned. - &#x60;driver&#x3D;&lt;volume-driver-name&gt;&#x60; Matches volumes based on their driver. - &#x60;label&#x3D;&lt;key&gt;&#x60; or &#x60;label&#x3D;&lt;key&gt;:&lt;value&gt;&#x60; Matches volumes based on    the presence of a &#x60;label&#x60; alone or a &#x60;label&#x60; and a value. - &#x60;name&#x3D;&lt;volume-name&gt;&#x60; Matches all or part of a volume name. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['volumeList'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\VolumeListResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\VolumeListResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1220,11 +1220,11 @@ class VolumeApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\VolumeListResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\VolumeListResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\VolumeListResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\VolumeListResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1242,17 +1242,17 @@ class VolumeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\VolumeListResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\VolumeListResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1270,13 +1270,13 @@ class VolumeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\VolumeListResponse';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\VolumeListResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -1308,7 +1308,7 @@ class VolumeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\VolumeListResponse',
+                        '\MatthewBaggett\Docker\Api\Model\VolumeListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1318,7 +1318,7 @@ class VolumeApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1365,7 +1365,7 @@ class VolumeApi
      */
     public function volumeListAsyncWithHttpInfo($filters = null, string $contentType = self::contentTypes['volumeList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\VolumeListResponse';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\VolumeListResponse';
         $request    = $this->volumeListRequest($filters, $contentType);
 
         return $this->client
@@ -1495,7 +1495,7 @@ class VolumeApi
      * @param string $filters     Filters to process on the prune list, encoded as JSON (a &#x60;map[string][]string&#x60;).  Available filters: - &#x60;label&#x60; (&#x60;label&#x3D;&lt;key&gt;&#x60;, &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;, &#x60;label!&#x3D;&lt;key&gt;&#x60;, or &#x60;label!&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;) Prune volumes with (or without, in case &#x60;label!&#x3D;...&#x60; is used) the specified labels. - &#x60;all&#x60; (&#x60;all&#x3D;true&#x60;) - Consider all (local) volumes for pruning and not just anonymous volumes. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['volumePrune'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\VolumePruneResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\VolumePruneResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1515,7 +1515,7 @@ class VolumeApi
      * @param string $filters     Filters to process on the prune list, encoded as JSON (a &#x60;map[string][]string&#x60;).  Available filters: - &#x60;label&#x60; (&#x60;label&#x3D;&lt;key&gt;&#x60;, &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;, &#x60;label!&#x3D;&lt;key&gt;&#x60;, or &#x60;label!&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;) Prune volumes with (or without, in case &#x60;label!&#x3D;...&#x60; is used) the specified labels. - &#x60;all&#x60; (&#x60;all&#x3D;true&#x60;) - Consider all (local) volumes for pruning and not just anonymous volumes. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['volumePrune'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\VolumePruneResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\VolumePruneResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1562,11 +1562,11 @@ class VolumeApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\VolumePruneResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\VolumePruneResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\VolumePruneResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\VolumePruneResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1584,17 +1584,17 @@ class VolumeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\VolumePruneResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\VolumePruneResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1612,13 +1612,13 @@ class VolumeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\VolumePruneResponse';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\VolumePruneResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -1650,7 +1650,7 @@ class VolumeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\VolumePruneResponse',
+                        '\MatthewBaggett\Docker\Api\Model\VolumePruneResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1660,7 +1660,7 @@ class VolumeApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1707,7 +1707,7 @@ class VolumeApi
      */
     public function volumePruneAsyncWithHttpInfo($filters = null, string $contentType = self::contentTypes['volumePrune'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\VolumePruneResponse';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\VolumePruneResponse';
         $request    = $this->volumePruneRequest($filters, $contentType);
 
         return $this->client
@@ -1908,7 +1908,7 @@ class VolumeApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1918,7 +1918,7 @@ class VolumeApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1928,7 +1928,7 @@ class VolumeApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1938,7 +1938,7 @@ class VolumeApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

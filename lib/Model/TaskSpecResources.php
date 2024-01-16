@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * TaskSpecResources Class Doc Comment.
@@ -64,8 +64,8 @@ class TaskSpecResources implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $openAPITypes = [
-        'limits'       => '\OpenAPI\Client\Model\Limit',
-        'reservations' => '\OpenAPI\Client\Model\ResourceObject',
+        'limits'       => '\MatthewBaggett\Docker\Api\Model\Limit',
+        'reservations' => '\MatthewBaggett\Docker\Api\Model\ResourceObject',
     ];
 
     /**

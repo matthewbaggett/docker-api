@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * SystemDataUsageResponse Class Doc Comment.
@@ -63,10 +63,10 @@ class SystemDataUsageResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      */
     protected static $openAPITypes = [
         'layers_size' => 'int',
-        'images'      => '\OpenAPI\Client\Model\ImageSummary[]',
-        'containers'  => '\OpenAPI\Client\Model\ContainerSummary[]',
-        'volumes'     => '\OpenAPI\Client\Model\Volume[]',
-        'build_cache' => '\OpenAPI\Client\Model\BuildCache[]',
+        'images'      => '\MatthewBaggett\Docker\Api\Model\ImageSummary[]',
+        'containers'  => '\MatthewBaggett\Docker\Api\Model\ContainerSummary[]',
+        'volumes'     => '\MatthewBaggett\Docker\Api\Model\Volume[]',
+        'build_cache' => '\MatthewBaggett\Docker\Api\Model\BuildCache[]',
     ];
 
     /**
@@ -338,7 +338,7 @@ class SystemDataUsageResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Gets images.
      *
-     * @return null|\OpenAPI\Client\Model\ImageSummary[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ImageSummary[]
      */
     public function getImages()
     {
@@ -348,7 +348,7 @@ class SystemDataUsageResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets images.
      *
-     * @param null|\OpenAPI\Client\Model\ImageSummary[] $images images
+     * @param null|\MatthewBaggett\Docker\Api\Model\ImageSummary[] $images images
      *
      * @return self
      */
@@ -365,7 +365,7 @@ class SystemDataUsageResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Gets containers.
      *
-     * @return null|\OpenAPI\Client\Model\ContainerSummary[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ContainerSummary[]
      */
     public function getContainers()
     {
@@ -375,7 +375,7 @@ class SystemDataUsageResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets containers.
      *
-     * @param null|\OpenAPI\Client\Model\ContainerSummary[] $containers containers
+     * @param null|\MatthewBaggett\Docker\Api\Model\ContainerSummary[] $containers containers
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class SystemDataUsageResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Gets volumes.
      *
-     * @return null|\OpenAPI\Client\Model\Volume[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\Volume[]
      */
     public function getVolumes()
     {
@@ -402,7 +402,7 @@ class SystemDataUsageResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets volumes.
      *
-     * @param null|\OpenAPI\Client\Model\Volume[] $volumes volumes
+     * @param null|\MatthewBaggett\Docker\Api\Model\Volume[] $volumes volumes
      *
      * @return self
      */
@@ -419,7 +419,7 @@ class SystemDataUsageResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Gets build_cache.
      *
-     * @return null|\OpenAPI\Client\Model\BuildCache[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\BuildCache[]
      */
     public function getBuildCache()
     {
@@ -429,7 +429,7 @@ class SystemDataUsageResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets build_cache.
      *
-     * @param null|\OpenAPI\Client\Model\BuildCache[] $build_cache build_cache
+     * @param null|\MatthewBaggett\Docker\Api\Model\BuildCache[] $build_cache build_cache
      *
      * @return self
      */

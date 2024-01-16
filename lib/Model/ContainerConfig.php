@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ContainerConfig Class Doc Comment.
@@ -76,7 +76,7 @@ class ContainerConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
         'stdin_once'       => 'bool',
         'env'              => 'string[]',
         'cmd'              => 'string[]',
-        'healthcheck'      => '\OpenAPI\Client\Model\HealthConfig',
+        'healthcheck'      => '\MatthewBaggett\Docker\Api\Model\HealthConfig',
         'args_escaped'     => 'bool',
         'image'            => 'string',
         'volumes'          => 'array<string,object>',

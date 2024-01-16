@@ -30,7 +30,7 @@ declare(strict_types=1);
  * Please update the test case below to test the model.
  */
 
-namespace OpenAPI\Client\Test\Model;
+namespace MatthewBaggett\Docker\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 

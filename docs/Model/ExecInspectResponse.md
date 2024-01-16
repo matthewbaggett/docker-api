@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **running** | **bool** |  | [optional]
 **exit_code** | **int** |  | [optional]
-**process_config** | [**\OpenAPI\Client\Model\ProcessConfig**](ProcessConfig.md) |  | [optional]
+**process_config** | [**\MatthewBaggett\Docker\Api\Model\ProcessConfig**](ProcessConfig.md) |  | [optional]
 **open_stdin** | **bool** |  | [optional]
 **open_stderr** | **bool** |  | [optional]
 **open_stdout** | **bool** |  | [optional]

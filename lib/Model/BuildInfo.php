@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * BuildInfo Class Doc Comment.
@@ -65,11 +65,11 @@ class BuildInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
         'id'              => 'string',
         'stream'          => 'string',
         'error'           => 'string',
-        'error_detail'    => '\OpenAPI\Client\Model\ErrorDetail',
+        'error_detail'    => '\MatthewBaggett\Docker\Api\Model\ErrorDetail',
         'status'          => 'string',
         'progress'        => 'string',
-        'progress_detail' => '\OpenAPI\Client\Model\ProgressDetail',
-        'aux'             => '\OpenAPI\Client\Model\ImageID',
+        'progress_detail' => '\MatthewBaggett\Docker\Api\Model\ProgressDetail',
+        'aux'             => '\MatthewBaggett\Docker\Api\Model\ImageID',
     ];
 
     /**

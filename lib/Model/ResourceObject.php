@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ResourceObject Class Doc Comment.
@@ -66,7 +66,7 @@ class ResourceObject implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'nano_cpus'         => 'int',
         'memory_bytes'      => 'int',
-        'generic_resources' => '\OpenAPI\Client\Model\GenericResourcesInner[]',
+        'generic_resources' => '\MatthewBaggett\Docker\Api\Model\GenericResourcesInner[]',
     ];
 
     /**
@@ -353,7 +353,7 @@ class ResourceObject implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets generic_resources.
      *
-     * @return null|\OpenAPI\Client\Model\GenericResourcesInner[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\GenericResourcesInner[]
      */
     public function getGenericResources()
     {
@@ -363,7 +363,7 @@ class ResourceObject implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets generic_resources.
      *
-     * @param null|\OpenAPI\Client\Model\GenericResourcesInner[] $generic_resources User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).
+     * @param null|\MatthewBaggett\Docker\Api\Model\GenericResourcesInner[] $generic_resources User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).
      *
      * @return self
      */

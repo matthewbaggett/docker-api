@@ -23,7 +23,7 @@
 #!docs/README.md
 
 .php-cs-fixer.dist.php
-composer.json
 .travis.yml
 git_push.sh
 README.md
+.gitignore

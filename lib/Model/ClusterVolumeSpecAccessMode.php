@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ClusterVolumeSpecAccessMode Class Doc Comment.
@@ -67,9 +67,9 @@ class ClusterVolumeSpecAccessMode implements ModelInterface, \ArrayAccess, \Json
         'scope'                      => 'string',
         'sharing'                    => 'string',
         'mount_volume'               => 'object',
-        'secrets'                    => '\OpenAPI\Client\Model\ClusterVolumeSpecAccessModeSecretsInner[]',
-        'accessibility_requirements' => '\OpenAPI\Client\Model\ClusterVolumeSpecAccessModeAccessibilityRequirements',
-        'capacity_range'             => '\OpenAPI\Client\Model\ClusterVolumeSpecAccessModeCapacityRange',
+        'secrets'                    => '\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpecAccessModeSecretsInner[]',
+        'accessibility_requirements' => '\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpecAccessModeAccessibilityRequirements',
+        'capacity_range'             => '\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpecAccessModeCapacityRange',
         'availability'               => 'string',
     ];
 
@@ -509,7 +509,7 @@ class ClusterVolumeSpecAccessMode implements ModelInterface, \ArrayAccess, \Json
     /**
      * Gets secrets.
      *
-     * @return null|\OpenAPI\Client\Model\ClusterVolumeSpecAccessModeSecretsInner[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpecAccessModeSecretsInner[]
      */
     public function getSecrets()
     {
@@ -519,7 +519,7 @@ class ClusterVolumeSpecAccessMode implements ModelInterface, \ArrayAccess, \Json
     /**
      * Sets secrets.
      *
-     * @param null|\OpenAPI\Client\Model\ClusterVolumeSpecAccessModeSecretsInner[] $secrets swarm Secrets that are passed to the CSI storage plugin when operating on this volume
+     * @param null|\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpecAccessModeSecretsInner[] $secrets swarm Secrets that are passed to the CSI storage plugin when operating on this volume
      *
      * @return self
      */

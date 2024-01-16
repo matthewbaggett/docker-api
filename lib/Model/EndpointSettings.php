@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * EndpointSettings Class Doc Comment.
@@ -64,7 +64,7 @@ class EndpointSettings implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $openAPITypes = [
-        'ipam_config'            => '\OpenAPI\Client\Model\EndpointIPAMConfig',
+        'ipam_config'            => '\MatthewBaggett\Docker\Api\Model\EndpointIPAMConfig',
         'links'                  => 'string[]',
         'aliases'                => 'string[]',
         'network_id'             => 'string',

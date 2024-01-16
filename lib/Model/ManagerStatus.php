@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ManagerStatus Class Doc Comment.
@@ -65,7 +65,7 @@ class ManagerStatus implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'leader'       => 'bool',
-        'reachability' => '\OpenAPI\Client\Model\Reachability',
+        'reachability' => '\MatthewBaggett\Docker\Api\Model\Reachability',
         'addr'         => 'string',
     ];
 

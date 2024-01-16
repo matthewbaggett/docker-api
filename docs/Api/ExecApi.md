@@ -1,4 +1,4 @@
-# OpenAPI\Client\ExecApi
+# MatthewBaggett\Docker\Api\ExecApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -13,7 +13,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `containerExec()`
 
 ```php
-containerExec($id, $exec_config): \OpenAPI\Client\Model\IdResponse
+containerExec($id, $exec_config): \MatthewBaggett\Docker\Api\Model\IdResponse
 ```
 
 Create an exec instance
@@ -28,13 +28,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ExecApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\ExecApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | ID or name of container
-$exec_config = new \OpenAPI\Client\Model\ExecConfig(); // \OpenAPI\Client\Model\ExecConfig | Exec configuration
+$exec_config = new \MatthewBaggett\Docker\Api\Model\ExecConfig(); // \MatthewBaggett\Docker\Api\Model\ExecConfig | Exec configuration
 
 try {
     $result = $apiInstance->containerExec($id, $exec_config);
@@ -49,11 +49,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| ID or name of container | |
-| **exec_config** | [**\OpenAPI\Client\Model\ExecConfig**](../Model/ExecConfig.md)| Exec configuration | |
+| **exec_config** | [**\MatthewBaggett\Docker\Api\Model\ExecConfig**](../Model/ExecConfig.md)| Exec configuration | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IdResponse**](../Model/IdResponse.md)
+[**\MatthewBaggett\Docker\Api\Model\IdResponse**](../Model/IdResponse.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ No authorization required
 ## `execInspect()`
 
 ```php
-execInspect($id): \OpenAPI\Client\Model\ExecInspectResponse
+execInspect($id): \MatthewBaggett\Docker\Api\Model\ExecInspectResponse
 ```
 
 Inspect an exec instance
@@ -86,7 +86,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ExecApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\ExecApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -109,7 +109,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ExecInspectResponse**](../Model/ExecInspectResponse.md)
+[**\MatthewBaggett\Docker\Api\Model\ExecInspectResponse**](../Model/ExecInspectResponse.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ExecApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\ExecApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -201,13 +201,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ExecApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\ExecApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | Exec instance ID
-$exec_start_config = new \OpenAPI\Client\Model\ExecStartConfig(); // \OpenAPI\Client\Model\ExecStartConfig
+$exec_start_config = new \MatthewBaggett\Docker\Api\Model\ExecStartConfig(); // \MatthewBaggett\Docker\Api\Model\ExecStartConfig
 
 try {
     $apiInstance->execStart($id, $exec_start_config);
@@ -221,7 +221,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Exec instance ID | |
-| **exec_start_config** | [**\OpenAPI\Client\Model\ExecStartConfig**](../Model/ExecStartConfig.md)|  | [optional] |
+| **exec_start_config** | [**\MatthewBaggett\Docker\Api\Model\ExecStartConfig**](../Model/ExecStartConfig.md)|  | [optional] |
 
 ### Return type
 

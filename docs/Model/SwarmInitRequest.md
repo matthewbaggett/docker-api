@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **default_addr_pool** | **string[]** | Default Address Pool specifies default subnet pools for global scope networks. | [optional]
 **force_new_cluster** | **bool** | Force creation of a new swarm. | [optional]
 **subnet_size** | **int** | SubnetSize specifies the subnet size of the networks created from the default subnet pool. | [optional]
-**spec** | [**\OpenAPI\Client\Model\SwarmSpec**](SwarmSpec.md) |  | [optional]
+**spec** | [**\MatthewBaggett\Docker\Api\Model\SwarmSpec**](SwarmSpec.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

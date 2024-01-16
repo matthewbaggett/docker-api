@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * Health Class Doc Comment.
@@ -66,7 +66,7 @@ class Health implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'status'         => 'string',
         'failing_streak' => 'int',
-        'log'            => '\OpenAPI\Client\Model\HealthcheckResult[]',
+        'log'            => '\MatthewBaggett\Docker\Api\Model\HealthcheckResult[]',
     ];
 
     /**
@@ -394,7 +394,7 @@ class Health implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets log.
      *
-     * @return null|\OpenAPI\Client\Model\HealthcheckResult[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\HealthcheckResult[]
      */
     public function getLog()
     {
@@ -404,7 +404,7 @@ class Health implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets log.
      *
-     * @param null|\OpenAPI\Client\Model\HealthcheckResult[] $log Log contains the last few results (oldest first)
+     * @param null|\MatthewBaggett\Docker\Api\Model\HealthcheckResult[] $log Log contains the last few results (oldest first)
      *
      * @return self
      */

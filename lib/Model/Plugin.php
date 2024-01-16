@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * Plugin Class Doc Comment.
@@ -67,9 +67,9 @@ class Plugin implements ModelInterface, \ArrayAccess, \JsonSerializable
         'id'               => 'string',
         'name'             => 'string',
         'enabled'          => 'bool',
-        'settings'         => '\OpenAPI\Client\Model\PluginSettings',
+        'settings'         => '\MatthewBaggett\Docker\Api\Model\PluginSettings',
         'plugin_reference' => 'string',
-        'config'           => '\OpenAPI\Client\Model\PluginConfig',
+        'config'           => '\MatthewBaggett\Docker\Api\Model\PluginConfig',
     ];
 
     /**

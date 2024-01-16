@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client;
+namespace MatthewBaggett\Docker\Api;
 
 /**
  * ApiException Class Doc Comment.

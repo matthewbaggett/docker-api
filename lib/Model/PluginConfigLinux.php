@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * PluginConfigLinux Class Doc Comment.
@@ -64,7 +64,7 @@ class PluginConfigLinux implements ModelInterface, \ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'capabilities'      => 'string[]',
         'allow_all_devices' => 'bool',
-        'devices'           => '\OpenAPI\Client\Model\PluginDevice[]',
+        'devices'           => '\MatthewBaggett\Docker\Api\Model\PluginDevice[]',
     ];
 
     /**
@@ -363,7 +363,7 @@ class PluginConfigLinux implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Gets devices.
      *
-     * @return \OpenAPI\Client\Model\PluginDevice[]
+     * @return \MatthewBaggett\Docker\Api\Model\PluginDevice[]
      */
     public function getDevices()
     {
@@ -373,7 +373,7 @@ class PluginConfigLinux implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets devices.
      *
-     * @param \OpenAPI\Client\Model\PluginDevice[] $devices devices
+     * @param \MatthewBaggett\Docker\Api\Model\PluginDevice[] $devices devices
      *
      * @return self
      */

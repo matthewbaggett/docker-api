@@ -1,4 +1,4 @@
-# OpenAPI\Client\SwarmApi
+# MatthewBaggett\Docker\Api\SwarmApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -29,12 +29,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SwarmApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SwarmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\SwarmInitRequest(); // \OpenAPI\Client\Model\SwarmInitRequest
+$body = new \MatthewBaggett\Docker\Api\Model\SwarmInitRequest(); // \MatthewBaggett\Docker\Api\Model\SwarmInitRequest
 
 try {
     $result = $apiInstance->swarmInit($body);
@@ -48,7 +48,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\OpenAPI\Client\Model\SwarmInitRequest**](../Model/SwarmInitRequest.md)|  | |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\SwarmInitRequest**](../Model/SwarmInitRequest.md)|  | |
 
 ### Return type
 
@@ -70,7 +70,7 @@ No authorization required
 ## `swarmInspect()`
 
 ```php
-swarmInspect(): \OpenAPI\Client\Model\Swarm
+swarmInspect(): \MatthewBaggett\Docker\Api\Model\Swarm
 ```
 
 Inspect swarm
@@ -83,7 +83,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SwarmApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SwarmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -103,7 +103,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Swarm**](../Model/Swarm.md)
+[**\MatthewBaggett\Docker\Api\Model\Swarm**](../Model/Swarm.md)
 
 ### Authorization
 
@@ -134,12 +134,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SwarmApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SwarmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\SwarmJoinRequest(); // \OpenAPI\Client\Model\SwarmJoinRequest
+$body = new \MatthewBaggett\Docker\Api\Model\SwarmJoinRequest(); // \MatthewBaggett\Docker\Api\Model\SwarmJoinRequest
 
 try {
     $apiInstance->swarmJoin($body);
@@ -152,7 +152,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\OpenAPI\Client\Model\SwarmJoinRequest**](../Model/SwarmJoinRequest.md)|  | |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\SwarmJoinRequest**](../Model/SwarmJoinRequest.md)|  | |
 
 ### Return type
 
@@ -187,7 +187,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SwarmApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SwarmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -240,12 +240,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SwarmApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SwarmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\SwarmUnlockRequest(); // \OpenAPI\Client\Model\SwarmUnlockRequest
+$body = new \MatthewBaggett\Docker\Api\Model\SwarmUnlockRequest(); // \MatthewBaggett\Docker\Api\Model\SwarmUnlockRequest
 
 try {
     $apiInstance->swarmUnlock($body);
@@ -258,7 +258,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\OpenAPI\Client\Model\SwarmUnlockRequest**](../Model/SwarmUnlockRequest.md)|  | |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\SwarmUnlockRequest**](../Model/SwarmUnlockRequest.md)|  | |
 
 ### Return type
 
@@ -280,7 +280,7 @@ No authorization required
 ## `swarmUnlockkey()`
 
 ```php
-swarmUnlockkey(): \OpenAPI\Client\Model\UnlockKeyResponse
+swarmUnlockkey(): \MatthewBaggett\Docker\Api\Model\UnlockKeyResponse
 ```
 
 Get the unlock key
@@ -293,7 +293,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SwarmApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SwarmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -313,7 +313,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\UnlockKeyResponse**](../Model/UnlockKeyResponse.md)
+[**\MatthewBaggett\Docker\Api\Model\UnlockKeyResponse**](../Model/UnlockKeyResponse.md)
 
 ### Authorization
 
@@ -344,13 +344,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SwarmApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SwarmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $version = 56; // int | The version number of the swarm object being updated. This is required to avoid conflicting writes.
-$body = new \OpenAPI\Client\Model\SwarmSpec(); // \OpenAPI\Client\Model\SwarmSpec
+$body = new \MatthewBaggett\Docker\Api\Model\SwarmSpec(); // \MatthewBaggett\Docker\Api\Model\SwarmSpec
 $rotate_worker_token = false; // bool | Rotate the worker join token.
 $rotate_manager_token = false; // bool | Rotate the manager join token.
 $rotate_manager_unlock_key = false; // bool | Rotate the manager unlock key.
@@ -367,7 +367,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **version** | **int**| The version number of the swarm object being updated. This is required to avoid conflicting writes. | |
-| **body** | [**\OpenAPI\Client\Model\SwarmSpec**](../Model/SwarmSpec.md)|  | |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\SwarmSpec**](../Model/SwarmSpec.md)|  | |
 | **rotate_worker_token** | **bool**| Rotate the worker join token. | [optional] [default to false] |
 | **rotate_manager_token** | **bool**| Rotate the manager join token. | [optional] [default to false] |
 | **rotate_manager_unlock_key** | **bool**| Rotate the manager unlock key. | [optional] [default to false] |

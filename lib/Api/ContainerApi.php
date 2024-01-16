@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace MatthewBaggett\Docker\Api\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -38,14 +38,14 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ApiException;
+use MatthewBaggett\Docker\Api\Configuration;
+use MatthewBaggett\Docker\Api\HeaderSelector;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Utils;
-use OpenAPI\Client\Model\ContainerCreateRequest;
-use OpenAPI\Client\Model\ContainerUpdateRequest;
+use MatthewBaggett\Docker\Api\Model\ContainerCreateRequest;
+use MatthewBaggett\Docker\Api\Model\ContainerUpdateRequest;
 
 /**
  * ContainerApi Class Doc Comment.
@@ -279,7 +279,7 @@ class ContainerApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -289,7 +289,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -299,7 +299,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -556,7 +556,7 @@ class ContainerApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -566,7 +566,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -576,7 +576,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -843,7 +843,7 @@ class ContainerApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -853,7 +853,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -863,7 +863,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1183,7 +1183,7 @@ class ContainerApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1193,7 +1193,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1203,7 +1203,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1444,7 +1444,7 @@ class ContainerApi
      * @param string $id          ID or name of the container (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerChanges'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\FilesystemChange[]
+     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\FilesystemChange[]
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1464,7 +1464,7 @@ class ContainerApi
      * @param string $id          ID or name of the container (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerChanges'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\FilesystemChange[]|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\FilesystemChange[]|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1511,11 +1511,11 @@ class ContainerApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\FilesystemChange[]' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\FilesystemChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FilesystemChange[]' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\FilesystemChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1533,17 +1533,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FilesystemChange[]', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\FilesystemChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1561,17 +1561,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1589,13 +1589,13 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\FilesystemChange[]';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\FilesystemChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -1627,7 +1627,7 @@ class ContainerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FilesystemChange[]',
+                        '\MatthewBaggett\Docker\Api\Model\FilesystemChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1637,7 +1637,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1647,7 +1647,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1694,7 +1694,7 @@ class ContainerApi
      */
     public function containerChangesAsyncWithHttpInfo($id, string $contentType = self::contentTypes['containerChanges'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\FilesystemChange[]';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\FilesystemChange[]';
         $request    = $this->containerChangesRequest($id, $contentType);
 
         return $this->client
@@ -1832,7 +1832,7 @@ class ContainerApi
      * @param string                 $platform    Platform in the format &#x60;os[/arch[/variant]]&#x60; used for image lookup.  When specified, the daemon checks if the requested image is present in the local image cache with the given OS and Architecture, and otherwise returns a &#x60;404&#x60; status.  If the option is not set, the host&#39;s native OS and Architecture are used to look up the image in the image cache. However, if no platform is passed and the given image does exist in the local image cache, but its OS or architecture does not match, the container is created with the available image, and a warning is added to the &#x60;Warnings&#x60; field in the response, for example;      WARNING: The requested image&#39;s platform (linux/arm64/v8) does not              match the detected host platform (linux/amd64) and no              specific platform was requested (optional)
      * @param string                 $contentType The value for the Content-Type header. Check self::contentTypes['containerCreate'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ContainerCreateResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ContainerCreateResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1854,7 +1854,7 @@ class ContainerApi
      * @param string                 $platform    Platform in the format &#x60;os[/arch[/variant]]&#x60; used for image lookup.  When specified, the daemon checks if the requested image is present in the local image cache with the given OS and Architecture, and otherwise returns a &#x60;404&#x60; status.  If the option is not set, the host&#39;s native OS and Architecture are used to look up the image in the image cache. However, if no platform is passed and the given image does exist in the local image cache, but its OS or architecture does not match, the container is created with the available image, and a warning is added to the &#x60;Warnings&#x60; field in the response, for example;      WARNING: The requested image&#39;s platform (linux/arm64/v8) does not              match the detected host platform (linux/amd64) and no              specific platform was requested (optional)
      * @param string                 $contentType The value for the Content-Type header. Check self::contentTypes['containerCreate'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\ContainerCreateResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\ContainerCreateResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1901,11 +1901,11 @@ class ContainerApi
 
             switch ($statusCode) {
                 case 201:
-                    if ('\OpenAPI\Client\Model\ContainerCreateResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ContainerCreateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ContainerCreateResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ContainerCreateResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1923,17 +1923,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ContainerCreateResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ContainerCreateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 400:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1951,17 +1951,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1979,17 +1979,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 409:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2007,17 +2007,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2035,13 +2035,13 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ContainerCreateResponse';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerCreateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -2073,7 +2073,7 @@ class ContainerApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ContainerCreateResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ContainerCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2083,7 +2083,7 @@ class ContainerApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2093,7 +2093,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2103,7 +2103,7 @@ class ContainerApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2113,7 +2113,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2164,7 +2164,7 @@ class ContainerApi
      */
     public function containerCreateAsyncWithHttpInfo($body, $name = null, $platform = null, string $contentType = self::contentTypes['containerCreate'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ContainerCreateResponse';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerCreateResponse';
         $request    = $this->containerCreateRequest($body, $name, $platform, $contentType);
 
         return $this->client
@@ -2396,7 +2396,7 @@ class ContainerApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2406,7 +2406,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2416,7 +2416,7 @@ class ContainerApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2426,7 +2426,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2698,7 +2698,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2708,7 +2708,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2877,7 +2877,7 @@ class ContainerApi
      * @param bool   $size        Return the size of container as fields &#x60;SizeRw&#x60; and &#x60;SizeRootFs&#x60; (optional, default to false)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerInspect'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ContainerInspectResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ContainerInspectResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -2898,7 +2898,7 @@ class ContainerApi
      * @param bool   $size        Return the size of container as fields &#x60;SizeRw&#x60; and &#x60;SizeRootFs&#x60; (optional, default to false)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerInspect'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\ContainerInspectResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\ContainerInspectResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -2945,11 +2945,11 @@ class ContainerApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ContainerInspectResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ContainerInspectResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ContainerInspectResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ContainerInspectResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2967,17 +2967,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ContainerInspectResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ContainerInspectResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2995,17 +2995,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3023,13 +3023,13 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ContainerInspectResponse';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerInspectResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -3061,7 +3061,7 @@ class ContainerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ContainerInspectResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ContainerInspectResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3071,7 +3071,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3081,7 +3081,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3130,7 +3130,7 @@ class ContainerApi
      */
     public function containerInspectAsyncWithHttpInfo($id, $size = false, string $contentType = self::contentTypes['containerInspect'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ContainerInspectResponse';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerInspectResponse';
         $request    = $this->containerInspectRequest($id, $size, $contentType);
 
         return $this->client
@@ -3346,7 +3346,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3356,7 +3356,7 @@ class ContainerApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3366,7 +3366,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3550,7 +3550,7 @@ class ContainerApi
      * @param string $filters     Filters to process on the container list, encoded as JSON (a &#x60;map[string][]string&#x60;). For example, &#x60;{\&quot;status\&quot;: [\&quot;paused\&quot;]}&#x60; will only return paused containers.  Available filters:  - &#x60;ancestor&#x60;&#x3D;(&#x60;&lt;image-name&gt;[:&lt;tag&gt;]&#x60;, &#x60;&lt;image id&gt;&#x60;, or &#x60;&lt;image@digest&gt;&#x60;) - &#x60;before&#x60;&#x3D;(&#x60;&lt;container id&gt;&#x60; or &#x60;&lt;container name&gt;&#x60;) - &#x60;expose&#x60;&#x3D;(&#x60;&lt;port&gt;[/&lt;proto&gt;]&#x60;|&#x60;&lt;startport-endport&gt;/[&lt;proto&gt;]&#x60;) - &#x60;exited&#x3D;&lt;int&gt;&#x60; containers with exit code of &#x60;&lt;int&gt;&#x60; - &#x60;health&#x60;&#x3D;(&#x60;starting&#x60;|&#x60;healthy&#x60;|&#x60;unhealthy&#x60;|&#x60;none&#x60;) - &#x60;id&#x3D;&lt;ID&gt;&#x60; a container&#39;s ID - &#x60;isolation&#x3D;&#x60;(&#x60;default&#x60;|&#x60;process&#x60;|&#x60;hyperv&#x60;) (Windows daemon only) - &#x60;is-task&#x3D;&#x60;(&#x60;true&#x60;|&#x60;false&#x60;) - &#x60;label&#x3D;key&#x60; or &#x60;label&#x3D;\&quot;key&#x3D;value\&quot;&#x60; of a container label - &#x60;name&#x3D;&lt;name&gt;&#x60; a container&#39;s name - &#x60;network&#x60;&#x3D;(&#x60;&lt;network id&gt;&#x60; or &#x60;&lt;network name&gt;&#x60;) - &#x60;publish&#x60;&#x3D;(&#x60;&lt;port&gt;[/&lt;proto&gt;]&#x60;|&#x60;&lt;startport-endport&gt;/[&lt;proto&gt;]&#x60;) - &#x60;since&#x60;&#x3D;(&#x60;&lt;container id&gt;&#x60; or &#x60;&lt;container name&gt;&#x60;) - &#x60;status&#x3D;&#x60;(&#x60;created&#x60;|&#x60;restarting&#x60;|&#x60;running&#x60;|&#x60;removing&#x60;|&#x60;paused&#x60;|&#x60;exited&#x60;|&#x60;dead&#x60;) - &#x60;volume&#x60;&#x3D;(&#x60;&lt;volume name&gt;&#x60; or &#x60;&lt;mount point destination&gt;&#x60;) (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerList'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ContainerSummary[]|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ContainerSummary[]|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -3573,7 +3573,7 @@ class ContainerApi
      * @param string $filters     Filters to process on the container list, encoded as JSON (a &#x60;map[string][]string&#x60;). For example, &#x60;{\&quot;status\&quot;: [\&quot;paused\&quot;]}&#x60; will only return paused containers.  Available filters:  - &#x60;ancestor&#x60;&#x3D;(&#x60;&lt;image-name&gt;[:&lt;tag&gt;]&#x60;, &#x60;&lt;image id&gt;&#x60;, or &#x60;&lt;image@digest&gt;&#x60;) - &#x60;before&#x60;&#x3D;(&#x60;&lt;container id&gt;&#x60; or &#x60;&lt;container name&gt;&#x60;) - &#x60;expose&#x60;&#x3D;(&#x60;&lt;port&gt;[/&lt;proto&gt;]&#x60;|&#x60;&lt;startport-endport&gt;/[&lt;proto&gt;]&#x60;) - &#x60;exited&#x3D;&lt;int&gt;&#x60; containers with exit code of &#x60;&lt;int&gt;&#x60; - &#x60;health&#x60;&#x3D;(&#x60;starting&#x60;|&#x60;healthy&#x60;|&#x60;unhealthy&#x60;|&#x60;none&#x60;) - &#x60;id&#x3D;&lt;ID&gt;&#x60; a container&#39;s ID - &#x60;isolation&#x3D;&#x60;(&#x60;default&#x60;|&#x60;process&#x60;|&#x60;hyperv&#x60;) (Windows daemon only) - &#x60;is-task&#x3D;&#x60;(&#x60;true&#x60;|&#x60;false&#x60;) - &#x60;label&#x3D;key&#x60; or &#x60;label&#x3D;\&quot;key&#x3D;value\&quot;&#x60; of a container label - &#x60;name&#x3D;&lt;name&gt;&#x60; a container&#39;s name - &#x60;network&#x60;&#x3D;(&#x60;&lt;network id&gt;&#x60; or &#x60;&lt;network name&gt;&#x60;) - &#x60;publish&#x60;&#x3D;(&#x60;&lt;port&gt;[/&lt;proto&gt;]&#x60;|&#x60;&lt;startport-endport&gt;/[&lt;proto&gt;]&#x60;) - &#x60;since&#x60;&#x3D;(&#x60;&lt;container id&gt;&#x60; or &#x60;&lt;container name&gt;&#x60;) - &#x60;status&#x3D;&#x60;(&#x60;created&#x60;|&#x60;restarting&#x60;|&#x60;running&#x60;|&#x60;removing&#x60;|&#x60;paused&#x60;|&#x60;exited&#x60;|&#x60;dead&#x60;) - &#x60;volume&#x60;&#x3D;(&#x60;&lt;volume name&gt;&#x60; or &#x60;&lt;mount point destination&gt;&#x60;) (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerList'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\ContainerSummary[]|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\ContainerSummary[]|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -3620,11 +3620,11 @@ class ContainerApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ContainerSummary[]' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ContainerSummary[]' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ContainerSummary[]' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ContainerSummary[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3642,17 +3642,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ContainerSummary[]', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ContainerSummary[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 400:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3670,17 +3670,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3698,13 +3698,13 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ContainerSummary[]';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerSummary[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -3736,7 +3736,7 @@ class ContainerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ContainerSummary[]',
+                        '\MatthewBaggett\Docker\Api\Model\ContainerSummary[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3746,7 +3746,7 @@ class ContainerApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3756,7 +3756,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3809,7 +3809,7 @@ class ContainerApi
      */
     public function containerListAsyncWithHttpInfo($all = false, $limit = null, $size = false, $filters = null, string $contentType = self::contentTypes['containerList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ContainerSummary[]';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerSummary[]';
         $request    = $this->containerListRequest($all, $limit, $size, $filters, $contentType);
 
         return $this->client
@@ -3976,7 +3976,7 @@ class ContainerApi
      * @param string $tail        Only return this number of log lines from the end of the logs. Specify as an integer or &#x60;all&#x60; to output all log lines. (optional, default to 'all')
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerLogs'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse|\SplFileObject
+     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\SplFileObject
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -4003,7 +4003,7 @@ class ContainerApi
      * @param string $tail        Only return this number of log lines from the end of the logs. Specify as an integer or &#x60;all&#x60; to output all log lines. (optional, default to 'all')
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerLogs'] to see the possible values for this operation
      *
-     * @return array of \SplFileObject|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -4078,11 +4078,11 @@ class ContainerApi
                     ];
 
                 case 404:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4100,17 +4100,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4128,7 +4128,7 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -4176,7 +4176,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4186,7 +4186,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4521,7 +4521,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4531,7 +4531,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4699,7 +4699,7 @@ class ContainerApi
      * @param string $filters     Filters to process on the prune list, encoded as JSON (a &#x60;map[string][]string&#x60;).  Available filters: - &#x60;until&#x3D;&lt;timestamp&gt;&#x60; Prune containers created before this timestamp. The &#x60;&lt;timestamp&gt;&#x60; can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. &#x60;10m&#x60;, &#x60;1h30m&#x60;) computed relative to the daemon machine’s time. - &#x60;label&#x60; (&#x60;label&#x3D;&lt;key&gt;&#x60;, &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;, &#x60;label!&#x3D;&lt;key&gt;&#x60;, or &#x60;label!&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;) Prune containers with (or without, in case &#x60;label!&#x3D;...&#x60; is used) the specified labels. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerPrune'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ContainerPruneResponse|\OpenAPI\Client\Model\ErrorResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ContainerPruneResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -4719,7 +4719,7 @@ class ContainerApi
      * @param string $filters     Filters to process on the prune list, encoded as JSON (a &#x60;map[string][]string&#x60;).  Available filters: - &#x60;until&#x3D;&lt;timestamp&gt;&#x60; Prune containers created before this timestamp. The &#x60;&lt;timestamp&gt;&#x60; can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. &#x60;10m&#x60;, &#x60;1h30m&#x60;) computed relative to the daemon machine’s time. - &#x60;label&#x60; (&#x60;label&#x3D;&lt;key&gt;&#x60;, &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;, &#x60;label!&#x3D;&lt;key&gt;&#x60;, or &#x60;label!&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;) Prune containers with (or without, in case &#x60;label!&#x3D;...&#x60; is used) the specified labels. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerPrune'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\ContainerPruneResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\ContainerPruneResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -4766,11 +4766,11 @@ class ContainerApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ContainerPruneResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ContainerPruneResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ContainerPruneResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ContainerPruneResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4788,17 +4788,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ContainerPruneResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ContainerPruneResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4816,13 +4816,13 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ContainerPruneResponse';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerPruneResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -4854,7 +4854,7 @@ class ContainerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ContainerPruneResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ContainerPruneResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4864,7 +4864,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4911,7 +4911,7 @@ class ContainerApi
      */
     public function containerPruneAsyncWithHttpInfo($filters = null, string $contentType = self::contentTypes['containerPrune'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ContainerPruneResponse';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerPruneResponse';
         $request    = $this->containerPruneRequest($filters, $contentType);
 
         return $this->client
@@ -5110,7 +5110,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5120,7 +5120,7 @@ class ContainerApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5130,7 +5130,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5389,7 +5389,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5399,7 +5399,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5663,7 +5663,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5673,7 +5673,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5935,7 +5935,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5945,7 +5945,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6128,7 +6128,7 @@ class ContainerApi
      * @param bool   $one_shot    Only get a single stat instead of waiting for 2 cycles. Must be used with &#x60;stream&#x3D;false&#x60;. (optional, default to false)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerStats'] to see the possible values for this operation
      *
-     * @return object|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|object
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -6150,7 +6150,7 @@ class ContainerApi
      * @param bool   $one_shot    Only get a single stat instead of waiting for 2 cycles. Must be used with &#x60;stream&#x3D;false&#x60;. (optional, default to false)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerStats'] to see the possible values for this operation
      *
-     * @return array of object|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -6225,11 +6225,11 @@ class ContainerApi
                     ];
 
                 case 404:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -6247,17 +6247,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -6275,7 +6275,7 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -6323,7 +6323,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6333,7 +6333,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6612,7 +6612,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6622,7 +6622,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6816,7 +6816,7 @@ class ContainerApi
      * @param string $ps_args     The arguments to pass to &#x60;ps&#x60;. For example, &#x60;aux&#x60; (optional, default to '-ef')
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerTop'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ContainerTopResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ContainerTopResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -6837,7 +6837,7 @@ class ContainerApi
      * @param string $ps_args     The arguments to pass to &#x60;ps&#x60;. For example, &#x60;aux&#x60; (optional, default to '-ef')
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerTop'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\ContainerTopResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\ContainerTopResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -6884,11 +6884,11 @@ class ContainerApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ContainerTopResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ContainerTopResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ContainerTopResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ContainerTopResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -6906,17 +6906,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ContainerTopResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ContainerTopResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -6934,17 +6934,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -6962,13 +6962,13 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ContainerTopResponse';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerTopResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -7000,7 +7000,7 @@ class ContainerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ContainerTopResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ContainerTopResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7010,7 +7010,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7020,7 +7020,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7069,7 +7069,7 @@ class ContainerApi
      */
     public function containerTopAsyncWithHttpInfo($id, $ps_args = '-ef', string $contentType = self::contentTypes['containerTop'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ContainerTopResponse';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerTopResponse';
         $request    = $this->containerTopRequest($id, $ps_args, $contentType);
 
         return $this->client
@@ -7283,7 +7283,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7293,7 +7293,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7462,7 +7462,7 @@ class ContainerApi
      * @param ContainerUpdateRequest $update      update (required)
      * @param string                 $contentType The value for the Content-Type header. Check self::contentTypes['containerUpdate'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ContainerUpdateResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -7483,7 +7483,7 @@ class ContainerApi
      * @param ContainerUpdateRequest $update      (required)
      * @param string                 $contentType The value for the Content-Type header. Check self::contentTypes['containerUpdate'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\ContainerUpdateResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -7530,11 +7530,11 @@ class ContainerApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ContainerUpdateResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ContainerUpdateResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7552,17 +7552,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ContainerUpdateResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7580,17 +7580,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7608,13 +7608,13 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ContainerUpdateResponse';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -7646,7 +7646,7 @@ class ContainerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ContainerUpdateResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7656,7 +7656,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7666,7 +7666,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7715,7 +7715,7 @@ class ContainerApi
      */
     public function containerUpdateAsyncWithHttpInfo($id, $update, string $contentType = self::contentTypes['containerUpdate'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ContainerUpdateResponse';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse';
         $request    = $this->containerUpdateRequest($id, $update, $contentType);
 
         return $this->client
@@ -7867,7 +7867,7 @@ class ContainerApi
      * @param string $condition   Wait until a container state reaches the given condition.  Defaults to &#x60;not-running&#x60; if omitted or empty. (optional, default to 'not-running')
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerWait'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\ContainerWaitResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse
+     * @return \MatthewBaggett\Docker\Api\Model\ContainerWaitResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -7888,7 +7888,7 @@ class ContainerApi
      * @param string $condition   Wait until a container state reaches the given condition.  Defaults to &#x60;not-running&#x60; if omitted or empty. (optional, default to 'not-running')
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['containerWait'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\ContainerWaitResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\ContainerWaitResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -7935,11 +7935,11 @@ class ContainerApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ContainerWaitResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ContainerWaitResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ContainerWaitResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ContainerWaitResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7957,17 +7957,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ContainerWaitResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ContainerWaitResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 400:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7985,17 +7985,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -8013,17 +8013,17 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -8041,13 +8041,13 @@ class ContainerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ContainerWaitResponse';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerWaitResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -8079,7 +8079,7 @@ class ContainerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ContainerWaitResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ContainerWaitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8089,7 +8089,7 @@ class ContainerApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8099,7 +8099,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8109,7 +8109,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8158,7 +8158,7 @@ class ContainerApi
      */
     public function containerWaitAsyncWithHttpInfo($id, $condition = 'not-running', string $contentType = self::contentTypes['containerWait'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ContainerWaitResponse';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\ContainerWaitResponse';
         $request    = $this->containerWaitRequest($id, $condition, $contentType);
 
         return $this->client
@@ -8380,7 +8380,7 @@ class ContainerApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8390,7 +8390,7 @@ class ContainerApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8400,7 +8400,7 @@ class ContainerApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8410,7 +8410,7 @@ class ContainerApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

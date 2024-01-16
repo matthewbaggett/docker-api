@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace MatthewBaggett\Docker\Api\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -38,10 +38,10 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ApiException;
+use MatthewBaggett\Docker\Api\Configuration;
+use MatthewBaggett\Docker\Api\HeaderSelector;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Utils;
 
@@ -134,7 +134,7 @@ class DistributionApi
      * @param string $name        Image name or id (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['distributionInspect'] to see the possible values for this operation
      *
-     * @return \OpenAPI\Client\Model\DistributionInspect|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse
+     * @return \MatthewBaggett\Docker\Api\Model\DistributionInspect|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -154,7 +154,7 @@ class DistributionApi
      * @param string $name        Image name or id (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['distributionInspect'] to see the possible values for this operation
      *
-     * @return array of \OpenAPI\Client\Model\DistributionInspect|\OpenAPI\Client\Model\ErrorResponse|\OpenAPI\Client\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Api\Model\DistributionInspect|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -201,11 +201,11 @@ class DistributionApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DistributionInspect' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\DistributionInspect' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DistributionInspect' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\DistributionInspect' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -223,17 +223,17 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DistributionInspect', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\DistributionInspect', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 401:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -251,17 +251,17 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\OpenAPI\Client\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -279,13 +279,13 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\DistributionInspect';
+            $returnType = '\MatthewBaggett\Docker\Api\Model\DistributionInspect';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -317,7 +317,7 @@ class DistributionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DistributionInspect',
+                        '\MatthewBaggett\Docker\Api\Model\DistributionInspect',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -327,7 +327,7 @@ class DistributionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -337,7 +337,7 @@ class DistributionApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -384,7 +384,7 @@ class DistributionApi
      */
     public function distributionInspectAsyncWithHttpInfo($name, string $contentType = self::contentTypes['distributionInspect'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\DistributionInspect';
+        $returnType = '\MatthewBaggett\Docker\Api\Model\DistributionInspect';
         $request    = $this->distributionInspectRequest($name, $contentType);
 
         return $this->client

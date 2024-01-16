@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ClusterVolumeSpec Class Doc Comment.
@@ -65,7 +65,7 @@ class ClusterVolumeSpec implements ModelInterface, \ArrayAccess, \JsonSerializab
      */
     protected static $openAPITypes = [
         'group'       => 'string',
-        'access_mode' => '\OpenAPI\Client\Model\ClusterVolumeSpecAccessMode',
+        'access_mode' => '\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpecAccessMode',
     ];
 
     /**

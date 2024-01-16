@@ -1,4 +1,4 @@
-# OpenAPI\Client\NetworkApi
+# MatthewBaggett\Docker\Api\NetworkApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -29,13 +29,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NetworkApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NetworkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | Network ID or name
-$container = new \OpenAPI\Client\Model\NetworkConnectRequest(); // \OpenAPI\Client\Model\NetworkConnectRequest
+$container = new \MatthewBaggett\Docker\Api\Model\NetworkConnectRequest(); // \MatthewBaggett\Docker\Api\Model\NetworkConnectRequest
 
 try {
     $apiInstance->networkConnect($id, $container);
@@ -49,7 +49,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Network ID or name | |
-| **container** | [**\OpenAPI\Client\Model\NetworkConnectRequest**](../Model/NetworkConnectRequest.md)|  | |
+| **container** | [**\MatthewBaggett\Docker\Api\Model\NetworkConnectRequest**](../Model/NetworkConnectRequest.md)|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 ## `networkCreate()`
 
 ```php
-networkCreate($network_config): \OpenAPI\Client\Model\NetworkCreateResponse
+networkCreate($network_config): \MatthewBaggett\Docker\Api\Model\NetworkCreateResponse
 ```
 
 Create a network
@@ -84,12 +84,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NetworkApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NetworkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$network_config = new \OpenAPI\Client\Model\NetworkCreateRequest(); // \OpenAPI\Client\Model\NetworkCreateRequest | Network configuration
+$network_config = new \MatthewBaggett\Docker\Api\Model\NetworkCreateRequest(); // \MatthewBaggett\Docker\Api\Model\NetworkCreateRequest | Network configuration
 
 try {
     $result = $apiInstance->networkCreate($network_config);
@@ -103,11 +103,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **network_config** | [**\OpenAPI\Client\Model\NetworkCreateRequest**](../Model/NetworkCreateRequest.md)| Network configuration | |
+| **network_config** | [**\MatthewBaggett\Docker\Api\Model\NetworkCreateRequest**](../Model/NetworkCreateRequest.md)| Network configuration | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\NetworkCreateResponse**](../Model/NetworkCreateResponse.md)
+[**\MatthewBaggett\Docker\Api\Model\NetworkCreateResponse**](../Model/NetworkCreateResponse.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NetworkApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NetworkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -191,13 +191,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NetworkApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NetworkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | Network ID or name
-$container = new \OpenAPI\Client\Model\NetworkDisconnectRequest(); // \OpenAPI\Client\Model\NetworkDisconnectRequest
+$container = new \MatthewBaggett\Docker\Api\Model\NetworkDisconnectRequest(); // \MatthewBaggett\Docker\Api\Model\NetworkDisconnectRequest
 
 try {
     $apiInstance->networkDisconnect($id, $container);
@@ -211,7 +211,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Network ID or name | |
-| **container** | [**\OpenAPI\Client\Model\NetworkDisconnectRequest**](../Model/NetworkDisconnectRequest.md)|  | |
+| **container** | [**\MatthewBaggett\Docker\Api\Model\NetworkDisconnectRequest**](../Model/NetworkDisconnectRequest.md)|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 ## `networkInspect()`
 
 ```php
-networkInspect($id, $verbose, $scope): \OpenAPI\Client\Model\Network
+networkInspect($id, $verbose, $scope): \MatthewBaggett\Docker\Api\Model\Network
 ```
 
 Inspect a network
@@ -246,7 +246,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NetworkApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NetworkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -273,7 +273,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Network**](../Model/Network.md)
+[**\MatthewBaggett\Docker\Api\Model\Network**](../Model/Network.md)
 
 ### Authorization
 
@@ -291,7 +291,7 @@ No authorization required
 ## `networkList()`
 
 ```php
-networkList($filters): \OpenAPI\Client\Model\Network[]
+networkList($filters): \MatthewBaggett\Docker\Api\Model\Network[]
 ```
 
 List networks
@@ -306,7 +306,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NetworkApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NetworkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -329,7 +329,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Network[]**](../Model/Network.md)
+[**\MatthewBaggett\Docker\Api\Model\Network[]**](../Model/Network.md)
 
 ### Authorization
 
@@ -347,7 +347,7 @@ No authorization required
 ## `networkPrune()`
 
 ```php
-networkPrune($filters): \OpenAPI\Client\Model\NetworkPruneResponse
+networkPrune($filters): \MatthewBaggett\Docker\Api\Model\NetworkPruneResponse
 ```
 
 Delete unused networks
@@ -360,7 +360,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NetworkApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\NetworkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -383,7 +383,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\NetworkPruneResponse**](../Model/NetworkPruneResponse.md)
+[**\MatthewBaggett\Docker\Api\Model\NetworkPruneResponse**](../Model/NetworkPruneResponse.md)
 
 ### Authorization
 

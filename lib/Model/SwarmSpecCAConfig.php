@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * SwarmSpecCAConfig Class Doc Comment.
@@ -65,7 +65,7 @@ class SwarmSpecCAConfig implements ModelInterface, \ArrayAccess, \JsonSerializab
      */
     protected static $openAPITypes = [
         'node_cert_expiry' => 'int',
-        'external_cas'     => '\OpenAPI\Client\Model\SwarmSpecCAConfigExternalCAsInner[]',
+        'external_cas'     => '\MatthewBaggett\Docker\Api\Model\SwarmSpecCAConfigExternalCAsInner[]',
         'signing_ca_cert'  => 'string',
         'signing_ca_key'   => 'string',
         'force_rotate'     => 'int',
@@ -340,7 +340,7 @@ class SwarmSpecCAConfig implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Gets external_cas.
      *
-     * @return null|\OpenAPI\Client\Model\SwarmSpecCAConfigExternalCAsInner[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\SwarmSpecCAConfigExternalCAsInner[]
      */
     public function getExternalCas()
     {
@@ -350,7 +350,7 @@ class SwarmSpecCAConfig implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets external_cas.
      *
-     * @param null|\OpenAPI\Client\Model\SwarmSpecCAConfigExternalCAsInner[] $external_cas configuration for forwarding signing requests to an external certificate authority
+     * @param null|\MatthewBaggett\Docker\Api\Model\SwarmSpecCAConfigExternalCAsInner[] $external_cas configuration for forwarding signing requests to an external certificate authority
      *
      * @return self
      */

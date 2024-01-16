@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * SwarmInfo Class Doc Comment.
@@ -66,13 +66,13 @@ class SwarmInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'node_id'           => 'string',
         'node_addr'         => 'string',
-        'local_node_state'  => '\OpenAPI\Client\Model\LocalNodeState',
+        'local_node_state'  => '\MatthewBaggett\Docker\Api\Model\LocalNodeState',
         'control_available' => 'bool',
         'error'             => 'string',
-        'remote_managers'   => '\OpenAPI\Client\Model\PeerNode[]',
+        'remote_managers'   => '\MatthewBaggett\Docker\Api\Model\PeerNode[]',
         'nodes'             => 'int',
         'managers'          => 'int',
-        'cluster'           => '\OpenAPI\Client\Model\ClusterInfo',
+        'cluster'           => '\MatthewBaggett\Docker\Api\Model\ClusterInfo',
     ];
 
     /**
@@ -476,7 +476,7 @@ class SwarmInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets remote_managers.
      *
-     * @return null|\OpenAPI\Client\Model\PeerNode[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\PeerNode[]
      */
     public function getRemoteManagers()
     {
@@ -486,7 +486,7 @@ class SwarmInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets remote_managers.
      *
-     * @param null|\OpenAPI\Client\Model\PeerNode[] $remote_managers list of ID's and addresses of other managers in the swarm
+     * @param null|\MatthewBaggett\Docker\Api\Model\PeerNode[] $remote_managers list of ID's and addresses of other managers in the swarm
      *
      * @return self
      */

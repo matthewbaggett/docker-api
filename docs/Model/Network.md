@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 **scope** | **string** |  | [optional]
 **driver** | **string** |  | [optional]
 **enable_ipv6** | **bool** |  | [optional]
-**ipam** | [**\OpenAPI\Client\Model\IPAM**](IPAM.md) |  | [optional]
+**ipam** | [**\MatthewBaggett\Docker\Api\Model\IPAM**](IPAM.md) |  | [optional]
 **internal** | **bool** |  | [optional]
 **attachable** | **bool** |  | [optional]
 **ingress** | **bool** |  | [optional]
-**containers** | [**array<string,\OpenAPI\Client\Model\NetworkContainer>**](NetworkContainer.md) |  | [optional]
+**containers** | [**array<string,\MatthewBaggett\Docker\Api\Model\NetworkContainer>**](NetworkContainer.md) |  | [optional]
 **options** | **array<string,string>** |  | [optional]
 **labels** | **array<string,string>** |  | [optional]
 

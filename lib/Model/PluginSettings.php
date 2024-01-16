@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * PluginSettings Class Doc Comment.
@@ -64,10 +64,10 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'mounts'  => '\OpenAPI\Client\Model\PluginMount[]',
+        'mounts'  => '\MatthewBaggett\Docker\Api\Model\PluginMount[]',
         'env'     => 'string[]',
         'args'    => 'string[]',
-        'devices' => '\OpenAPI\Client\Model\PluginDevice[]',
+        'devices' => '\MatthewBaggett\Docker\Api\Model\PluginDevice[]',
     ];
 
     /**
@@ -321,7 +321,7 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets mounts.
      *
-     * @return \OpenAPI\Client\Model\PluginMount[]
+     * @return \MatthewBaggett\Docker\Api\Model\PluginMount[]
      */
     public function getMounts()
     {
@@ -331,7 +331,7 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets mounts.
      *
-     * @param \OpenAPI\Client\Model\PluginMount[] $mounts mounts
+     * @param \MatthewBaggett\Docker\Api\Model\PluginMount[] $mounts mounts
      *
      * @return self
      */
@@ -402,7 +402,7 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets devices.
      *
-     * @return \OpenAPI\Client\Model\PluginDevice[]
+     * @return \MatthewBaggett\Docker\Api\Model\PluginDevice[]
      */
     public function getDevices()
     {
@@ -412,7 +412,7 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets devices.
      *
-     * @param \OpenAPI\Client\Model\PluginDevice[] $devices devices
+     * @param \MatthewBaggett\Docker\Api\Model\PluginDevice[] $devices devices
      *
      * @return self
      */

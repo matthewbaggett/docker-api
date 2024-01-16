@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * NetworkingConfig Class Doc Comment.
@@ -64,7 +64,7 @@ class NetworkingConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $openAPITypes = [
-        'endpoints_config' => 'array<string,\OpenAPI\Client\Model\EndpointSettings>',
+        'endpoints_config' => 'array<string,\MatthewBaggett\Docker\Api\Model\EndpointSettings>',
     ];
 
     /**
@@ -285,7 +285,7 @@ class NetworkingConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Gets endpoints_config.
      *
-     * @return null|array<string,\OpenAPI\Client\Model\EndpointSettings>
+     * @return null|array<string,\MatthewBaggett\Docker\Api\Model\EndpointSettings>
      */
     public function getEndpointsConfig()
     {
@@ -295,7 +295,7 @@ class NetworkingConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets endpoints_config.
      *
-     * @param null|array<string,\OpenAPI\Client\Model\EndpointSettings> $endpoints_config a mapping of network name to endpoint configuration for that network
+     * @param null|array<string,\MatthewBaggett\Docker\Api\Model\EndpointSettings> $endpoints_config a mapping of network name to endpoint configuration for that network
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# OpenAPI\Client\VolumeApi
+# MatthewBaggett\Docker\Api\VolumeApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -15,7 +15,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `volumeCreate()`
 
 ```php
-volumeCreate($volume_config): \OpenAPI\Client\Model\Volume
+volumeCreate($volume_config): \MatthewBaggett\Docker\Api\Model\Volume
 ```
 
 Create a volume
@@ -28,12 +28,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\VolumeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\VolumeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$volume_config = new \OpenAPI\Client\Model\VolumeCreateOptions(); // \OpenAPI\Client\Model\VolumeCreateOptions | Volume configuration
+$volume_config = new \MatthewBaggett\Docker\Api\Model\VolumeCreateOptions(); // \MatthewBaggett\Docker\Api\Model\VolumeCreateOptions | Volume configuration
 
 try {
     $result = $apiInstance->volumeCreate($volume_config);
@@ -47,11 +47,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **volume_config** | [**\OpenAPI\Client\Model\VolumeCreateOptions**](../Model/VolumeCreateOptions.md)| Volume configuration | |
+| **volume_config** | [**\MatthewBaggett\Docker\Api\Model\VolumeCreateOptions**](../Model/VolumeCreateOptions.md)| Volume configuration | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Volume**](../Model/Volume.md)
+[**\MatthewBaggett\Docker\Api\Model\Volume**](../Model/Volume.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\VolumeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\VolumeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -126,7 +126,7 @@ No authorization required
 ## `volumeInspect()`
 
 ```php
-volumeInspect($name): \OpenAPI\Client\Model\Volume
+volumeInspect($name): \MatthewBaggett\Docker\Api\Model\Volume
 ```
 
 Inspect a volume
@@ -139,7 +139,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\VolumeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\VolumeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -162,7 +162,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Volume**](../Model/Volume.md)
+[**\MatthewBaggett\Docker\Api\Model\Volume**](../Model/Volume.md)
 
 ### Authorization
 
@@ -180,7 +180,7 @@ No authorization required
 ## `volumeList()`
 
 ```php
-volumeList($filters): \OpenAPI\Client\Model\VolumeListResponse
+volumeList($filters): \MatthewBaggett\Docker\Api\Model\VolumeListResponse
 ```
 
 List volumes
@@ -193,7 +193,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\VolumeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\VolumeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -216,7 +216,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\VolumeListResponse**](../Model/VolumeListResponse.md)
+[**\MatthewBaggett\Docker\Api\Model\VolumeListResponse**](../Model/VolumeListResponse.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ No authorization required
 ## `volumePrune()`
 
 ```php
-volumePrune($filters): \OpenAPI\Client\Model\VolumePruneResponse
+volumePrune($filters): \MatthewBaggett\Docker\Api\Model\VolumePruneResponse
 ```
 
 Delete unused volumes
@@ -247,7 +247,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\VolumeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\VolumeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -270,7 +270,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\VolumePruneResponse**](../Model/VolumePruneResponse.md)
+[**\MatthewBaggett\Docker\Api\Model\VolumePruneResponse**](../Model/VolumePruneResponse.md)
 
 ### Authorization
 
@@ -301,14 +301,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\VolumeApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\VolumeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $name = 'name_example'; // string | The name or ID of the volume
 $version = 56; // int | The version number of the volume being updated. This is required to avoid conflicting writes. Found in the volume's `ClusterVolume` field.
-$body = new \OpenAPI\Client\Model\VolumeUpdateRequest(); // \OpenAPI\Client\Model\VolumeUpdateRequest | The spec of the volume to update. Currently, only Availability may change. All other fields must remain unchanged.
+$body = new \MatthewBaggett\Docker\Api\Model\VolumeUpdateRequest(); // \MatthewBaggett\Docker\Api\Model\VolumeUpdateRequest | The spec of the volume to update. Currently, only Availability may change. All other fields must remain unchanged.
 
 try {
     $apiInstance->volumeUpdate($name, $version, $body);
@@ -323,7 +323,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **name** | **string**| The name or ID of the volume | |
 | **version** | **int**| The version number of the volume being updated. This is required to avoid conflicting writes. Found in the volume&#39;s &#x60;ClusterVolume&#x60; field. | |
-| **body** | [**\OpenAPI\Client\Model\VolumeUpdateRequest**](../Model/VolumeUpdateRequest.md)| The spec of the volume to update. Currently, only Availability may change. All other fields must remain unchanged. | [optional] |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\VolumeUpdateRequest**](../Model/VolumeUpdateRequest.md)| The spec of the volume to update. Currently, only Availability may change. All other fields must remain unchanged. | [optional] |
 
 ### Return type
 

@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * MountVolumeOptions Class Doc Comment.
@@ -66,7 +66,7 @@ class MountVolumeOptions implements ModelInterface, \ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'no_copy'       => 'bool',
         'labels'        => 'array<string,string>',
-        'driver_config' => '\OpenAPI\Client\Model\MountVolumeOptionsDriverConfig',
+        'driver_config' => '\MatthewBaggett\Docker\Api\Model\MountVolumeOptionsDriverConfig',
     ];
 
     /**

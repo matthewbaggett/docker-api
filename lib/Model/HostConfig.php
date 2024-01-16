@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * HostConfig Class Doc Comment.
@@ -68,20 +68,20 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
         'memory'                   => 'int',
         'cgroup_parent'            => 'string',
         'blkio_weight'             => 'int',
-        'blkio_weight_device'      => '\OpenAPI\Client\Model\ResourcesBlkioWeightDeviceInner[]',
-        'blkio_device_read_bps'    => '\OpenAPI\Client\Model\ThrottleDevice[]',
-        'blkio_device_write_bps'   => '\OpenAPI\Client\Model\ThrottleDevice[]',
-        'blkio_device_read_i_ops'  => '\OpenAPI\Client\Model\ThrottleDevice[]',
-        'blkio_device_write_i_ops' => '\OpenAPI\Client\Model\ThrottleDevice[]',
+        'blkio_weight_device'      => '\MatthewBaggett\Docker\Api\Model\ResourcesBlkioWeightDeviceInner[]',
+        'blkio_device_read_bps'    => '\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]',
+        'blkio_device_write_bps'   => '\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]',
+        'blkio_device_read_i_ops'  => '\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]',
+        'blkio_device_write_i_ops' => '\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]',
         'cpu_period'               => 'int',
         'cpu_quota'                => 'int',
         'cpu_realtime_period'      => 'int',
         'cpu_realtime_runtime'     => 'int',
         'cpuset_cpus'              => 'string',
         'cpuset_mems'              => 'string',
-        'devices'                  => '\OpenAPI\Client\Model\DeviceMapping[]',
+        'devices'                  => '\MatthewBaggett\Docker\Api\Model\DeviceMapping[]',
         'device_cgroup_rules'      => 'string[]',
-        'device_requests'          => '\OpenAPI\Client\Model\DeviceRequest[]',
+        'device_requests'          => '\MatthewBaggett\Docker\Api\Model\DeviceRequest[]',
         'kernel_memory_tcp'        => 'int',
         'memory_reservation'       => 'int',
         'memory_swap'              => 'int',
@@ -90,21 +90,21 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
         'oom_kill_disable'         => 'bool',
         'init'                     => 'bool',
         'pids_limit'               => 'int',
-        'ulimits'                  => '\OpenAPI\Client\Model\ResourcesUlimitsInner[]',
+        'ulimits'                  => '\MatthewBaggett\Docker\Api\Model\ResourcesUlimitsInner[]',
         'cpu_count'                => 'int',
         'cpu_percent'              => 'int',
         'io_maximum_i_ops'         => 'int',
         'io_maximum_bandwidth'     => 'int',
         'binds'                    => 'string[]',
         'container_id_file'        => 'string',
-        'log_config'               => '\OpenAPI\Client\Model\HostConfigAllOfLogConfig',
+        'log_config'               => '\MatthewBaggett\Docker\Api\Model\HostConfigAllOfLogConfig',
         'network_mode'             => 'string',
-        'port_bindings'            => 'array<string,\OpenAPI\Client\Model\PortBinding[]>',
-        'restart_policy'           => '\OpenAPI\Client\Model\RestartPolicy',
+        'port_bindings'            => 'array<string,\MatthewBaggett\Docker\Api\Model\PortBinding[]>',
+        'restart_policy'           => '\MatthewBaggett\Docker\Api\Model\RestartPolicy',
         'auto_remove'              => 'bool',
         'volume_driver'            => 'string',
         'volumes_from'             => 'string[]',
-        'mounts'                   => '\OpenAPI\Client\Model\Mount[]',
+        'mounts'                   => '\MatthewBaggett\Docker\Api\Model\Mount[]',
         'console_size'             => 'int[]',
         'annotations'              => 'array<string,string>',
         'cap_add'                  => 'string[]',
@@ -965,7 +965,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_weight_device.
      *
-     * @return null|\OpenAPI\Client\Model\ResourcesBlkioWeightDeviceInner[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ResourcesBlkioWeightDeviceInner[]
      */
     public function getBlkioWeightDevice()
     {
@@ -975,7 +975,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_weight_device.
      *
-     * @param null|\OpenAPI\Client\Model\ResourcesBlkioWeightDeviceInner[] $blkio_weight_device Block IO weight (relative device weight) in the form:  ``` [{\"Path\": \"device_path\", \"Weight\": weight}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ResourcesBlkioWeightDeviceInner[] $blkio_weight_device Block IO weight (relative device weight) in the form:  ``` [{\"Path\": \"device_path\", \"Weight\": weight}] ```
      *
      * @return self
      */
@@ -992,7 +992,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_device_read_bps.
      *
-     * @return null|\OpenAPI\Client\Model\ThrottleDevice[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]
      */
     public function getBlkioDeviceReadBps()
     {
@@ -1002,7 +1002,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_device_read_bps.
      *
-     * @param null|\OpenAPI\Client\Model\ThrottleDevice[] $blkio_device_read_bps Limit read rate (bytes per second) from a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[] $blkio_device_read_bps Limit read rate (bytes per second) from a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
      *
      * @return self
      */
@@ -1019,7 +1019,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_device_write_bps.
      *
-     * @return null|\OpenAPI\Client\Model\ThrottleDevice[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]
      */
     public function getBlkioDeviceWriteBps()
     {
@@ -1029,7 +1029,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_device_write_bps.
      *
-     * @param null|\OpenAPI\Client\Model\ThrottleDevice[] $blkio_device_write_bps Limit write rate (bytes per second) to a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[] $blkio_device_write_bps Limit write rate (bytes per second) to a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
      *
      * @return self
      */
@@ -1046,7 +1046,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_device_read_i_ops.
      *
-     * @return null|\OpenAPI\Client\Model\ThrottleDevice[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]
      */
     public function getBlkioDeviceReadIOps()
     {
@@ -1056,7 +1056,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_device_read_i_ops.
      *
-     * @param null|\OpenAPI\Client\Model\ThrottleDevice[] $blkio_device_read_i_ops Limit read rate (IO per second) from a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[] $blkio_device_read_i_ops Limit read rate (IO per second) from a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
      *
      * @return self
      */
@@ -1073,7 +1073,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_device_write_i_ops.
      *
-     * @return null|\OpenAPI\Client\Model\ThrottleDevice[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]
      */
     public function getBlkioDeviceWriteIOps()
     {
@@ -1083,7 +1083,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_device_write_i_ops.
      *
-     * @param null|\OpenAPI\Client\Model\ThrottleDevice[] $blkio_device_write_i_ops Limit write rate (IO per second) to a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[] $blkio_device_write_i_ops Limit write rate (IO per second) to a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
      *
      * @return self
      */
@@ -1262,7 +1262,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets devices.
      *
-     * @return null|\OpenAPI\Client\Model\DeviceMapping[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\DeviceMapping[]
      */
     public function getDevices()
     {
@@ -1272,7 +1272,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets devices.
      *
-     * @param null|\OpenAPI\Client\Model\DeviceMapping[] $devices a list of devices to add to the container
+     * @param null|\MatthewBaggett\Docker\Api\Model\DeviceMapping[] $devices a list of devices to add to the container
      *
      * @return self
      */
@@ -1316,7 +1316,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets device_requests.
      *
-     * @return null|\OpenAPI\Client\Model\DeviceRequest[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\DeviceRequest[]
      */
     public function getDeviceRequests()
     {
@@ -1326,7 +1326,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets device_requests.
      *
-     * @param null|\OpenAPI\Client\Model\DeviceRequest[] $device_requests a list of requests for devices to be sent to device drivers
+     * @param null|\MatthewBaggett\Docker\Api\Model\DeviceRequest[] $device_requests a list of requests for devices to be sent to device drivers
      *
      * @return self
      */
@@ -1581,7 +1581,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets ulimits.
      *
-     * @return null|\OpenAPI\Client\Model\ResourcesUlimitsInner[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ResourcesUlimitsInner[]
      */
     public function getUlimits()
     {
@@ -1591,7 +1591,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets ulimits.
      *
-     * @param null|\OpenAPI\Client\Model\ResourcesUlimitsInner[] $ulimits A list of resource limits to set in the container. For example:  ``` {\"Name\": \"nofile\", \"Soft\": 1024, \"Hard\": 2048} ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ResourcesUlimitsInner[] $ulimits A list of resource limits to set in the container. For example:  ``` {\"Name\": \"nofile\", \"Soft\": 1024, \"Hard\": 2048} ```
      *
      * @return self
      */
@@ -1824,7 +1824,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets port_bindings.
      *
-     * @return null|array<string,\OpenAPI\Client\Model\PortBinding[]>
+     * @return null|array<string,\MatthewBaggett\Docker\Api\Model\PortBinding[]>
      */
     public function getPortBindings()
     {
@@ -1834,7 +1834,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets port_bindings.
      *
-     * @param null|array<string,\OpenAPI\Client\Model\PortBinding[]> $port_bindings PortMap describes the mapping of container ports to host ports, using the container's port-number and protocol as key in the format `<port>/<protocol>`, for example, `80/udp`.  If a container's port is mapped for multiple protocols, separate entries are added to the mapping table.
+     * @param null|array<string,\MatthewBaggett\Docker\Api\Model\PortBinding[]> $port_bindings PortMap describes the mapping of container ports to host ports, using the container's port-number and protocol as key in the format `<port>/<protocol>`, for example, `80/udp`.  If a container's port is mapped for multiple protocols, separate entries are added to the mapping table.
      *
      * @return self
      */
@@ -1959,7 +1959,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets mounts.
      *
-     * @return null|\OpenAPI\Client\Model\Mount[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\Mount[]
      */
     public function getMounts()
     {
@@ -1969,7 +1969,7 @@ class HostConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets mounts.
      *
-     * @param null|\OpenAPI\Client\Model\Mount[] $mounts specification for mounts to be added to the container
+     * @param null|\MatthewBaggett\Docker\Api\Model\Mount[] $mounts specification for mounts to be added to the container
      *
      * @return self
      */

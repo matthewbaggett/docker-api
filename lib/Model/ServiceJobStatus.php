@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ServiceJobStatus Class Doc Comment.
@@ -64,7 +64,7 @@ class ServiceJobStatus implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $openAPITypes = [
-        'job_iteration'  => '\OpenAPI\Client\Model\ObjectVersion',
+        'job_iteration'  => '\MatthewBaggett\Docker\Api\Model\ObjectVersion',
         'last_execution' => 'string',
     ];
 

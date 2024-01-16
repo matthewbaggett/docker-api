@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * VolumeCreateOptions Class Doc Comment.
@@ -68,7 +68,7 @@ class VolumeCreateOptions implements ModelInterface, \ArrayAccess, \JsonSerializ
         'driver'              => 'string',
         'driver_opts'         => 'array<string,string>',
         'labels'              => 'array<string,string>',
-        'cluster_volume_spec' => '\OpenAPI\Client\Model\ClusterVolumeSpec',
+        'cluster_volume_spec' => '\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpec',
     ];
 
     /**

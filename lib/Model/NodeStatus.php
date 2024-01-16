@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * NodeStatus Class Doc Comment.
@@ -64,7 +64,7 @@ class NodeStatus implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'state'   => '\OpenAPI\Client\Model\NodeState',
+        'state'   => '\MatthewBaggett\Docker\Api\Model\NodeState',
         'message' => 'string',
         'addr'    => 'string',
     ];

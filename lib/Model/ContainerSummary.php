@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ContainerSummary Class Doc Comment.
@@ -68,15 +68,15 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
         'image_id'         => 'string',
         'command'          => 'string',
         'created'          => 'int',
-        'ports'            => '\OpenAPI\Client\Model\Port[]',
+        'ports'            => '\MatthewBaggett\Docker\Api\Model\Port[]',
         'size_rw'          => 'int',
         'size_root_fs'     => 'int',
         'labels'           => 'array<string,string>',
         'state'            => 'string',
         'status'           => 'string',
-        'host_config'      => '\OpenAPI\Client\Model\ContainerSummaryHostConfig',
-        'network_settings' => '\OpenAPI\Client\Model\ContainerSummaryNetworkSettings',
-        'mounts'           => '\OpenAPI\Client\Model\MountPoint[]',
+        'host_config'      => '\MatthewBaggett\Docker\Api\Model\ContainerSummaryHostConfig',
+        'network_settings' => '\MatthewBaggett\Docker\Api\Model\ContainerSummaryNetworkSettings',
+        'mounts'           => '\MatthewBaggett\Docker\Api\Model\MountPoint[]',
     ];
 
     /**
@@ -543,7 +543,7 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Gets ports.
      *
-     * @return null|\OpenAPI\Client\Model\Port[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\Port[]
      */
     public function getPorts()
     {
@@ -553,7 +553,7 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets ports.
      *
-     * @param null|\OpenAPI\Client\Model\Port[] $ports The ports exposed by this container
+     * @param null|\MatthewBaggett\Docker\Api\Model\Port[] $ports The ports exposed by this container
      *
      * @return self
      */
@@ -759,7 +759,7 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Gets mounts.
      *
-     * @return null|\OpenAPI\Client\Model\MountPoint[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\MountPoint[]
      */
     public function getMounts()
     {
@@ -769,7 +769,7 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets mounts.
      *
-     * @param null|\OpenAPI\Client\Model\MountPoint[] $mounts mounts
+     * @param null|\MatthewBaggett\Docker\Api\Model\MountPoint[] $mounts mounts
      *
      * @return self
      */

@@ -15,6 +15,6 @@ Name | Type | Description | Notes
 **error** | **string** |  | [optional]
 **started_at** | **string** | The time when this container was last started. | [optional]
 **finished_at** | **string** | The time when this container last exited. | [optional]
-**health** | [**\OpenAPI\Client\Model\Health**](Health.md) |  | [optional]
+**health** | [**\MatthewBaggett\Docker\Api\Model\Health**](Health.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

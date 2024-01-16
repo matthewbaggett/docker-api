@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**state** | [**\OpenAPI\Client\Model\NodeState**](NodeState.md) |  | [optional]
+**state** | [**\MatthewBaggett\Docker\Api\Model\NodeState**](NodeState.md) |  | [optional]
 **message** | **string** |  | [optional]
 **addr** | **string** | IP address of the node. | [optional]
 

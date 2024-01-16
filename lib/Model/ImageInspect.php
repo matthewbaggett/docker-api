@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ImageInspect Class Doc Comment.
@@ -71,19 +71,19 @@ class ImageInspect implements ModelInterface, \ArrayAccess, \JsonSerializable
         'comment'          => 'string',
         'created'          => 'string',
         'container'        => 'string',
-        'container_config' => '\OpenAPI\Client\Model\ContainerConfig',
+        'container_config' => '\MatthewBaggett\Docker\Api\Model\ContainerConfig',
         'docker_version'   => 'string',
         'author'           => 'string',
-        'config'           => '\OpenAPI\Client\Model\ContainerConfig',
+        'config'           => '\MatthewBaggett\Docker\Api\Model\ContainerConfig',
         'architecture'     => 'string',
         'variant'          => 'string',
         'os'               => 'string',
         'os_version'       => 'string',
         'size'             => 'int',
         'virtual_size'     => 'int',
-        'graph_driver'     => '\OpenAPI\Client\Model\GraphDriverData',
-        'root_fs'          => '\OpenAPI\Client\Model\ImageInspectRootFS',
-        'metadata'         => '\OpenAPI\Client\Model\ImageInspectMetadata',
+        'graph_driver'     => '\MatthewBaggett\Docker\Api\Model\GraphDriverData',
+        'root_fs'          => '\MatthewBaggett\Docker\Api\Model\ImageInspectRootFS',
+        'metadata'         => '\MatthewBaggett\Docker\Api\Model\ImageInspectMetadata',
     ];
 
     /**

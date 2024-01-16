@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * TaskSpecContainerSpecPrivileges Class Doc Comment.
@@ -64,8 +64,8 @@ class TaskSpecContainerSpecPrivileges implements ModelInterface, \ArrayAccess, \
      * @var string[]
      */
     protected static $openAPITypes = [
-        'credential_spec'  => '\OpenAPI\Client\Model\TaskSpecContainerSpecPrivilegesCredentialSpec',
-        'se_linux_context' => '\OpenAPI\Client\Model\TaskSpecContainerSpecPrivilegesSELinuxContext',
+        'credential_spec'  => '\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecPrivilegesCredentialSpec',
+        'se_linux_context' => '\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecPrivilegesSELinuxContext',
     ];
 
     /**

@@ -1,4 +1,4 @@
-# OpenAPI\Client\PluginApi
+# MatthewBaggett\Docker\Api\PluginApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -20,7 +20,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `getPluginPrivileges()`
 
 ```php
-getPluginPrivileges($remote): \OpenAPI\Client\Model\PluginPrivilege[]
+getPluginPrivileges($remote): \MatthewBaggett\Docker\Api\Model\PluginPrivilege[]
 ```
 
 Get plugin privileges
@@ -33,7 +33,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -56,7 +56,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\PluginPrivilege[]**](../Model/PluginPrivilege.md)
+[**\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]**](../Model/PluginPrivilege.md)
 
 ### Authorization
 
@@ -87,7 +87,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -129,7 +129,7 @@ No authorization required
 ## `pluginDelete()`
 
 ```php
-pluginDelete($name, $force): \OpenAPI\Client\Model\Plugin
+pluginDelete($name, $force): \MatthewBaggett\Docker\Api\Model\Plugin
 ```
 
 Remove a plugin
@@ -142,7 +142,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -167,7 +167,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Plugin**](../Model/Plugin.md)
+[**\MatthewBaggett\Docker\Api\Model\Plugin**](../Model/Plugin.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -253,7 +253,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -295,7 +295,7 @@ No authorization required
 ## `pluginInspect()`
 
 ```php
-pluginInspect($name): \OpenAPI\Client\Model\Plugin
+pluginInspect($name): \MatthewBaggett\Docker\Api\Model\Plugin
 ```
 
 Inspect a plugin
@@ -308,7 +308,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -331,7 +331,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Plugin**](../Model/Plugin.md)
+[**\MatthewBaggett\Docker\Api\Model\Plugin**](../Model/Plugin.md)
 
 ### Authorization
 
@@ -349,7 +349,7 @@ No authorization required
 ## `pluginList()`
 
 ```php
-pluginList($filters): \OpenAPI\Client\Model\Plugin[]
+pluginList($filters): \MatthewBaggett\Docker\Api\Model\Plugin[]
 ```
 
 List plugins
@@ -364,7 +364,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -387,7 +387,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Plugin[]**](../Model/Plugin.md)
+[**\MatthewBaggett\Docker\Api\Model\Plugin[]**](../Model/Plugin.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -428,7 +428,7 @@ $apiInstance = new OpenAPI\Client\Api\PluginApi(
 $remote = 'remote_example'; // string | Remote reference for plugin to install.  The `:latest` tag is optional, and is used as the default if omitted.
 $name = 'name_example'; // string | Local name for the pulled plugin.  The `:latest` tag is optional, and is used as the default if omitted.
 $x_registry_auth = 'x_registry_auth_example'; // string | A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details.
-$body = array(new \OpenAPI\Client\Model\PluginPrivilege()); // \OpenAPI\Client\Model\PluginPrivilege[]
+$body = array(new \MatthewBaggett\Docker\Api\Model\PluginPrivilege()); // \MatthewBaggett\Docker\Api\Model\PluginPrivilege[]
 
 try {
     $apiInstance->pluginPull($remote, $name, $x_registry_auth, $body);
@@ -444,7 +444,7 @@ try {
 | **remote** | **string**| Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. | |
 | **name** | **string**| Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. | [optional] |
 | **x_registry_auth** | **string**| A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. | [optional] |
-| **body** | [**\OpenAPI\Client\Model\PluginPrivilege[]**](../Model/PluginPrivilege.md)|  | [optional] |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]**](../Model/PluginPrivilege.md)|  | [optional] |
 
 ### Return type
 
@@ -481,7 +481,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -534,7 +534,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -589,7 +589,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\PluginApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\PluginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -597,7 +597,7 @@ $apiInstance = new OpenAPI\Client\Api\PluginApi(
 $name = 'name_example'; // string | The name of the plugin. The `:latest` tag is optional, and is the default if omitted.
 $remote = 'remote_example'; // string | Remote reference to upgrade to.  The `:latest` tag is optional, and is used as the default if omitted.
 $x_registry_auth = 'x_registry_auth_example'; // string | A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details.
-$body = array(new \OpenAPI\Client\Model\PluginPrivilege()); // \OpenAPI\Client\Model\PluginPrivilege[]
+$body = array(new \MatthewBaggett\Docker\Api\Model\PluginPrivilege()); // \MatthewBaggett\Docker\Api\Model\PluginPrivilege[]
 
 try {
     $apiInstance->pluginUpgrade($name, $remote, $x_registry_auth, $body);
@@ -613,7 +613,7 @@ try {
 | **name** | **string**| The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. | |
 | **remote** | **string**| Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. | |
 | **x_registry_auth** | **string**| A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. | [optional] |
-| **body** | [**\OpenAPI\Client\Model\PluginPrivilege[]**](../Model/PluginPrivilege.md)|  | [optional] |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]**](../Model/PluginPrivilege.md)|  | [optional] |
 
 ### Return type
 

@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * TaskSpec Class Doc Comment.
@@ -64,16 +64,16 @@ class TaskSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'plugin_spec'             => '\OpenAPI\Client\Model\TaskSpecPluginSpec',
-        'container_spec'          => '\OpenAPI\Client\Model\TaskSpecContainerSpec',
-        'network_attachment_spec' => '\OpenAPI\Client\Model\TaskSpecNetworkAttachmentSpec',
-        'resources'               => '\OpenAPI\Client\Model\TaskSpecResources',
-        'restart_policy'          => '\OpenAPI\Client\Model\TaskSpecRestartPolicy',
-        'placement'               => '\OpenAPI\Client\Model\TaskSpecPlacement',
+        'plugin_spec'             => '\MatthewBaggett\Docker\Api\Model\TaskSpecPluginSpec',
+        'container_spec'          => '\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpec',
+        'network_attachment_spec' => '\MatthewBaggett\Docker\Api\Model\TaskSpecNetworkAttachmentSpec',
+        'resources'               => '\MatthewBaggett\Docker\Api\Model\TaskSpecResources',
+        'restart_policy'          => '\MatthewBaggett\Docker\Api\Model\TaskSpecRestartPolicy',
+        'placement'               => '\MatthewBaggett\Docker\Api\Model\TaskSpecPlacement',
         'force_update'            => 'int',
         'runtime'                 => 'string',
-        'networks'                => '\OpenAPI\Client\Model\NetworkAttachmentConfig[]',
-        'log_driver'              => '\OpenAPI\Client\Model\TaskSpecLogDriver',
+        'networks'                => '\MatthewBaggett\Docker\Api\Model\NetworkAttachmentConfig[]',
+        'log_driver'              => '\MatthewBaggett\Docker\Api\Model\TaskSpecLogDriver',
     ];
 
     /**
@@ -564,7 +564,7 @@ class TaskSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets networks.
      *
-     * @return null|\OpenAPI\Client\Model\NetworkAttachmentConfig[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\NetworkAttachmentConfig[]
      */
     public function getNetworks()
     {
@@ -574,7 +574,7 @@ class TaskSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets networks.
      *
-     * @param null|\OpenAPI\Client\Model\NetworkAttachmentConfig[] $networks specifies which networks the service should attach to
+     * @param null|\MatthewBaggett\Docker\Api\Model\NetworkAttachmentConfig[] $networks specifies which networks the service should attach to
      *
      * @return self
      */

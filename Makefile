@@ -8,7 +8,11 @@ generate: download-spec
 		-v $(shell pwd):/local openapitools/openapi-generator-cli generate \
 		-i /local/docker-api.yaml \
 		-g php \
-		-o /local \
+		--additional-properties=composerPackageName=matthewbaggett/docker-api-php-client \
+		--additional-properties=artifactVersion=1.43.0 \
+		--additional-properties=invokerPackage=MatthewBaggett\\Docker\\Api \
+		-o /local
+
 	$(MAKE) fix
 fix:
-	php-cs-fixer fix --config=.php_cs.dist
+	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php

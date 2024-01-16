@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ContainerInspectResponse Class Doc Comment.
@@ -66,7 +66,7 @@ class ContainerInspectResponse implements ModelInterface, \ArrayAccess, \JsonSer
         'created'           => 'string',
         'path'              => 'string',
         'args'              => 'string[]',
-        'state'             => '\OpenAPI\Client\Model\ContainerState',
+        'state'             => '\MatthewBaggett\Docker\Api\Model\ContainerState',
         'image'             => 'string',
         'resolv_conf_path'  => 'string',
         'hostname_path'     => 'string',
@@ -80,13 +80,13 @@ class ContainerInspectResponse implements ModelInterface, \ArrayAccess, \JsonSer
         'process_label'     => 'string',
         'app_armor_profile' => 'string',
         'exec_ids'          => 'string[]',
-        'host_config'       => '\OpenAPI\Client\Model\HostConfig',
-        'graph_driver'      => '\OpenAPI\Client\Model\GraphDriverData',
+        'host_config'       => '\MatthewBaggett\Docker\Api\Model\HostConfig',
+        'graph_driver'      => '\MatthewBaggett\Docker\Api\Model\GraphDriverData',
         'size_rw'           => 'int',
         'size_root_fs'      => 'int',
-        'mounts'            => '\OpenAPI\Client\Model\MountPoint[]',
-        'config'            => '\OpenAPI\Client\Model\ContainerConfig',
-        'network_settings'  => '\OpenAPI\Client\Model\NetworkSettings',
+        'mounts'            => '\MatthewBaggett\Docker\Api\Model\MountPoint[]',
+        'config'            => '\MatthewBaggett\Docker\Api\Model\ContainerConfig',
+        'network_settings'  => '\MatthewBaggett\Docker\Api\Model\NetworkSettings',
     ];
 
     /**
@@ -1059,7 +1059,7 @@ class ContainerInspectResponse implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Gets mounts.
      *
-     * @return null|\OpenAPI\Client\Model\MountPoint[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\MountPoint[]
      */
     public function getMounts()
     {
@@ -1069,7 +1069,7 @@ class ContainerInspectResponse implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets mounts.
      *
-     * @param null|\OpenAPI\Client\Model\MountPoint[] $mounts mounts
+     * @param null|\MatthewBaggett\Docker\Api\Model\MountPoint[] $mounts mounts
      *
      * @return self
      */

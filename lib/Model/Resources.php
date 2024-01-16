@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * Resources Class Doc Comment.
@@ -68,20 +68,20 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
         'memory'                   => 'int',
         'cgroup_parent'            => 'string',
         'blkio_weight'             => 'int',
-        'blkio_weight_device'      => '\OpenAPI\Client\Model\ResourcesBlkioWeightDeviceInner[]',
-        'blkio_device_read_bps'    => '\OpenAPI\Client\Model\ThrottleDevice[]',
-        'blkio_device_write_bps'   => '\OpenAPI\Client\Model\ThrottleDevice[]',
-        'blkio_device_read_i_ops'  => '\OpenAPI\Client\Model\ThrottleDevice[]',
-        'blkio_device_write_i_ops' => '\OpenAPI\Client\Model\ThrottleDevice[]',
+        'blkio_weight_device'      => '\MatthewBaggett\Docker\Api\Model\ResourcesBlkioWeightDeviceInner[]',
+        'blkio_device_read_bps'    => '\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]',
+        'blkio_device_write_bps'   => '\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]',
+        'blkio_device_read_i_ops'  => '\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]',
+        'blkio_device_write_i_ops' => '\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]',
         'cpu_period'               => 'int',
         'cpu_quota'                => 'int',
         'cpu_realtime_period'      => 'int',
         'cpu_realtime_runtime'     => 'int',
         'cpuset_cpus'              => 'string',
         'cpuset_mems'              => 'string',
-        'devices'                  => '\OpenAPI\Client\Model\DeviceMapping[]',
+        'devices'                  => '\MatthewBaggett\Docker\Api\Model\DeviceMapping[]',
         'device_cgroup_rules'      => 'string[]',
-        'device_requests'          => '\OpenAPI\Client\Model\DeviceRequest[]',
+        'device_requests'          => '\MatthewBaggett\Docker\Api\Model\DeviceRequest[]',
         'kernel_memory_tcp'        => 'int',
         'memory_reservation'       => 'int',
         'memory_swap'              => 'int',
@@ -90,7 +90,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
         'oom_kill_disable'         => 'bool',
         'init'                     => 'bool',
         'pids_limit'               => 'int',
-        'ulimits'                  => '\OpenAPI\Client\Model\ResourcesUlimitsInner[]',
+        'ulimits'                  => '\MatthewBaggett\Docker\Api\Model\ResourcesUlimitsInner[]',
         'cpu_count'                => 'int',
         'cpu_percent'              => 'int',
         'io_maximum_i_ops'         => 'int',
@@ -629,7 +629,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_weight_device.
      *
-     * @return null|\OpenAPI\Client\Model\ResourcesBlkioWeightDeviceInner[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ResourcesBlkioWeightDeviceInner[]
      */
     public function getBlkioWeightDevice()
     {
@@ -639,7 +639,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_weight_device.
      *
-     * @param null|\OpenAPI\Client\Model\ResourcesBlkioWeightDeviceInner[] $blkio_weight_device Block IO weight (relative device weight) in the form:  ``` [{\"Path\": \"device_path\", \"Weight\": weight}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ResourcesBlkioWeightDeviceInner[] $blkio_weight_device Block IO weight (relative device weight) in the form:  ``` [{\"Path\": \"device_path\", \"Weight\": weight}] ```
      *
      * @return self
      */
@@ -656,7 +656,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_device_read_bps.
      *
-     * @return null|\OpenAPI\Client\Model\ThrottleDevice[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]
      */
     public function getBlkioDeviceReadBps()
     {
@@ -666,7 +666,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_device_read_bps.
      *
-     * @param null|\OpenAPI\Client\Model\ThrottleDevice[] $blkio_device_read_bps Limit read rate (bytes per second) from a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[] $blkio_device_read_bps Limit read rate (bytes per second) from a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
      *
      * @return self
      */
@@ -683,7 +683,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_device_write_bps.
      *
-     * @return null|\OpenAPI\Client\Model\ThrottleDevice[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]
      */
     public function getBlkioDeviceWriteBps()
     {
@@ -693,7 +693,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_device_write_bps.
      *
-     * @param null|\OpenAPI\Client\Model\ThrottleDevice[] $blkio_device_write_bps Limit write rate (bytes per second) to a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[] $blkio_device_write_bps Limit write rate (bytes per second) to a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
      *
      * @return self
      */
@@ -710,7 +710,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_device_read_i_ops.
      *
-     * @return null|\OpenAPI\Client\Model\ThrottleDevice[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]
      */
     public function getBlkioDeviceReadIOps()
     {
@@ -720,7 +720,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_device_read_i_ops.
      *
-     * @param null|\OpenAPI\Client\Model\ThrottleDevice[] $blkio_device_read_i_ops Limit read rate (IO per second) from a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[] $blkio_device_read_i_ops Limit read rate (IO per second) from a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
      *
      * @return self
      */
@@ -737,7 +737,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets blkio_device_write_i_ops.
      *
-     * @return null|\OpenAPI\Client\Model\ThrottleDevice[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[]
      */
     public function getBlkioDeviceWriteIOps()
     {
@@ -747,7 +747,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets blkio_device_write_i_ops.
      *
-     * @param null|\OpenAPI\Client\Model\ThrottleDevice[] $blkio_device_write_i_ops Limit write rate (IO per second) to a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ThrottleDevice[] $blkio_device_write_i_ops Limit write rate (IO per second) to a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```
      *
      * @return self
      */
@@ -926,7 +926,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets devices.
      *
-     * @return null|\OpenAPI\Client\Model\DeviceMapping[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\DeviceMapping[]
      */
     public function getDevices()
     {
@@ -936,7 +936,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets devices.
      *
-     * @param null|\OpenAPI\Client\Model\DeviceMapping[] $devices a list of devices to add to the container
+     * @param null|\MatthewBaggett\Docker\Api\Model\DeviceMapping[] $devices a list of devices to add to the container
      *
      * @return self
      */
@@ -980,7 +980,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets device_requests.
      *
-     * @return null|\OpenAPI\Client\Model\DeviceRequest[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\DeviceRequest[]
      */
     public function getDeviceRequests()
     {
@@ -990,7 +990,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets device_requests.
      *
-     * @param null|\OpenAPI\Client\Model\DeviceRequest[] $device_requests a list of requests for devices to be sent to device drivers
+     * @param null|\MatthewBaggett\Docker\Api\Model\DeviceRequest[] $device_requests a list of requests for devices to be sent to device drivers
      *
      * @return self
      */
@@ -1245,7 +1245,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets ulimits.
      *
-     * @return null|\OpenAPI\Client\Model\ResourcesUlimitsInner[]
+     * @return null|\MatthewBaggett\Docker\Api\Model\ResourcesUlimitsInner[]
      */
     public function getUlimits()
     {
@@ -1255,7 +1255,7 @@ class Resources implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets ulimits.
      *
-     * @param null|\OpenAPI\Client\Model\ResourcesUlimitsInner[] $ulimits A list of resource limits to set in the container. For example:  ``` {\"Name\": \"nofile\", \"Soft\": 1024, \"Hard\": 2048} ```
+     * @param null|\MatthewBaggett\Docker\Api\Model\ResourcesUlimitsInner[] $ulimits A list of resource limits to set in the container. For example:  ``` {\"Name\": \"nofile\", \"Soft\": 1024, \"Hard\": 2048} ```
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# OpenAPI\Client\SecretApi
+# MatthewBaggett\Docker\Api\SecretApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -14,7 +14,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `secretCreate()`
 
 ```php
-secretCreate($body): \OpenAPI\Client\Model\IdResponse
+secretCreate($body): \MatthewBaggett\Docker\Api\Model\IdResponse
 ```
 
 Create a secret
@@ -27,12 +27,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SecretApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SecretApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\SecretCreateRequest(); // \OpenAPI\Client\Model\SecretCreateRequest
+$body = new \MatthewBaggett\Docker\Api\Model\SecretCreateRequest(); // \MatthewBaggett\Docker\Api\Model\SecretCreateRequest
 
 try {
     $result = $apiInstance->secretCreate($body);
@@ -46,11 +46,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\OpenAPI\Client\Model\SecretCreateRequest**](../Model/SecretCreateRequest.md)|  | [optional] |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\SecretCreateRequest**](../Model/SecretCreateRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IdResponse**](../Model/IdResponse.md)
+[**\MatthewBaggett\Docker\Api\Model\IdResponse**](../Model/IdResponse.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SecretApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SecretApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -121,7 +121,7 @@ No authorization required
 ## `secretInspect()`
 
 ```php
-secretInspect($id): \OpenAPI\Client\Model\Secret
+secretInspect($id): \MatthewBaggett\Docker\Api\Model\Secret
 ```
 
 Inspect a secret
@@ -134,7 +134,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SecretApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SecretApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -157,7 +157,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Secret**](../Model/Secret.md)
+[**\MatthewBaggett\Docker\Api\Model\Secret**](../Model/Secret.md)
 
 ### Authorization
 
@@ -175,7 +175,7 @@ No authorization required
 ## `secretList()`
 
 ```php
-secretList($filters): \OpenAPI\Client\Model\Secret[]
+secretList($filters): \MatthewBaggett\Docker\Api\Model\Secret[]
 ```
 
 List secrets
@@ -188,7 +188,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SecretApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SecretApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -211,7 +211,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Secret[]**](../Model/Secret.md)
+[**\MatthewBaggett\Docker\Api\Model\Secret[]**](../Model/Secret.md)
 
 ### Authorization
 
@@ -242,14 +242,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SecretApi(
+$apiInstance = new MatthewBaggett\Docker\Api\Api\SecretApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | The ID or name of the secret
 $version = 56; // int | The version number of the secret object being updated. This is required to avoid conflicting writes.
-$body = new \OpenAPI\Client\Model\SecretSpec(); // \OpenAPI\Client\Model\SecretSpec | The spec of the secret to update. Currently, only the Labels field can be updated. All other fields must remain unchanged from the [SecretInspect endpoint](#operation/SecretInspect) response values.
+$body = new \MatthewBaggett\Docker\Api\Model\SecretSpec(); // \MatthewBaggett\Docker\Api\Model\SecretSpec | The spec of the secret to update. Currently, only the Labels field can be updated. All other fields must remain unchanged from the [SecretInspect endpoint](#operation/SecretInspect) response values.
 
 try {
     $apiInstance->secretUpdate($id, $version, $body);
@@ -264,7 +264,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| The ID or name of the secret | |
 | **version** | **int**| The version number of the secret object being updated. This is required to avoid conflicting writes. | |
-| **body** | [**\OpenAPI\Client\Model\SecretSpec**](../Model/SecretSpec.md)| The spec of the secret to update. Currently, only the Labels field can be updated. All other fields must remain unchanged from the [SecretInspect endpoint](#operation/SecretInspect) response values. | [optional] |
+| **body** | [**\MatthewBaggett\Docker\Api\Model\SecretSpec**](../Model/SecretSpec.md)| The spec of the secret to update. Currently, only the Labels field can be updated. All other fields must remain unchanged from the [SecretInspect endpoint](#operation/SecretInspect) response values. | [optional] |
 
 ### Return type
 

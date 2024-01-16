@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * Service Class Doc Comment.
@@ -63,14 +63,14 @@ class Service implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'id'             => 'string',
-        'version'        => '\OpenAPI\Client\Model\ObjectVersion',
+        'version'        => '\MatthewBaggett\Docker\Api\Model\ObjectVersion',
         'created_at'     => 'string',
         'updated_at'     => 'string',
-        'spec'           => '\OpenAPI\Client\Model\ServiceSpec',
-        'endpoint'       => '\OpenAPI\Client\Model\ServiceEndpoint',
-        'update_status'  => '\OpenAPI\Client\Model\ServiceUpdateStatus',
-        'service_status' => '\OpenAPI\Client\Model\ServiceServiceStatus',
-        'job_status'     => '\OpenAPI\Client\Model\ServiceJobStatus',
+        'spec'           => '\MatthewBaggett\Docker\Api\Model\ServiceSpec',
+        'endpoint'       => '\MatthewBaggett\Docker\Api\Model\ServiceEndpoint',
+        'update_status'  => '\MatthewBaggett\Docker\Api\Model\ServiceUpdateStatus',
+        'service_status' => '\MatthewBaggett\Docker\Api\Model\ServiceServiceStatus',
+        'job_status'     => '\MatthewBaggett\Docker\Api\Model\ServiceJobStatus',
     ];
 
     /**

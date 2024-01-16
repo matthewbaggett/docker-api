@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**\OpenAPI\Client\Model\EndpointSpec**](EndpointSpec.md) |  | [optional]
-**ports** | [**\OpenAPI\Client\Model\EndpointPortConfig[]**](EndpointPortConfig.md) |  | [optional]
-**virtual_ips** | [**\OpenAPI\Client\Model\ServiceEndpointVirtualIPsInner[]**](ServiceEndpointVirtualIPsInner.md) |  | [optional]
+**spec** | [**\MatthewBaggett\Docker\Api\Model\EndpointSpec**](EndpointSpec.md) |  | [optional]
+**ports** | [**\MatthewBaggett\Docker\Api\Model\EndpointPortConfig[]**](EndpointPortConfig.md) |  | [optional]
+**virtual_ips** | [**\MatthewBaggett\Docker\Api\Model\ServiceEndpointVirtualIPsInner[]**](ServiceEndpointVirtualIPsInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

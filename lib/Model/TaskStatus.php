@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * TaskStatus Class Doc Comment.
@@ -63,10 +63,10 @@ class TaskStatus implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'timestamp'        => 'string',
-        'state'            => '\OpenAPI\Client\Model\TaskState',
+        'state'            => '\MatthewBaggett\Docker\Api\Model\TaskState',
         'message'          => 'string',
         'err'              => 'string',
-        'container_status' => '\OpenAPI\Client\Model\TaskStatusContainerStatus',
+        'container_status' => '\MatthewBaggett\Docker\Api\Model\TaskStatusContainerStatus',
     ];
 
     /**

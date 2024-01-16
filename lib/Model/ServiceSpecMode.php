@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace MatthewBaggett\Docker\Api\Model;
 
-use OpenAPI\Client\ObjectSerializer;
+use MatthewBaggett\Docker\Api\ObjectSerializer;
 
 /**
  * ServiceSpecMode Class Doc Comment.
@@ -64,9 +64,9 @@ class ServiceSpecMode implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'replicated'     => '\OpenAPI\Client\Model\ServiceSpecModeReplicated',
+        'replicated'     => '\MatthewBaggett\Docker\Api\Model\ServiceSpecModeReplicated',
         'global'         => 'object',
-        'replicated_job' => '\OpenAPI\Client\Model\ServiceSpecModeReplicatedJob',
+        'replicated_job' => '\MatthewBaggett\Docker\Api\Model\ServiceSpecModeReplicatedJob',
         'global_job'     => 'object',
     ];
 
