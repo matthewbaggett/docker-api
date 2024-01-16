@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * SwarmSpec Class Doc Comment.
@@ -66,12 +66,12 @@ class SwarmSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'name'              => 'string',
         'labels'            => 'array<string,string>',
-        'orchestration'     => '\MatthewBaggett\Docker\Api\Model\SwarmSpecOrchestration',
-        'raft'              => '\MatthewBaggett\Docker\Api\Model\SwarmSpecRaft',
-        'dispatcher'        => '\MatthewBaggett\Docker\Api\Model\SwarmSpecDispatcher',
-        'ca_config'         => '\MatthewBaggett\Docker\Api\Model\SwarmSpecCAConfig',
-        'encryption_config' => '\MatthewBaggett\Docker\Api\Model\SwarmSpecEncryptionConfig',
-        'task_defaults'     => '\MatthewBaggett\Docker\Api\Model\SwarmSpecTaskDefaults',
+        'orchestration'     => '\MatthewBaggett\Docker\Model\SwarmSpecOrchestration',
+        'raft'              => '\MatthewBaggett\Docker\Model\SwarmSpecRaft',
+        'dispatcher'        => '\MatthewBaggett\Docker\Model\SwarmSpecDispatcher',
+        'ca_config'         => '\MatthewBaggett\Docker\Model\SwarmSpecCAConfig',
+        'encryption_config' => '\MatthewBaggett\Docker\Model\SwarmSpecEncryptionConfig',
+        'task_defaults'     => '\MatthewBaggett\Docker\Model\SwarmSpecTaskDefaults',
     ];
 
     /**

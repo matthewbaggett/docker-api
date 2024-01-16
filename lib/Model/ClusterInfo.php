@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * ClusterInfo Class Doc Comment.
@@ -65,11 +65,11 @@ class ClusterInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'id'                        => 'string',
-        'version'                   => '\MatthewBaggett\Docker\Api\Model\ObjectVersion',
+        'version'                   => '\MatthewBaggett\Docker\Model\ObjectVersion',
         'created_at'                => 'string',
         'updated_at'                => 'string',
-        'spec'                      => '\MatthewBaggett\Docker\Api\Model\SwarmSpec',
-        'tls_info'                  => '\MatthewBaggett\Docker\Api\Model\TLSInfo',
+        'spec'                      => '\MatthewBaggett\Docker\Model\SwarmSpec',
+        'tls_info'                  => '\MatthewBaggett\Docker\Model\TLSInfo',
         'root_rotation_in_progress' => 'bool',
         'data_path_port'            => 'int',
         'default_addr_pool'         => 'string[]',

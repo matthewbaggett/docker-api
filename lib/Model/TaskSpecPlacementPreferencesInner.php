@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * TaskSpecPlacementPreferencesInner Class Doc Comment.
@@ -62,7 +62,7 @@ class TaskSpecPlacementPreferencesInner implements ModelInterface, \ArrayAccess,
      * @var string[]
      */
     protected static $openAPITypes = [
-        'spread' => '\MatthewBaggett\Docker\Api\Model\TaskSpecPlacementPreferencesInnerSpread',
+        'spread' => '\MatthewBaggett\Docker\Model\TaskSpecPlacementPreferencesInnerSpread',
     ];
 
     /**

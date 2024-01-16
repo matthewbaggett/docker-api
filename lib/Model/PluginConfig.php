@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * PluginConfig Class Doc Comment.
@@ -67,19 +67,19 @@ class PluginConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
         'docker_version'   => 'string',
         'description'      => 'string',
         'documentation'    => 'string',
-        'interface'        => '\MatthewBaggett\Docker\Api\Model\PluginConfigInterface',
+        'interface'        => '\MatthewBaggett\Docker\Model\PluginConfigInterface',
         'entrypoint'       => 'string[]',
         'work_dir'         => 'string',
-        'user'             => '\MatthewBaggett\Docker\Api\Model\PluginConfigUser',
-        'network'          => '\MatthewBaggett\Docker\Api\Model\PluginConfigNetwork',
-        'linux'            => '\MatthewBaggett\Docker\Api\Model\PluginConfigLinux',
+        'user'             => '\MatthewBaggett\Docker\Model\PluginConfigUser',
+        'network'          => '\MatthewBaggett\Docker\Model\PluginConfigNetwork',
+        'linux'            => '\MatthewBaggett\Docker\Model\PluginConfigLinux',
         'propagated_mount' => 'string',
         'ipc_host'         => 'bool',
         'pid_host'         => 'bool',
-        'mounts'           => '\MatthewBaggett\Docker\Api\Model\PluginMount[]',
-        'env'              => '\MatthewBaggett\Docker\Api\Model\PluginEnv[]',
-        'args'             => '\MatthewBaggett\Docker\Api\Model\PluginConfigArgs',
-        'rootfs'           => '\MatthewBaggett\Docker\Api\Model\PluginConfigRootfs',
+        'mounts'           => '\MatthewBaggett\Docker\Model\PluginMount[]',
+        'env'              => '\MatthewBaggett\Docker\Model\PluginEnv[]',
+        'args'             => '\MatthewBaggett\Docker\Model\PluginConfigArgs',
+        'rootfs'           => '\MatthewBaggett\Docker\Model\PluginConfigRootfs',
     ];
 
     /**
@@ -756,7 +756,7 @@ class PluginConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets mounts.
      *
-     * @return \MatthewBaggett\Docker\Api\Model\PluginMount[]
+     * @return \MatthewBaggett\Docker\Model\PluginMount[]
      */
     public function getMounts()
     {
@@ -766,7 +766,7 @@ class PluginConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets mounts.
      *
-     * @param \MatthewBaggett\Docker\Api\Model\PluginMount[] $mounts mounts
+     * @param \MatthewBaggett\Docker\Model\PluginMount[] $mounts mounts
      *
      * @return self
      */
@@ -783,7 +783,7 @@ class PluginConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets env.
      *
-     * @return \MatthewBaggett\Docker\Api\Model\PluginEnv[]
+     * @return \MatthewBaggett\Docker\Model\PluginEnv[]
      */
     public function getEnv()
     {
@@ -793,7 +793,7 @@ class PluginConfig implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets env.
      *
-     * @param \MatthewBaggett\Docker\Api\Model\PluginEnv[] $env env
+     * @param \MatthewBaggett\Docker\Model\PluginEnv[] $env env
      *
      * @return self
      */

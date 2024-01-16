@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Api;
+namespace MatthewBaggett\Docker\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -38,15 +38,15 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use MatthewBaggett\Docker\Api\ApiException;
-use MatthewBaggett\Docker\Api\Configuration;
-use MatthewBaggett\Docker\Api\HeaderSelector;
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ApiException;
+use MatthewBaggett\Docker\Configuration;
+use MatthewBaggett\Docker\HeaderSelector;
+use MatthewBaggett\Docker\ObjectSerializer;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Utils;
-use MatthewBaggett\Docker\Api\Model\NetworkConnectRequest;
-use MatthewBaggett\Docker\Api\Model\NetworkCreateRequest;
-use MatthewBaggett\Docker\Api\Model\NetworkDisconnectRequest;
+use MatthewBaggett\Docker\Model\NetworkConnectRequest;
+use MatthewBaggett\Docker\Model\NetworkCreateRequest;
+use MatthewBaggett\Docker\Model\NetworkDisconnectRequest;
 
 /**
  * NetworkApi Class Doc Comment.
@@ -224,7 +224,7 @@ class NetworkApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -234,7 +234,7 @@ class NetworkApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -244,7 +244,7 @@ class NetworkApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -429,7 +429,7 @@ class NetworkApi
      * @param NetworkCreateRequest $network_config Network configuration (required)
      * @param string               $contentType    The value for the Content-Type header. Check self::contentTypes['networkCreate'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\NetworkCreateResponse
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\NetworkCreateResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -449,7 +449,7 @@ class NetworkApi
      * @param NetworkCreateRequest $network_config Network configuration (required)
      * @param string               $contentType    The value for the Content-Type header. Check self::contentTypes['networkCreate'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\NetworkCreateResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\NetworkCreateResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -496,11 +496,11 @@ class NetworkApi
 
             switch ($statusCode) {
                 case 201:
-                    if ('\MatthewBaggett\Docker\Api\Model\NetworkCreateResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\NetworkCreateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\NetworkCreateResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\NetworkCreateResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -518,17 +518,17 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\NetworkCreateResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\NetworkCreateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 403:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -546,17 +546,17 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -574,17 +574,17 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -602,13 +602,13 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\NetworkCreateResponse';
+            $returnType = '\MatthewBaggett\Docker\Model\NetworkCreateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -640,7 +640,7 @@ class NetworkApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\NetworkCreateResponse',
+                        '\MatthewBaggett\Docker\Model\NetworkCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -650,7 +650,7 @@ class NetworkApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -660,7 +660,7 @@ class NetworkApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -670,7 +670,7 @@ class NetworkApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -717,7 +717,7 @@ class NetworkApi
      */
     public function networkCreateAsyncWithHttpInfo($network_config, string $contentType = self::contentTypes['networkCreate'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\NetworkCreateResponse';
+        $returnType = '\MatthewBaggett\Docker\Model\NetworkCreateResponse';
         $request    = $this->networkCreateRequest($network_config, $contentType);
 
         return $this->client
@@ -918,7 +918,7 @@ class NetworkApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -928,7 +928,7 @@ class NetworkApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -938,7 +938,7 @@ class NetworkApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1175,7 +1175,7 @@ class NetworkApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1185,7 +1185,7 @@ class NetworkApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1195,7 +1195,7 @@ class NetworkApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1382,7 +1382,7 @@ class NetworkApi
      * @param string $scope       Filter the network by scope (swarm, global, or local) (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['networkInspect'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Network
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\Network
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1404,7 +1404,7 @@ class NetworkApi
      * @param string $scope       Filter the network by scope (swarm, global, or local) (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['networkInspect'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\Network|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\Network|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1451,11 +1451,11 @@ class NetworkApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\Network' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\Network' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\Network' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\Network' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1473,17 +1473,17 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Network', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\Network', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1501,17 +1501,17 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1529,13 +1529,13 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\Network';
+            $returnType = '\MatthewBaggett\Docker\Model\Network';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -1567,7 +1567,7 @@ class NetworkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\Network',
+                        '\MatthewBaggett\Docker\Model\Network',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1577,7 +1577,7 @@ class NetworkApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1587,7 +1587,7 @@ class NetworkApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1638,7 +1638,7 @@ class NetworkApi
      */
     public function networkInspectAsyncWithHttpInfo($id, $verbose = false, $scope = null, string $contentType = self::contentTypes['networkInspect'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\Network';
+        $returnType = '\MatthewBaggett\Docker\Model\Network';
         $request    = $this->networkInspectRequest($id, $verbose, $scope, $contentType);
 
         return $this->client
@@ -1795,7 +1795,7 @@ class NetworkApi
      * @param string $filters     JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the networks list.  Available filters:  - &#x60;dangling&#x3D;&lt;boolean&gt;&#x60; When set to &#x60;true&#x60; (or &#x60;1&#x60;), returns all    networks that are not in use by a container. When set to &#x60;false&#x60;    (or &#x60;0&#x60;), only networks that are in use by one or more    containers are returned. - &#x60;driver&#x3D;&lt;driver-name&gt;&#x60; Matches a network&#39;s driver. - &#x60;id&#x3D;&lt;network-id&gt;&#x60; Matches all or part of a network ID. - &#x60;label&#x3D;&lt;key&gt;&#x60; or &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60; of a network label. - &#x60;name&#x3D;&lt;network-name&gt;&#x60; Matches all or part of a network name. - &#x60;scope&#x3D;[\&quot;swarm\&quot;|\&quot;global\&quot;|\&quot;local\&quot;]&#x60; Filters networks by scope (&#x60;swarm&#x60;, &#x60;global&#x60;, or &#x60;local&#x60;). - &#x60;type&#x3D;[\&quot;custom\&quot;|\&quot;builtin\&quot;]&#x60; Filters networks by type. The &#x60;custom&#x60; keyword returns all user-defined networks. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['networkList'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Network[]
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\Network[]
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1815,7 +1815,7 @@ class NetworkApi
      * @param string $filters     JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the networks list.  Available filters:  - &#x60;dangling&#x3D;&lt;boolean&gt;&#x60; When set to &#x60;true&#x60; (or &#x60;1&#x60;), returns all    networks that are not in use by a container. When set to &#x60;false&#x60;    (or &#x60;0&#x60;), only networks that are in use by one or more    containers are returned. - &#x60;driver&#x3D;&lt;driver-name&gt;&#x60; Matches a network&#39;s driver. - &#x60;id&#x3D;&lt;network-id&gt;&#x60; Matches all or part of a network ID. - &#x60;label&#x3D;&lt;key&gt;&#x60; or &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60; of a network label. - &#x60;name&#x3D;&lt;network-name&gt;&#x60; Matches all or part of a network name. - &#x60;scope&#x3D;[\&quot;swarm\&quot;|\&quot;global\&quot;|\&quot;local\&quot;]&#x60; Filters networks by scope (&#x60;swarm&#x60;, &#x60;global&#x60;, or &#x60;local&#x60;). - &#x60;type&#x3D;[\&quot;custom\&quot;|\&quot;builtin\&quot;]&#x60; Filters networks by type. The &#x60;custom&#x60; keyword returns all user-defined networks. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['networkList'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\Network[]|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\Network[]|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1862,11 +1862,11 @@ class NetworkApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\Network[]' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\Network[]' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\Network[]' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\Network[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1884,17 +1884,17 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Network[]', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\Network[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1912,13 +1912,13 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\Network[]';
+            $returnType = '\MatthewBaggett\Docker\Model\Network[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -1950,7 +1950,7 @@ class NetworkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\Network[]',
+                        '\MatthewBaggett\Docker\Model\Network[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1960,7 +1960,7 @@ class NetworkApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2007,7 +2007,7 @@ class NetworkApi
      */
     public function networkListAsyncWithHttpInfo($filters = null, string $contentType = self::contentTypes['networkList'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\Network[]';
+        $returnType = '\MatthewBaggett\Docker\Model\Network[]';
         $request    = $this->networkListRequest($filters, $contentType);
 
         return $this->client
@@ -2137,7 +2137,7 @@ class NetworkApi
      * @param string $filters     Filters to process on the prune list, encoded as JSON (a &#x60;map[string][]string&#x60;).  Available filters: - &#x60;until&#x3D;&lt;timestamp&gt;&#x60; Prune networks created before this timestamp. The &#x60;&lt;timestamp&gt;&#x60; can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. &#x60;10m&#x60;, &#x60;1h30m&#x60;) computed relative to the daemon machine’s time. - &#x60;label&#x60; (&#x60;label&#x3D;&lt;key&gt;&#x60;, &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;, &#x60;label!&#x3D;&lt;key&gt;&#x60;, or &#x60;label!&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;) Prune networks with (or without, in case &#x60;label!&#x3D;...&#x60; is used) the specified labels. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['networkPrune'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\NetworkPruneResponse
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\NetworkPruneResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -2157,7 +2157,7 @@ class NetworkApi
      * @param string $filters     Filters to process on the prune list, encoded as JSON (a &#x60;map[string][]string&#x60;).  Available filters: - &#x60;until&#x3D;&lt;timestamp&gt;&#x60; Prune networks created before this timestamp. The &#x60;&lt;timestamp&gt;&#x60; can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. &#x60;10m&#x60;, &#x60;1h30m&#x60;) computed relative to the daemon machine’s time. - &#x60;label&#x60; (&#x60;label&#x3D;&lt;key&gt;&#x60;, &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;, &#x60;label!&#x3D;&lt;key&gt;&#x60;, or &#x60;label!&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;) Prune networks with (or without, in case &#x60;label!&#x3D;...&#x60; is used) the specified labels. (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['networkPrune'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\NetworkPruneResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\NetworkPruneResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -2204,11 +2204,11 @@ class NetworkApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\NetworkPruneResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\NetworkPruneResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\NetworkPruneResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\NetworkPruneResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2226,17 +2226,17 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\NetworkPruneResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\NetworkPruneResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2254,13 +2254,13 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\NetworkPruneResponse';
+            $returnType = '\MatthewBaggett\Docker\Model\NetworkPruneResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -2292,7 +2292,7 @@ class NetworkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\NetworkPruneResponse',
+                        '\MatthewBaggett\Docker\Model\NetworkPruneResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2302,7 +2302,7 @@ class NetworkApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2349,7 +2349,7 @@ class NetworkApi
      */
     public function networkPruneAsyncWithHttpInfo($filters = null, string $contentType = self::contentTypes['networkPrune'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\NetworkPruneResponse';
+        $returnType = '\MatthewBaggett\Docker\Model\NetworkPruneResponse';
         $request    = $this->networkPruneRequest($filters, $contentType);
 
         return $this->client

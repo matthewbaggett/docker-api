@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * Plugin Class Doc Comment.
@@ -67,9 +67,9 @@ class Plugin implements ModelInterface, \ArrayAccess, \JsonSerializable
         'id'               => 'string',
         'name'             => 'string',
         'enabled'          => 'bool',
-        'settings'         => '\MatthewBaggett\Docker\Api\Model\PluginSettings',
+        'settings'         => '\MatthewBaggett\Docker\Model\PluginSettings',
         'plugin_reference' => 'string',
-        'config'           => '\MatthewBaggett\Docker\Api\Model\PluginConfig',
+        'config'           => '\MatthewBaggett\Docker\Model\PluginConfig',
     ];
 
     /**

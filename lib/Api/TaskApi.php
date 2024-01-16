@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Api;
+namespace MatthewBaggett\Docker\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -38,10 +38,10 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use MatthewBaggett\Docker\Api\ApiException;
-use MatthewBaggett\Docker\Api\Configuration;
-use MatthewBaggett\Docker\Api\HeaderSelector;
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ApiException;
+use MatthewBaggett\Docker\Configuration;
+use MatthewBaggett\Docker\HeaderSelector;
+use MatthewBaggett\Docker\ObjectSerializer;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Utils;
 
@@ -140,7 +140,7 @@ class TaskApi
      * @param string $id          ID of the task (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['taskInspect'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Task
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\Task
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -160,7 +160,7 @@ class TaskApi
      * @param string $id          ID of the task (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['taskInspect'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\Task|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\Task|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -207,11 +207,11 @@ class TaskApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\Task' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\Task' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\Task' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\Task' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -229,17 +229,17 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Task', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\Task', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -257,17 +257,17 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -285,17 +285,17 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 503:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -313,13 +313,13 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\Task';
+            $returnType = '\MatthewBaggett\Docker\Model\Task';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -351,7 +351,7 @@ class TaskApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\Task',
+                        '\MatthewBaggett\Docker\Model\Task',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -361,7 +361,7 @@ class TaskApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -371,7 +371,7 @@ class TaskApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -381,7 +381,7 @@ class TaskApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -428,7 +428,7 @@ class TaskApi
      */
     public function taskInspectAsyncWithHttpInfo($id, string $contentType = self::contentTypes['taskInspect'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\Task';
+        $returnType = '\MatthewBaggett\Docker\Model\Task';
         $request    = $this->taskInspectRequest($id, $contentType);
 
         return $this->client
@@ -564,7 +564,7 @@ class TaskApi
      * @param string $filters     A JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the tasks list.  Available filters:  - &#x60;desired-state&#x3D;(running | shutdown | accepted)&#x60; - &#x60;id&#x3D;&lt;task id&gt;&#x60; - &#x60;label&#x3D;key&#x60; or &#x60;label&#x3D;\&quot;key&#x3D;value\&quot;&#x60; - &#x60;name&#x3D;&lt;task name&gt;&#x60; - &#x60;node&#x3D;&lt;node id or name&gt;&#x60; - &#x60;service&#x3D;&lt;service name&gt;&#x60; (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['taskList'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Task[]
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\Task[]
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -584,7 +584,7 @@ class TaskApi
      * @param string $filters     A JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the tasks list.  Available filters:  - &#x60;desired-state&#x3D;(running | shutdown | accepted)&#x60; - &#x60;id&#x3D;&lt;task id&gt;&#x60; - &#x60;label&#x3D;key&#x60; or &#x60;label&#x3D;\&quot;key&#x3D;value\&quot;&#x60; - &#x60;name&#x3D;&lt;task name&gt;&#x60; - &#x60;node&#x3D;&lt;node id or name&gt;&#x60; - &#x60;service&#x3D;&lt;service name&gt;&#x60; (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['taskList'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\Task[]|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\Task[]|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -631,11 +631,11 @@ class TaskApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\Task[]' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\Task[]' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\Task[]' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\Task[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -653,17 +653,17 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Task[]', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\Task[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -681,17 +681,17 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 503:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -709,13 +709,13 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\Task[]';
+            $returnType = '\MatthewBaggett\Docker\Model\Task[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -747,7 +747,7 @@ class TaskApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\Task[]',
+                        '\MatthewBaggett\Docker\Model\Task[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -757,7 +757,7 @@ class TaskApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -767,7 +767,7 @@ class TaskApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -814,7 +814,7 @@ class TaskApi
      */
     public function taskListAsyncWithHttpInfo($filters = null, string $contentType = self::contentTypes['taskList'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\Task[]';
+        $returnType = '\MatthewBaggett\Docker\Model\Task[]';
         $request    = $this->taskListRequest($filters, $contentType);
 
         return $this->client
@@ -951,7 +951,7 @@ class TaskApi
      * @param string $tail        Only return this number of log lines from the end of the logs. Specify as an integer or &#x60;all&#x60; to output all log lines. (optional, default to 'all')
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['taskLogs'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\SplFileObject
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\SplFileObject
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -978,7 +978,7 @@ class TaskApi
      * @param string $tail        Only return this number of log lines from the end of the logs. Specify as an integer or &#x60;all&#x60; to output all log lines. (optional, default to 'all')
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['taskLogs'] to see the possible values for this operation
      *
-     * @return array of \SplFileObject|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1053,11 +1053,11 @@ class TaskApi
                     ];
 
                 case 404:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1075,17 +1075,17 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1103,17 +1103,17 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 503:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1131,7 +1131,7 @@ class TaskApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1179,7 +1179,7 @@ class TaskApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1189,7 +1189,7 @@ class TaskApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1199,7 +1199,7 @@ class TaskApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

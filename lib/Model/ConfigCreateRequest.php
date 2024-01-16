@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * ConfigCreateRequest Class Doc Comment.
@@ -65,7 +65,7 @@ class ConfigCreateRequest implements ModelInterface, \ArrayAccess, \JsonSerializ
         'name'       => 'string',
         'labels'     => 'array<string,string>',
         'data'       => 'string',
-        'templating' => '\MatthewBaggett\Docker\Api\Model\Driver',
+        'templating' => '\MatthewBaggett\Docker\Model\Driver',
     ];
 
     /**

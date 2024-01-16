@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * BuildInfo Class Doc Comment.
@@ -65,11 +65,11 @@ class BuildInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
         'id'              => 'string',
         'stream'          => 'string',
         'error'           => 'string',
-        'error_detail'    => '\MatthewBaggett\Docker\Api\Model\ErrorDetail',
+        'error_detail'    => '\MatthewBaggett\Docker\Model\ErrorDetail',
         'status'          => 'string',
         'progress'        => 'string',
-        'progress_detail' => '\MatthewBaggett\Docker\Api\Model\ProgressDetail',
-        'aux'             => '\MatthewBaggett\Docker\Api\Model\ImageID',
+        'progress_detail' => '\MatthewBaggett\Docker\Model\ProgressDetail',
+        'aux'             => '\MatthewBaggett\Docker\Model\ImageID',
     ];
 
     /**

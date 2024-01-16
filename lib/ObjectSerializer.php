@@ -30,10 +30,10 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api;
+namespace MatthewBaggett\Docker;
 
 use GuzzleHttp\Psr7\Utils;
-use MatthewBaggett\Docker\Api\Model\ModelInterface;
+use MatthewBaggett\Docker\Model\ModelInterface;
 use GuzzleHttp\Psr7\Query;
 
 /**
@@ -529,7 +529,7 @@ class ObjectSerializer
         // If a discriminator is defined and points to a valid subclass, use it.
         $discriminator = $class::DISCRIMINATOR;
         if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-            $subclass = '\MatthewBaggett\Docker\Api\Model\\' . $data->{$discriminator};
+            $subclass = '\MatthewBaggett\Docker\Model\\' . $data->{$discriminator};
             if (is_subclass_of($subclass, $class)) {
                 $class = $subclass;
             }

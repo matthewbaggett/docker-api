@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **internal** | **bool** | Restrict external access to the network. | [optional]
 **attachable** | **bool** | Globally scoped network is manually attachable by regular containers from workers in swarm mode. | [optional]
 **ingress** | **bool** | Ingress network is the network which provides the routing-mesh in swarm mode. | [optional]
-**ipam** | [**\MatthewBaggett\Docker\Api\Model\IPAM**](IPAM.md) |  | [optional]
+**ipam** | [**\MatthewBaggett\Docker\Model\IPAM**](IPAM.md) |  | [optional]
 **enable_ipv6** | **bool** | Enable IPv6 on the network. | [optional]
 **options** | **array<string,string>** | Network specific options to be used by the drivers. | [optional]
 **labels** | **array<string,string>** | User-defined key/value metadata. | [optional]

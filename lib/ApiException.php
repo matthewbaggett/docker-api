@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api;
+namespace MatthewBaggett\Docker;
 
 /**
  * ApiException Class Doc Comment.

@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * EngineDescription Class Doc Comment.
@@ -66,7 +66,7 @@ class EngineDescription implements ModelInterface, \ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'engine_version' => 'string',
         'labels'         => 'array<string,string>',
-        'plugins'        => '\MatthewBaggett\Docker\Api\Model\EngineDescriptionPluginsInner[]',
+        'plugins'        => '\MatthewBaggett\Docker\Model\EngineDescriptionPluginsInner[]',
     ];
 
     /**
@@ -353,7 +353,7 @@ class EngineDescription implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Gets plugins.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\EngineDescriptionPluginsInner[]
+     * @return null|\MatthewBaggett\Docker\Model\EngineDescriptionPluginsInner[]
      */
     public function getPlugins()
     {
@@ -363,7 +363,7 @@ class EngineDescription implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets plugins.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\EngineDescriptionPluginsInner[] $plugins plugins
+     * @param null|\MatthewBaggett\Docker\Model\EngineDescriptionPluginsInner[] $plugins plugins
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# MatthewBaggett\Docker\Api\SystemApi
+# MatthewBaggett\Docker\SystemApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -16,7 +16,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `systemAuth()`
 
 ```php
-systemAuth($auth_config): \MatthewBaggett\Docker\Api\Model\SystemAuthResponse
+systemAuth($auth_config): \MatthewBaggett\Docker\Model\SystemAuthResponse
 ```
 
 Check auth configuration
@@ -31,12 +31,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\SystemApi(
+$apiInstance = new MatthewBaggett\Docker\Api\SystemApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$auth_config = new \MatthewBaggett\Docker\Api\Model\AuthConfig(); // \MatthewBaggett\Docker\Api\Model\AuthConfig | Authentication to check
+$auth_config = new \MatthewBaggett\Docker\Model\AuthConfig(); // \MatthewBaggett\Docker\Model\AuthConfig | Authentication to check
 
 try {
     $result = $apiInstance->systemAuth($auth_config);
@@ -50,11 +50,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **auth_config** | [**\MatthewBaggett\Docker\Api\Model\AuthConfig**](../Model/AuthConfig.md)| Authentication to check | [optional] |
+| **auth_config** | [**\MatthewBaggett\Docker\Model\AuthConfig**](../Model/AuthConfig.md)| Authentication to check | [optional] |
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\SystemAuthResponse**](../Model/SystemAuthResponse.md)
+[**\MatthewBaggett\Docker\Model\SystemAuthResponse**](../Model/SystemAuthResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ No authorization required
 ## `systemDataUsage()`
 
 ```php
-systemDataUsage($type): \MatthewBaggett\Docker\Api\Model\SystemDataUsageResponse
+systemDataUsage($type): \MatthewBaggett\Docker\Model\SystemDataUsageResponse
 ```
 
 Get data usage information
@@ -85,7 +85,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\SystemApi(
+$apiInstance = new MatthewBaggett\Docker\Api\SystemApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -108,7 +108,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\SystemDataUsageResponse**](../Model/SystemDataUsageResponse.md)
+[**\MatthewBaggett\Docker\Model\SystemDataUsageResponse**](../Model/SystemDataUsageResponse.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ No authorization required
 ## `systemEvents()`
 
 ```php
-systemEvents($since, $until, $filters): \MatthewBaggett\Docker\Api\Model\EventMessage
+systemEvents($since, $until, $filters): \MatthewBaggett\Docker\Model\EventMessage
 ```
 
 Monitor events
@@ -141,7 +141,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\SystemApi(
+$apiInstance = new MatthewBaggett\Docker\Api\SystemApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -168,7 +168,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\EventMessage**](../Model/EventMessage.md)
+[**\MatthewBaggett\Docker\Model\EventMessage**](../Model/EventMessage.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ No authorization required
 ## `systemInfo()`
 
 ```php
-systemInfo(): \MatthewBaggett\Docker\Api\Model\SystemInfo
+systemInfo(): \MatthewBaggett\Docker\Model\SystemInfo
 ```
 
 Get system information
@@ -199,7 +199,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\SystemApi(
+$apiInstance = new MatthewBaggett\Docker\Api\SystemApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -219,7 +219,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\SystemInfo**](../Model/SystemInfo.md)
+[**\MatthewBaggett\Docker\Model\SystemInfo**](../Model/SystemInfo.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\SystemApi(
+$apiInstance = new MatthewBaggett\Docker\Api\SystemApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -305,7 +305,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\SystemApi(
+$apiInstance = new MatthewBaggett\Docker\Api\SystemApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -343,7 +343,7 @@ No authorization required
 ## `systemVersion()`
 
 ```php
-systemVersion(): \MatthewBaggett\Docker\Api\Model\SystemVersion
+systemVersion(): \MatthewBaggett\Docker\Model\SystemVersion
 ```
 
 Get version
@@ -358,7 +358,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\SystemApi(
+$apiInstance = new MatthewBaggett\Docker\Api\SystemApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -378,7 +378,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\SystemVersion**](../Model/SystemVersion.md)
+[**\MatthewBaggett\Docker\Model\SystemVersion**](../Model/SystemVersion.md)
 
 ### Authorization
 

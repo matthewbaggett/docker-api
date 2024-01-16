@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Api;
+namespace MatthewBaggett\Docker\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -38,10 +38,10 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use MatthewBaggett\Docker\Api\ApiException;
-use MatthewBaggett\Docker\Api\Configuration;
-use MatthewBaggett\Docker\Api\HeaderSelector;
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ApiException;
+use MatthewBaggett\Docker\Configuration;
+use MatthewBaggett\Docker\HeaderSelector;
+use MatthewBaggett\Docker\ObjectSerializer;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Utils;
 
@@ -166,7 +166,7 @@ class PluginApi
      * @param string $remote      The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['getPluginPrivileges'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\PluginPrivilege[]
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -186,7 +186,7 @@ class PluginApi
      * @param string $remote      The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['getPluginPrivileges'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\PluginPrivilege[]|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\PluginPrivilege[]|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -233,11 +233,11 @@ class PluginApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\PluginPrivilege[]' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\PluginPrivilege[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -255,17 +255,17 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\PluginPrivilege[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -283,13 +283,13 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]';
+            $returnType = '\MatthewBaggett\Docker\Model\PluginPrivilege[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -321,7 +321,7 @@ class PluginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]',
+                        '\MatthewBaggett\Docker\Model\PluginPrivilege[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -331,7 +331,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -378,7 +378,7 @@ class PluginApi
      */
     public function getPluginPrivilegesAsyncWithHttpInfo($remote, string $contentType = self::contentTypes['getPluginPrivileges'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]';
+        $returnType = '\MatthewBaggett\Docker\Model\PluginPrivilege[]';
         $request    = $this->getPluginPrivilegesRequest($remote, $contentType);
 
         return $this->client
@@ -584,7 +584,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -764,7 +764,7 @@ class PluginApi
      * @param bool   $force       Disable the plugin before removing. This may result in issues if the plugin is in use by a container. (optional, default to false)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['pluginDelete'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Plugin
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\Plugin
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -785,7 +785,7 @@ class PluginApi
      * @param bool   $force       Disable the plugin before removing. This may result in issues if the plugin is in use by a container. (optional, default to false)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['pluginDelete'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\Plugin|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\Plugin|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -832,11 +832,11 @@ class PluginApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\Plugin' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\Plugin' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\Plugin' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\Plugin' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -854,17 +854,17 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Plugin', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\Plugin', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -882,17 +882,17 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -910,13 +910,13 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\Plugin';
+            $returnType = '\MatthewBaggett\Docker\Model\Plugin';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -948,7 +948,7 @@ class PluginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\Plugin',
+                        '\MatthewBaggett\Docker\Model\Plugin',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -958,7 +958,7 @@ class PluginApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -968,7 +968,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1017,7 +1017,7 @@ class PluginApi
      */
     public function pluginDeleteAsyncWithHttpInfo($name, $force = false, string $contentType = self::contentTypes['pluginDelete'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\Plugin';
+        $returnType = '\MatthewBaggett\Docker\Model\Plugin';
         $request    = $this->pluginDeleteRequest($name, $force, $contentType);
 
         return $this->client
@@ -1233,7 +1233,7 @@ class PluginApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1243,7 +1243,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1493,7 +1493,7 @@ class PluginApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1503,7 +1503,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1684,7 +1684,7 @@ class PluginApi
      * @param string $name        The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['pluginInspect'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Plugin
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\Plugin
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1704,7 +1704,7 @@ class PluginApi
      * @param string $name        The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['pluginInspect'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\Plugin|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\Plugin|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1751,11 +1751,11 @@ class PluginApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\Plugin' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\Plugin' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\Plugin' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\Plugin' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1773,17 +1773,17 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Plugin', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\Plugin', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1801,17 +1801,17 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1829,13 +1829,13 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\Plugin';
+            $returnType = '\MatthewBaggett\Docker\Model\Plugin';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -1867,7 +1867,7 @@ class PluginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\Plugin',
+                        '\MatthewBaggett\Docker\Model\Plugin',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1877,7 +1877,7 @@ class PluginApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1887,7 +1887,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1934,7 +1934,7 @@ class PluginApi
      */
     public function pluginInspectAsyncWithHttpInfo($name, string $contentType = self::contentTypes['pluginInspect'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\Plugin';
+        $returnType = '\MatthewBaggett\Docker\Model\Plugin';
         $request    = $this->pluginInspectRequest($name, $contentType);
 
         return $this->client
@@ -2070,7 +2070,7 @@ class PluginApi
      * @param string $filters     A JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the plugin list.  Available filters:  - &#x60;capability&#x3D;&lt;capability name&gt;&#x60; - &#x60;enable&#x3D;&lt;true&gt;|&lt;false&gt;&#x60; (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['pluginList'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Plugin[]
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\Plugin[]
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -2090,7 +2090,7 @@ class PluginApi
      * @param string $filters     A JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the plugin list.  Available filters:  - &#x60;capability&#x3D;&lt;capability name&gt;&#x60; - &#x60;enable&#x3D;&lt;true&gt;|&lt;false&gt;&#x60; (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['pluginList'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\Plugin[]|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\Plugin[]|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -2137,11 +2137,11 @@ class PluginApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\Plugin[]' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\Plugin[]' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\Plugin[]' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\Plugin[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2159,17 +2159,17 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Plugin[]', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\Plugin[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2187,13 +2187,13 @@ class PluginApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\Plugin[]';
+            $returnType = '\MatthewBaggett\Docker\Model\Plugin[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -2225,7 +2225,7 @@ class PluginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\Plugin[]',
+                        '\MatthewBaggett\Docker\Model\Plugin[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2235,7 +2235,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2282,7 +2282,7 @@ class PluginApi
      */
     public function pluginListAsyncWithHttpInfo($filters = null, string $contentType = self::contentTypes['pluginList'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\Plugin[]';
+        $returnType = '\MatthewBaggett\Docker\Model\Plugin[]';
         $request    = $this->pluginListRequest($filters, $contentType);
 
         return $this->client
@@ -2409,11 +2409,11 @@ class PluginApi
      *
      * Install a plugin
      *
-     * @param string                                             $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            body (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
+     * @param string                                         $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            body (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -2428,11 +2428,11 @@ class PluginApi
      *
      * Install a plugin
      *
-     * @param string                                             $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
+     * @param string                                         $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
      *
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
@@ -2485,7 +2485,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2502,11 +2502,11 @@ class PluginApi
      *
      * Install a plugin
      *
-     * @param string                                             $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
+     * @param string                                         $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
      *
      * @return PromiseInterface
      *
@@ -2526,11 +2526,11 @@ class PluginApi
      *
      * Install a plugin
      *
-     * @param string                                             $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
+     * @param string                                         $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
      *
      * @return PromiseInterface
      *
@@ -2567,11 +2567,11 @@ class PluginApi
     /**
      * Create request for operation 'pluginPull'.
      *
-     * @param string                                             $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
+     * @param string                                         $remote          Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $name            Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (optional)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginPull'] to see the possible values for this operation
      *
      * @return Request
      *
@@ -2751,7 +2751,7 @@ class PluginApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2761,7 +2761,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2998,7 +2998,7 @@ class PluginApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3008,7 +3008,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3183,11 +3183,11 @@ class PluginApi
      *
      * Upgrade a plugin
      *
-     * @param string                                             $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
-     * @param string                                             $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            body (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
+     * @param string                                         $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
+     * @param string                                         $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            body (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -3202,11 +3202,11 @@ class PluginApi
      *
      * Upgrade a plugin
      *
-     * @param string                                             $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
-     * @param string                                             $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
+     * @param string                                         $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
+     * @param string                                         $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
      *
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
@@ -3259,7 +3259,7 @@ class PluginApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3269,7 +3269,7 @@ class PluginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3286,11 +3286,11 @@ class PluginApi
      *
      * Upgrade a plugin
      *
-     * @param string                                             $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
-     * @param string                                             $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
+     * @param string                                         $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
+     * @param string                                         $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
      *
      * @return PromiseInterface
      *
@@ -3310,11 +3310,11 @@ class PluginApi
      *
      * Upgrade a plugin
      *
-     * @param string                                             $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
-     * @param string                                             $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
+     * @param string                                         $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
+     * @param string                                         $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
      *
      * @return PromiseInterface
      *
@@ -3351,11 +3351,11 @@ class PluginApi
     /**
      * Create request for operation 'pluginUpgrade'.
      *
-     * @param string                                             $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
-     * @param string                                             $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
-     * @param string                                             $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
-     * @param \MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $body            (optional)
-     * @param string                                             $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
+     * @param string                                         $name            The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted. (required)
+     * @param string                                         $remote          Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted. (required)
+     * @param string                                         $x_registry_auth A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. (optional)
+     * @param \MatthewBaggett\Docker\Model\PluginPrivilege[] $body            (optional)
+     * @param string                                         $contentType     The value for the Content-Type header. Check self::contentTypes['pluginUpgrade'] to see the possible values for this operation
      *
      * @return Request
      *

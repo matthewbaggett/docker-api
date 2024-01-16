@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Api;
+namespace MatthewBaggett\Docker\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -38,14 +38,14 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use MatthewBaggett\Docker\Api\ApiException;
-use MatthewBaggett\Docker\Api\Configuration;
-use MatthewBaggett\Docker\Api\HeaderSelector;
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ApiException;
+use MatthewBaggett\Docker\Configuration;
+use MatthewBaggett\Docker\HeaderSelector;
+use MatthewBaggett\Docker\ObjectSerializer;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Utils;
-use MatthewBaggett\Docker\Api\Model\SecretCreateRequest;
-use MatthewBaggett\Docker\Api\Model\SecretSpec;
+use MatthewBaggett\Docker\Model\SecretCreateRequest;
+use MatthewBaggett\Docker\Model\SecretSpec;
 
 /**
  * SecretApi Class Doc Comment.
@@ -149,7 +149,7 @@ class SecretApi
      * @param SecretCreateRequest $body        body (optional)
      * @param string              $contentType The value for the Content-Type header. Check self::contentTypes['secretCreate'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\IdResponse
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\IdResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -169,7 +169,7 @@ class SecretApi
      * @param SecretCreateRequest $body        (optional)
      * @param string              $contentType The value for the Content-Type header. Check self::contentTypes['secretCreate'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\IdResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\IdResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -216,11 +216,11 @@ class SecretApi
 
             switch ($statusCode) {
                 case 201:
-                    if ('\MatthewBaggett\Docker\Api\Model\IdResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\IdResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\IdResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\IdResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -238,17 +238,17 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\IdResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\IdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 409:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -266,17 +266,17 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -294,17 +294,17 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 503:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -322,13 +322,13 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\IdResponse';
+            $returnType = '\MatthewBaggett\Docker\Model\IdResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -360,7 +360,7 @@ class SecretApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\IdResponse',
+                        '\MatthewBaggett\Docker\Model\IdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -370,7 +370,7 @@ class SecretApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -380,7 +380,7 @@ class SecretApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -390,7 +390,7 @@ class SecretApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -437,7 +437,7 @@ class SecretApi
      */
     public function secretCreateAsyncWithHttpInfo($body = null, string $contentType = self::contentTypes['secretCreate'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\IdResponse';
+        $returnType = '\MatthewBaggett\Docker\Model\IdResponse';
         $request    = $this->secretCreateRequest($body, $contentType);
 
         return $this->client
@@ -631,7 +631,7 @@ class SecretApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -641,7 +641,7 @@ class SecretApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -651,7 +651,7 @@ class SecretApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -819,7 +819,7 @@ class SecretApi
      * @param string $id          ID of the secret (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['secretInspect'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Secret
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\Secret
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -839,7 +839,7 @@ class SecretApi
      * @param string $id          ID of the secret (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['secretInspect'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\Secret|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\Secret|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -886,11 +886,11 @@ class SecretApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\Secret' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\Secret' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\Secret' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\Secret' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -908,17 +908,17 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Secret', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\Secret', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -936,17 +936,17 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -964,17 +964,17 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 503:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -992,13 +992,13 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\Secret';
+            $returnType = '\MatthewBaggett\Docker\Model\Secret';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -1030,7 +1030,7 @@ class SecretApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\Secret',
+                        '\MatthewBaggett\Docker\Model\Secret',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1040,7 +1040,7 @@ class SecretApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1050,7 +1050,7 @@ class SecretApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1060,7 +1060,7 @@ class SecretApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1107,7 +1107,7 @@ class SecretApi
      */
     public function secretInspectAsyncWithHttpInfo($id, string $contentType = self::contentTypes['secretInspect'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\Secret';
+        $returnType = '\MatthewBaggett\Docker\Model\Secret';
         $request    = $this->secretInspectRequest($id, $contentType);
 
         return $this->client
@@ -1243,7 +1243,7 @@ class SecretApi
      * @param string $filters     A JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the secrets list.  Available filters:  - &#x60;id&#x3D;&lt;secret id&gt;&#x60; - &#x60;label&#x3D;&lt;key&gt; or label&#x3D;&lt;key&gt;&#x3D;value&#x60; - &#x60;name&#x3D;&lt;secret name&gt;&#x60; - &#x60;names&#x3D;&lt;secret name&gt;&#x60; (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['secretList'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\Secret[]
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\Secret[]
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1263,7 +1263,7 @@ class SecretApi
      * @param string $filters     A JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the secrets list.  Available filters:  - &#x60;id&#x3D;&lt;secret id&gt;&#x60; - &#x60;label&#x3D;&lt;key&gt; or label&#x3D;&lt;key&gt;&#x3D;value&#x60; - &#x60;name&#x3D;&lt;secret name&gt;&#x60; - &#x60;names&#x3D;&lt;secret name&gt;&#x60; (optional)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['secretList'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\Secret[]|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\Secret[]|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -1310,11 +1310,11 @@ class SecretApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\Secret[]' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\Secret[]' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\Secret[]' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\Secret[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1332,17 +1332,17 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\Secret[]', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\Secret[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1360,17 +1360,17 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 503:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1388,13 +1388,13 @@ class SecretApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\Secret[]';
+            $returnType = '\MatthewBaggett\Docker\Model\Secret[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -1426,7 +1426,7 @@ class SecretApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\Secret[]',
+                        '\MatthewBaggett\Docker\Model\Secret[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1436,7 +1436,7 @@ class SecretApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1446,7 +1446,7 @@ class SecretApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1493,7 +1493,7 @@ class SecretApi
      */
     public function secretListAsyncWithHttpInfo($filters = null, string $contentType = self::contentTypes['secretList'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\Secret[]';
+        $returnType = '\MatthewBaggett\Docker\Model\Secret[]';
         $request    = $this->secretListRequest($filters, $contentType);
 
         return $this->client
@@ -1694,7 +1694,7 @@ class SecretApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1704,7 +1704,7 @@ class SecretApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1714,7 +1714,7 @@ class SecretApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1724,7 +1724,7 @@ class SecretApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

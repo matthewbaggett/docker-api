@@ -1,4 +1,4 @@
-# MatthewBaggett\Docker\Api\ConfigApi
+# MatthewBaggett\Docker\ConfigApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -14,7 +14,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `configCreate()`
 
 ```php
-configCreate($body): \MatthewBaggett\Docker\Api\Model\IdResponse
+configCreate($body): \MatthewBaggett\Docker\Model\IdResponse
 ```
 
 Create a config
@@ -27,12 +27,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ConfigApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ConfigApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \MatthewBaggett\Docker\Api\Model\ConfigCreateRequest(); // \MatthewBaggett\Docker\Api\Model\ConfigCreateRequest
+$body = new \MatthewBaggett\Docker\Model\ConfigCreateRequest(); // \MatthewBaggett\Docker\Model\ConfigCreateRequest
 
 try {
     $result = $apiInstance->configCreate($body);
@@ -46,11 +46,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\MatthewBaggett\Docker\Api\Model\ConfigCreateRequest**](../Model/ConfigCreateRequest.md)|  | [optional] |
+| **body** | [**\MatthewBaggett\Docker\Model\ConfigCreateRequest**](../Model/ConfigCreateRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\IdResponse**](../Model/IdResponse.md)
+[**\MatthewBaggett\Docker\Model\IdResponse**](../Model/IdResponse.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ConfigApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ConfigApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -121,7 +121,7 @@ No authorization required
 ## `configInspect()`
 
 ```php
-configInspect($id): \MatthewBaggett\Docker\Api\Model\Config
+configInspect($id): \MatthewBaggett\Docker\Model\Config
 ```
 
 Inspect a config
@@ -134,7 +134,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ConfigApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ConfigApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -157,7 +157,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\Config**](../Model/Config.md)
+[**\MatthewBaggett\Docker\Model\Config**](../Model/Config.md)
 
 ### Authorization
 
@@ -175,7 +175,7 @@ No authorization required
 ## `configList()`
 
 ```php
-configList($filters): \MatthewBaggett\Docker\Api\Model\Config[]
+configList($filters): \MatthewBaggett\Docker\Model\Config[]
 ```
 
 List configs
@@ -188,7 +188,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ConfigApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ConfigApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -211,7 +211,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\Config[]**](../Model/Config.md)
+[**\MatthewBaggett\Docker\Model\Config[]**](../Model/Config.md)
 
 ### Authorization
 
@@ -242,14 +242,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ConfigApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ConfigApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | The ID or name of the config
 $version = 56; // int | The version number of the config object being updated. This is required to avoid conflicting writes.
-$body = new \MatthewBaggett\Docker\Api\Model\ConfigSpec(); // \MatthewBaggett\Docker\Api\Model\ConfigSpec | The spec of the config to update. Currently, only the Labels field can be updated. All other fields must remain unchanged from the [ConfigInspect endpoint](#operation/ConfigInspect) response values.
+$body = new \MatthewBaggett\Docker\Model\ConfigSpec(); // \MatthewBaggett\Docker\Model\ConfigSpec | The spec of the config to update. Currently, only the Labels field can be updated. All other fields must remain unchanged from the [ConfigInspect endpoint](#operation/ConfigInspect) response values.
 
 try {
     $apiInstance->configUpdate($id, $version, $body);
@@ -264,7 +264,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| The ID or name of the config | |
 | **version** | **int**| The version number of the config object being updated. This is required to avoid conflicting writes. | |
-| **body** | [**\MatthewBaggett\Docker\Api\Model\ConfigSpec**](../Model/ConfigSpec.md)| The spec of the config to update. Currently, only the Labels field can be updated. All other fields must remain unchanged from the [ConfigInspect endpoint](#operation/ConfigInspect) response values. | [optional] |
+| **body** | [**\MatthewBaggett\Docker\Model\ConfigSpec**](../Model/ConfigSpec.md)| The spec of the config to update. Currently, only the Labels field can be updated. All other fields must remain unchanged from the [ConfigInspect endpoint](#operation/ConfigInspect) response values. | [optional] |
 
 ### Return type
 

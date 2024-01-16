@@ -1,4 +1,4 @@
-# MatthewBaggett\Docker\Api\ImageApi
+# MatthewBaggett\Docker\ImageApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -24,7 +24,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `buildPrune()`
 
 ```php
-buildPrune($keep_storage, $all, $filters): \MatthewBaggett\Docker\Api\Model\BuildPruneResponse
+buildPrune($keep_storage, $all, $filters): \MatthewBaggett\Docker\Model\BuildPruneResponse
 ```
 
 Delete builder cache
@@ -37,7 +37,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -64,7 +64,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\BuildPruneResponse**](../Model/BuildPruneResponse.md)
+[**\MatthewBaggett\Docker\Model\BuildPruneResponse**](../Model/BuildPruneResponse.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -189,7 +189,7 @@ No authorization required
 ## `imageCommit()`
 
 ```php
-imageCommit($container, $repo, $tag, $comment, $author, $pause, $changes, $container_config): \MatthewBaggett\Docker\Api\Model\IdResponse
+imageCommit($container, $repo, $tag, $comment, $author, $pause, $changes, $container_config): \MatthewBaggett\Docker\Model\IdResponse
 ```
 
 Create a new image from a container
@@ -202,7 +202,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -214,7 +214,7 @@ $comment = 'comment_example'; // string | Commit message
 $author = 'author_example'; // string | Author of the image (e.g., `John Hannibal Smith <hannibal@a-team.com>`)
 $pause = true; // bool | Whether to pause the container before committing
 $changes = 'changes_example'; // string | `Dockerfile` instructions to apply while committing
-$container_config = new \MatthewBaggett\Docker\Api\Model\ContainerConfig(); // \MatthewBaggett\Docker\Api\Model\ContainerConfig | The container configuration
+$container_config = new \MatthewBaggett\Docker\Model\ContainerConfig(); // \MatthewBaggett\Docker\Model\ContainerConfig | The container configuration
 
 try {
     $result = $apiInstance->imageCommit($container, $repo, $tag, $comment, $author, $pause, $changes, $container_config);
@@ -235,11 +235,11 @@ try {
 | **author** | **string**| Author of the image (e.g., &#x60;John Hannibal Smith &lt;hannibal@a-team.com&gt;&#x60;) | [optional] |
 | **pause** | **bool**| Whether to pause the container before committing | [optional] [default to true] |
 | **changes** | **string**| &#x60;Dockerfile&#x60; instructions to apply while committing | [optional] |
-| **container_config** | [**\MatthewBaggett\Docker\Api\Model\ContainerConfig**](../Model/ContainerConfig.md)| The container configuration | [optional] |
+| **container_config** | [**\MatthewBaggett\Docker\Model\ContainerConfig**](../Model/ContainerConfig.md)| The container configuration | [optional] |
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\IdResponse**](../Model/IdResponse.md)
+[**\MatthewBaggett\Docker\Model\IdResponse**](../Model/IdResponse.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -328,7 +328,7 @@ No authorization required
 ## `imageDelete()`
 
 ```php
-imageDelete($name, $force, $noprune): \MatthewBaggett\Docker\Api\Model\ImageDeleteResponseItem[]
+imageDelete($name, $force, $noprune): \MatthewBaggett\Docker\Model\ImageDeleteResponseItem[]
 ```
 
 Remove an image
@@ -343,7 +343,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -370,7 +370,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ImageDeleteResponseItem[]**](../Model/ImageDeleteResponseItem.md)
+[**\MatthewBaggett\Docker\Model\ImageDeleteResponseItem[]**](../Model/ImageDeleteResponseItem.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -459,7 +459,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -500,7 +500,7 @@ No authorization required
 ## `imageHistory()`
 
 ```php
-imageHistory($name): \MatthewBaggett\Docker\Api\Model\HistoryResponseItem[]
+imageHistory($name): \MatthewBaggett\Docker\Model\HistoryResponseItem[]
 ```
 
 Get the history of an image
@@ -515,7 +515,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -538,7 +538,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\HistoryResponseItem[]**](../Model/HistoryResponseItem.md)
+[**\MatthewBaggett\Docker\Model\HistoryResponseItem[]**](../Model/HistoryResponseItem.md)
 
 ### Authorization
 
@@ -556,7 +556,7 @@ No authorization required
 ## `imageInspect()`
 
 ```php
-imageInspect($name): \MatthewBaggett\Docker\Api\Model\ImageInspect
+imageInspect($name): \MatthewBaggett\Docker\Model\ImageInspect
 ```
 
 Inspect an image
@@ -571,7 +571,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -594,7 +594,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ImageInspect**](../Model/ImageInspect.md)
+[**\MatthewBaggett\Docker\Model\ImageInspect**](../Model/ImageInspect.md)
 
 ### Authorization
 
@@ -612,7 +612,7 @@ No authorization required
 ## `imageList()`
 
 ```php
-imageList($all, $filters, $shared_size, $digests): \MatthewBaggett\Docker\Api\Model\ImageSummary[]
+imageList($all, $filters, $shared_size, $digests): \MatthewBaggett\Docker\Model\ImageSummary[]
 ```
 
 List Images
@@ -627,7 +627,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -656,7 +656,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ImageSummary[]**](../Model/ImageSummary.md)
+[**\MatthewBaggett\Docker\Model\ImageSummary[]**](../Model/ImageSummary.md)
 
 ### Authorization
 
@@ -689,7 +689,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -731,7 +731,7 @@ No authorization required
 ## `imagePrune()`
 
 ```php
-imagePrune($filters): \MatthewBaggett\Docker\Api\Model\ImagePruneResponse
+imagePrune($filters): \MatthewBaggett\Docker\Model\ImagePruneResponse
 ```
 
 Delete unused images
@@ -744,7 +744,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -767,7 +767,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ImagePruneResponse**](../Model/ImagePruneResponse.md)
+[**\MatthewBaggett\Docker\Model\ImagePruneResponse**](../Model/ImagePruneResponse.md)
 
 ### Authorization
 
@@ -800,7 +800,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -844,7 +844,7 @@ No authorization required
 ## `imageSearch()`
 
 ```php
-imageSearch($term, $limit, $filters): \MatthewBaggett\Docker\Api\Model\ImageSearchResponseItem[]
+imageSearch($term, $limit, $filters): \MatthewBaggett\Docker\Model\ImageSearchResponseItem[]
 ```
 
 Search images
@@ -859,7 +859,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -886,7 +886,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ImageSearchResponseItem[]**](../Model/ImageSearchResponseItem.md)
+[**\MatthewBaggett\Docker\Model\ImageSearchResponseItem[]**](../Model/ImageSearchResponseItem.md)
 
 ### Authorization
 
@@ -919,7 +919,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ImageApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()

@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * EndpointSpec Class Doc Comment.
@@ -65,7 +65,7 @@ class EndpointSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'mode'  => 'string',
-        'ports' => '\MatthewBaggett\Docker\Api\Model\EndpointPortConfig[]',
+        'ports' => '\MatthewBaggett\Docker\Model\EndpointPortConfig[]',
     ];
 
     /**
@@ -356,7 +356,7 @@ class EndpointSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets ports.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\EndpointPortConfig[]
+     * @return null|\MatthewBaggett\Docker\Model\EndpointPortConfig[]
      */
     public function getPorts()
     {
@@ -366,7 +366,7 @@ class EndpointSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets ports.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\EndpointPortConfig[] $ports List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used.
+     * @param null|\MatthewBaggett\Docker\Model\EndpointPortConfig[] $ports List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used.
      *
      * @return self
      */

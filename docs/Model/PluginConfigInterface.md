@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**types** | [**\MatthewBaggett\Docker\Api\Model\PluginInterfaceType[]**](PluginInterfaceType.md) |  |
+**types** | [**\MatthewBaggett\Docker\Model\PluginInterfaceType[]**](PluginInterfaceType.md) |  |
 **socket** | **string** |  |
 **protocol_scheme** | **string** | Protocol to use for clients connecting to the plugin. | [optional]
 

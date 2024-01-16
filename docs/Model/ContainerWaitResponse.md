@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status_code** | **int** | Exit code of the container |
-**error** | [**\MatthewBaggett\Docker\Api\Model\ContainerWaitExitError**](ContainerWaitExitError.md) |  | [optional]
+**error** | [**\MatthewBaggett\Docker\Model\ContainerWaitExitError**](ContainerWaitExitError.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

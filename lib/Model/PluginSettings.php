@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * PluginSettings Class Doc Comment.
@@ -64,10 +64,10 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'mounts'  => '\MatthewBaggett\Docker\Api\Model\PluginMount[]',
+        'mounts'  => '\MatthewBaggett\Docker\Model\PluginMount[]',
         'env'     => 'string[]',
         'args'    => 'string[]',
-        'devices' => '\MatthewBaggett\Docker\Api\Model\PluginDevice[]',
+        'devices' => '\MatthewBaggett\Docker\Model\PluginDevice[]',
     ];
 
     /**
@@ -321,7 +321,7 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets mounts.
      *
-     * @return \MatthewBaggett\Docker\Api\Model\PluginMount[]
+     * @return \MatthewBaggett\Docker\Model\PluginMount[]
      */
     public function getMounts()
     {
@@ -331,7 +331,7 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets mounts.
      *
-     * @param \MatthewBaggett\Docker\Api\Model\PluginMount[] $mounts mounts
+     * @param \MatthewBaggett\Docker\Model\PluginMount[] $mounts mounts
      *
      * @return self
      */
@@ -402,7 +402,7 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets devices.
      *
-     * @return \MatthewBaggett\Docker\Api\Model\PluginDevice[]
+     * @return \MatthewBaggett\Docker\Model\PluginDevice[]
      */
     public function getDevices()
     {
@@ -412,7 +412,7 @@ class PluginSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets devices.
      *
-     * @param \MatthewBaggett\Docker\Api\Model\PluginDevice[] $devices devices
+     * @param \MatthewBaggett\Docker\Model\PluginDevice[] $devices devices
      *
      * @return self
      */

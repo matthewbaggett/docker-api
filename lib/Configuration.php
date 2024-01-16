@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api;
+namespace MatthewBaggett\Docker;
 
 /**
  * Configuration Class Doc Comment
@@ -443,7 +443,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (MatthewBaggett\Docker\Api) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (MatthewBaggett\Docker) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 1.43' . PHP_EOL;

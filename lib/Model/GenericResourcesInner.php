@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * GenericResourcesInner Class Doc Comment.
@@ -62,8 +62,8 @@ class GenericResourcesInner implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $openAPITypes = [
-        'named_resource_spec'    => '\MatthewBaggett\Docker\Api\Model\GenericResourcesInnerNamedResourceSpec',
-        'discrete_resource_spec' => '\MatthewBaggett\Docker\Api\Model\GenericResourcesInnerDiscreteResourceSpec',
+        'named_resource_spec'    => '\MatthewBaggett\Docker\Model\GenericResourcesInnerNamedResourceSpec',
+        'discrete_resource_spec' => '\MatthewBaggett\Docker\Model\GenericResourcesInnerDiscreteResourceSpec',
     ];
 
     /**

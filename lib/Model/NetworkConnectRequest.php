@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * NetworkConnectRequest Class Doc Comment.
@@ -63,7 +63,7 @@ class NetworkConnectRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      */
     protected static $openAPITypes = [
         'container'       => 'string',
-        'endpoint_config' => '\MatthewBaggett\Docker\Api\Model\EndpointSettings',
+        'endpoint_config' => '\MatthewBaggett\Docker\Model\EndpointSettings',
     ];
 
     /**

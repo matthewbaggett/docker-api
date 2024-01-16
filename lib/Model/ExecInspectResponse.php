@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * ExecInspectResponse Class Doc Comment.
@@ -67,7 +67,7 @@ class ExecInspectResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
         'id'             => 'string',
         'running'        => 'bool',
         'exit_code'      => 'int',
-        'process_config' => '\MatthewBaggett\Docker\Api\Model\ProcessConfig',
+        'process_config' => '\MatthewBaggett\Docker\Model\ProcessConfig',
         'open_stdin'     => 'bool',
         'open_stderr'    => 'bool',
         'open_stdout'    => 'bool',

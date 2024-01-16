@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * TaskSpec Class Doc Comment.
@@ -64,16 +64,16 @@ class TaskSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'plugin_spec'             => '\MatthewBaggett\Docker\Api\Model\TaskSpecPluginSpec',
-        'container_spec'          => '\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpec',
-        'network_attachment_spec' => '\MatthewBaggett\Docker\Api\Model\TaskSpecNetworkAttachmentSpec',
-        'resources'               => '\MatthewBaggett\Docker\Api\Model\TaskSpecResources',
-        'restart_policy'          => '\MatthewBaggett\Docker\Api\Model\TaskSpecRestartPolicy',
-        'placement'               => '\MatthewBaggett\Docker\Api\Model\TaskSpecPlacement',
+        'plugin_spec'             => '\MatthewBaggett\Docker\Model\TaskSpecPluginSpec',
+        'container_spec'          => '\MatthewBaggett\Docker\Model\TaskSpecContainerSpec',
+        'network_attachment_spec' => '\MatthewBaggett\Docker\Model\TaskSpecNetworkAttachmentSpec',
+        'resources'               => '\MatthewBaggett\Docker\Model\TaskSpecResources',
+        'restart_policy'          => '\MatthewBaggett\Docker\Model\TaskSpecRestartPolicy',
+        'placement'               => '\MatthewBaggett\Docker\Model\TaskSpecPlacement',
         'force_update'            => 'int',
         'runtime'                 => 'string',
-        'networks'                => '\MatthewBaggett\Docker\Api\Model\NetworkAttachmentConfig[]',
-        'log_driver'              => '\MatthewBaggett\Docker\Api\Model\TaskSpecLogDriver',
+        'networks'                => '\MatthewBaggett\Docker\Model\NetworkAttachmentConfig[]',
+        'log_driver'              => '\MatthewBaggett\Docker\Model\TaskSpecLogDriver',
     ];
 
     /**
@@ -564,7 +564,7 @@ class TaskSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets networks.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\NetworkAttachmentConfig[]
+     * @return null|\MatthewBaggett\Docker\Model\NetworkAttachmentConfig[]
      */
     public function getNetworks()
     {
@@ -574,7 +574,7 @@ class TaskSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets networks.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\NetworkAttachmentConfig[] $networks specifies which networks the service should attach to
+     * @param null|\MatthewBaggett\Docker\Model\NetworkAttachmentConfig[] $networks specifies which networks the service should attach to
      *
      * @return self
      */

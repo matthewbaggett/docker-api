@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * SwarmSpecTaskDefaults Class Doc Comment.
@@ -64,7 +64,7 @@ class SwarmSpecTaskDefaults implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $openAPITypes = [
-        'log_driver' => '\MatthewBaggett\Docker\Api\Model\SwarmSpecTaskDefaultsLogDriver',
+        'log_driver' => '\MatthewBaggett\Docker\Model\SwarmSpecTaskDefaultsLogDriver',
     ];
 
     /**

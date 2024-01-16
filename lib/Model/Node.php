@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * Node Class Doc Comment.
@@ -63,13 +63,13 @@ class Node implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'id'             => 'string',
-        'version'        => '\MatthewBaggett\Docker\Api\Model\ObjectVersion',
+        'version'        => '\MatthewBaggett\Docker\Model\ObjectVersion',
         'created_at'     => 'string',
         'updated_at'     => 'string',
-        'spec'           => '\MatthewBaggett\Docker\Api\Model\NodeSpec',
-        'description'    => '\MatthewBaggett\Docker\Api\Model\NodeDescription',
-        'status'         => '\MatthewBaggett\Docker\Api\Model\NodeStatus',
-        'manager_status' => '\MatthewBaggett\Docker\Api\Model\ManagerStatus',
+        'spec'           => '\MatthewBaggett\Docker\Model\NodeSpec',
+        'description'    => '\MatthewBaggett\Docker\Model\NodeDescription',
+        'status'         => '\MatthewBaggett\Docker\Model\NodeStatus',
+        'manager_status' => '\MatthewBaggett\Docker\Model\ManagerStatus',
     ];
 
     /**

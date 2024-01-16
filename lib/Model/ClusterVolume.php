@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * ClusterVolume Class Doc Comment.
@@ -65,12 +65,12 @@ class ClusterVolume implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'id'             => 'string',
-        'version'        => '\MatthewBaggett\Docker\Api\Model\ObjectVersion',
+        'version'        => '\MatthewBaggett\Docker\Model\ObjectVersion',
         'created_at'     => 'string',
         'updated_at'     => 'string',
-        'spec'           => '\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpec',
-        'info'           => '\MatthewBaggett\Docker\Api\Model\ClusterVolumeInfo',
-        'publish_status' => '\MatthewBaggett\Docker\Api\Model\ClusterVolumePublishStatusInner[]',
+        'spec'           => '\MatthewBaggett\Docker\Model\ClusterVolumeSpec',
+        'info'           => '\MatthewBaggett\Docker\Model\ClusterVolumeInfo',
+        'publish_status' => '\MatthewBaggett\Docker\Model\ClusterVolumePublishStatusInner[]',
     ];
 
     /**
@@ -489,7 +489,7 @@ class ClusterVolume implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets publish_status.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\ClusterVolumePublishStatusInner[]
+     * @return null|\MatthewBaggett\Docker\Model\ClusterVolumePublishStatusInner[]
      */
     public function getPublishStatus()
     {
@@ -499,7 +499,7 @@ class ClusterVolume implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets publish_status.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\ClusterVolumePublishStatusInner[] $publish_status The status of the volume as it pertains to its publishing and use on specific nodes
+     * @param null|\MatthewBaggett\Docker\Model\ClusterVolumePublishStatusInner[] $publish_status The status of the volume as it pertains to its publishing and use on specific nodes
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# MatthewBaggett\Docker\Api\ServiceApi
+# MatthewBaggett\Docker\ServiceApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -15,7 +15,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `serviceCreate()`
 
 ```php
-serviceCreate($body, $x_registry_auth): \MatthewBaggett\Docker\Api\Model\ServiceCreateResponse
+serviceCreate($body, $x_registry_auth): \MatthewBaggett\Docker\Model\ServiceCreateResponse
 ```
 
 Create a service
@@ -28,12 +28,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ServiceApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \MatthewBaggett\Docker\Api\Model\ServiceCreateRequest(); // \MatthewBaggett\Docker\Api\Model\ServiceCreateRequest
+$body = new \MatthewBaggett\Docker\Model\ServiceCreateRequest(); // \MatthewBaggett\Docker\Model\ServiceCreateRequest
 $x_registry_auth = 'x_registry_auth_example'; // string | A base64url-encoded auth configuration for pulling from private registries.  Refer to the [authentication section](#section/Authentication) for details.
 
 try {
@@ -48,12 +48,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\MatthewBaggett\Docker\Api\Model\ServiceCreateRequest**](../Model/ServiceCreateRequest.md)|  | |
+| **body** | [**\MatthewBaggett\Docker\Model\ServiceCreateRequest**](../Model/ServiceCreateRequest.md)|  | |
 | **x_registry_auth** | **string**| A base64url-encoded auth configuration for pulling from private registries.  Refer to the [authentication section](#section/Authentication) for details. | [optional] |
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ServiceCreateResponse**](../Model/ServiceCreateResponse.md)
+[**\MatthewBaggett\Docker\Model\ServiceCreateResponse**](../Model/ServiceCreateResponse.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ServiceApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -124,7 +124,7 @@ No authorization required
 ## `serviceInspect()`
 
 ```php
-serviceInspect($id, $insert_defaults): \MatthewBaggett\Docker\Api\Model\Service
+serviceInspect($id, $insert_defaults): \MatthewBaggett\Docker\Model\Service
 ```
 
 Inspect a service
@@ -137,7 +137,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ServiceApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -162,7 +162,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\Service**](../Model/Service.md)
+[**\MatthewBaggett\Docker\Model\Service**](../Model/Service.md)
 
 ### Authorization
 
@@ -180,7 +180,7 @@ No authorization required
 ## `serviceList()`
 
 ```php
-serviceList($filters, $status): \MatthewBaggett\Docker\Api\Model\Service[]
+serviceList($filters, $status): \MatthewBaggett\Docker\Model\Service[]
 ```
 
 List services
@@ -193,7 +193,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ServiceApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -218,7 +218,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\Service[]**](../Model/Service.md)
+[**\MatthewBaggett\Docker\Model\Service[]**](../Model/Service.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ServiceApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -306,7 +306,7 @@ No authorization required
 ## `serviceUpdate()`
 
 ```php
-serviceUpdate($id, $version, $body, $registry_auth_from, $rollback, $x_registry_auth): \MatthewBaggett\Docker\Api\Model\ServiceUpdateResponse
+serviceUpdate($id, $version, $body, $registry_auth_from, $rollback, $x_registry_auth): \MatthewBaggett\Docker\Model\ServiceUpdateResponse
 ```
 
 Update a service
@@ -319,14 +319,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ServiceApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | ID or name of service.
 $version = 56; // int | The version number of the service object being updated. This is required to avoid conflicting writes. This version number should be the value as currently set on the service *before* the update. You can find the current version by calling `GET /services/{id}`
-$body = new \MatthewBaggett\Docker\Api\Model\ServiceUpdateRequest(); // \MatthewBaggett\Docker\Api\Model\ServiceUpdateRequest
+$body = new \MatthewBaggett\Docker\Model\ServiceUpdateRequest(); // \MatthewBaggett\Docker\Model\ServiceUpdateRequest
 $registry_auth_from = 'spec'; // string | If the `X-Registry-Auth` header is not specified, this parameter indicates where to find registry authorization credentials.
 $rollback = 'rollback_example'; // string | Set to this parameter to `previous` to cause a server-side rollback to the previous service spec. The supplied spec will be ignored in this case.
 $x_registry_auth = 'x_registry_auth_example'; // string | A base64url-encoded auth configuration for pulling from private registries.  Refer to the [authentication section](#section/Authentication) for details.
@@ -345,14 +345,14 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| ID or name of service. | |
 | **version** | **int**| The version number of the service object being updated. This is required to avoid conflicting writes. This version number should be the value as currently set on the service *before* the update. You can find the current version by calling &#x60;GET /services/{id}&#x60; | |
-| **body** | [**\MatthewBaggett\Docker\Api\Model\ServiceUpdateRequest**](../Model/ServiceUpdateRequest.md)|  | |
+| **body** | [**\MatthewBaggett\Docker\Model\ServiceUpdateRequest**](../Model/ServiceUpdateRequest.md)|  | |
 | **registry_auth_from** | **string**| If the &#x60;X-Registry-Auth&#x60; header is not specified, this parameter indicates where to find registry authorization credentials. | [optional] [default to &#39;spec&#39;] |
 | **rollback** | **string**| Set to this parameter to &#x60;previous&#x60; to cause a server-side rollback to the previous service spec. The supplied spec will be ignored in this case. | [optional] |
 | **x_registry_auth** | **string**| A base64url-encoded auth configuration for pulling from private registries.  Refer to the [authentication section](#section/Authentication) for details. | [optional] |
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ServiceUpdateResponse**](../Model/ServiceUpdateResponse.md)
+[**\MatthewBaggett\Docker\Model\ServiceUpdateResponse**](../Model/ServiceUpdateResponse.md)
 
 ### Authorization
 

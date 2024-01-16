@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **driver** | **string** | Name of the volume driver to use. | [optional] [default to 'local']
 **driver_opts** | **array<string,string>** | A mapping of driver options and values. These options are passed directly to the driver and are driver specific. | [optional]
 **labels** | **array<string,string>** | User-defined key/value metadata. | [optional]
-**cluster_volume_spec** | [**\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpec**](ClusterVolumeSpec.md) |  | [optional]
+**cluster_volume_spec** | [**\MatthewBaggett\Docker\Model\ClusterVolumeSpec**](ClusterVolumeSpec.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

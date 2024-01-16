@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**platform** | [**\MatthewBaggett\Docker\Api\Model\SystemVersionPlatform**](SystemVersionPlatform.md) |  | [optional]
-**components** | [**\MatthewBaggett\Docker\Api\Model\SystemVersionComponentsInner[]**](SystemVersionComponentsInner.md) | Information about system components | [optional]
+**platform** | [**\MatthewBaggett\Docker\Model\SystemVersionPlatform**](SystemVersionPlatform.md) |  | [optional]
+**components** | [**\MatthewBaggett\Docker\Model\SystemVersionComponentsInner[]**](SystemVersionComponentsInner.md) | Information about system components | [optional]
 **version** | **string** | The version of the daemon | [optional]
 **api_version** | **string** | The default (and highest) API version that is supported by the daemon | [optional]
 **min_api_version** | **string** | The minimum API version that is supported by the daemon | [optional]

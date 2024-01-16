@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * Task Class Doc Comment.
@@ -63,19 +63,19 @@ class Task implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'id'                         => 'string',
-        'version'                    => '\MatthewBaggett\Docker\Api\Model\ObjectVersion',
+        'version'                    => '\MatthewBaggett\Docker\Model\ObjectVersion',
         'created_at'                 => 'string',
         'updated_at'                 => 'string',
         'name'                       => 'string',
         'labels'                     => 'array<string,string>',
-        'spec'                       => '\MatthewBaggett\Docker\Api\Model\TaskSpec',
+        'spec'                       => '\MatthewBaggett\Docker\Model\TaskSpec',
         'service_id'                 => 'string',
         'slot'                       => 'int',
         'node_id'                    => 'string',
-        'assigned_generic_resources' => '\MatthewBaggett\Docker\Api\Model\GenericResourcesInner[]',
-        'status'                     => '\MatthewBaggett\Docker\Api\Model\TaskStatus',
-        'desired_state'              => '\MatthewBaggett\Docker\Api\Model\TaskState',
-        'job_iteration'              => '\MatthewBaggett\Docker\Api\Model\ObjectVersion',
+        'assigned_generic_resources' => '\MatthewBaggett\Docker\Model\GenericResourcesInner[]',
+        'status'                     => '\MatthewBaggett\Docker\Model\TaskStatus',
+        'desired_state'              => '\MatthewBaggett\Docker\Model\TaskState',
+        'job_iteration'              => '\MatthewBaggett\Docker\Model\ObjectVersion',
     ];
 
     /**
@@ -644,7 +644,7 @@ class Task implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets assigned_generic_resources.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\GenericResourcesInner[]
+     * @return null|\MatthewBaggett\Docker\Model\GenericResourcesInner[]
      */
     public function getAssignedGenericResources()
     {
@@ -654,7 +654,7 @@ class Task implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets assigned_generic_resources.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\GenericResourcesInner[] $assigned_generic_resources User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).
+     * @param null|\MatthewBaggett\Docker\Model\GenericResourcesInner[] $assigned_generic_resources User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).
      *
      * @return self
      */

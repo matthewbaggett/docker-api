@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * SystemInfo Class Doc Comment.
@@ -71,7 +71,7 @@ class SystemInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
         'driver'                => 'string',
         'driver_status'         => 'string[][]',
         'docker_root_dir'       => 'string',
-        'plugins'               => '\MatthewBaggett\Docker\Api\Model\PluginsInfo',
+        'plugins'               => '\MatthewBaggett\Docker\Model\PluginsInfo',
         'memory_limit'          => 'bool',
         'swap_limit'            => 'bool',
         'kernel_memory_tcp'     => 'bool',
@@ -100,8 +100,8 @@ class SystemInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
         'ncpu'                  => 'int',
         'mem_total'             => 'int',
         'index_server_address'  => 'string',
-        'registry_config'       => '\MatthewBaggett\Docker\Api\Model\RegistryServiceConfig',
-        'generic_resources'     => '\MatthewBaggett\Docker\Api\Model\GenericResourcesInner[]',
+        'registry_config'       => '\MatthewBaggett\Docker\Model\RegistryServiceConfig',
+        'generic_resources'     => '\MatthewBaggett\Docker\Model\GenericResourcesInner[]',
         'http_proxy'            => 'string',
         'https_proxy'           => 'string',
         'no_proxy'              => 'string',
@@ -109,18 +109,18 @@ class SystemInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
         'labels'                => 'string[]',
         'experimental_build'    => 'bool',
         'server_version'        => 'string',
-        'runtimes'              => 'array<string,\MatthewBaggett\Docker\Api\Model\Runtime>',
+        'runtimes'              => 'array<string,\MatthewBaggett\Docker\Model\Runtime>',
         'default_runtime'       => 'string',
-        'swarm'                 => '\MatthewBaggett\Docker\Api\Model\SwarmInfo',
+        'swarm'                 => '\MatthewBaggett\Docker\Model\SwarmInfo',
         'live_restore_enabled'  => 'bool',
         'isolation'             => 'string',
         'init_binary'           => 'string',
-        'containerd_commit'     => '\MatthewBaggett\Docker\Api\Model\Commit',
-        'runc_commit'           => '\MatthewBaggett\Docker\Api\Model\Commit',
-        'init_commit'           => '\MatthewBaggett\Docker\Api\Model\Commit',
+        'containerd_commit'     => '\MatthewBaggett\Docker\Model\Commit',
+        'runc_commit'           => '\MatthewBaggett\Docker\Model\Commit',
+        'init_commit'           => '\MatthewBaggett\Docker\Model\Commit',
         'security_options'      => 'string[]',
         'product_license'       => 'string',
-        'default_address_pools' => '\MatthewBaggett\Docker\Api\Model\SystemInfoDefaultAddressPoolsInner[]',
+        'default_address_pools' => '\MatthewBaggett\Docker\Model\SystemInfoDefaultAddressPoolsInner[]',
         'warnings'              => 'string[]',
     ];
 
@@ -1855,7 +1855,7 @@ class SystemInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets generic_resources.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\GenericResourcesInner[]
+     * @return null|\MatthewBaggett\Docker\Model\GenericResourcesInner[]
      */
     public function getGenericResources()
     {
@@ -1865,7 +1865,7 @@ class SystemInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets generic_resources.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\GenericResourcesInner[] $generic_resources User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).
+     * @param null|\MatthewBaggett\Docker\Model\GenericResourcesInner[] $generic_resources User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).
      *
      * @return self
      */
@@ -2071,7 +2071,7 @@ class SystemInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets runtimes.
      *
-     * @return null|array<string,\MatthewBaggett\Docker\Api\Model\Runtime>
+     * @return null|array<string,\MatthewBaggett\Docker\Model\Runtime>
      */
     public function getRuntimes()
     {
@@ -2081,7 +2081,7 @@ class SystemInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets runtimes.
      *
-     * @param null|array<string,\MatthewBaggett\Docker\Api\Model\Runtime> $runtimes List of [OCI compliant](https://github.com/opencontainers/runtime-spec) runtimes configured on the daemon. Keys hold the \"name\" used to reference the runtime.  The Docker daemon relies on an OCI compliant runtime (invoked via the `containerd` daemon) as its interface to the Linux kernel namespaces, cgroups, and SELinux.  The default runtime is `runc`, and automatically configured. Additional runtimes can be configured by the user and will be listed here.
+     * @param null|array<string,\MatthewBaggett\Docker\Model\Runtime> $runtimes List of [OCI compliant](https://github.com/opencontainers/runtime-spec) runtimes configured on the daemon. Keys hold the \"name\" used to reference the runtime.  The Docker daemon relies on an OCI compliant runtime (invoked via the `containerd` daemon) as its interface to the Linux kernel namespaces, cgroups, and SELinux.  The default runtime is `runc`, and automatically configured. Additional runtimes can be configured by the user and will be listed here.
      *
      * @return self
      */
@@ -2378,7 +2378,7 @@ class SystemInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets default_address_pools.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\SystemInfoDefaultAddressPoolsInner[]
+     * @return null|\MatthewBaggett\Docker\Model\SystemInfoDefaultAddressPoolsInner[]
      */
     public function getDefaultAddressPools()
     {
@@ -2388,7 +2388,7 @@ class SystemInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets default_address_pools.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\SystemInfoDefaultAddressPoolsInner[] $default_address_pools List of custom default address pools for local networks, which can be specified in the daemon.json file or dockerd option.  Example: a Base \"10.10.0.0/16\" with Size 24 will define the set of 256 10.10.[0-255].0/24 address pools.
+     * @param null|\MatthewBaggett\Docker\Model\SystemInfoDefaultAddressPoolsInner[] $default_address_pools List of custom default address pools for local networks, which can be specified in the daemon.json file or dockerd option.  Example: a Base \"10.10.0.0/16\" with Size 24 will define the set of 256 10.10.[0-255].0/24 address pools.
      *
      * @return self
      */

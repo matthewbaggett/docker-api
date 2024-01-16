@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * IPAM Class Doc Comment.
@@ -63,7 +63,7 @@ class IPAM implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'driver'  => 'string',
-        'config'  => '\MatthewBaggett\Docker\Api\Model\IPAMConfig[]',
+        'config'  => '\MatthewBaggett\Docker\Model\IPAMConfig[]',
         'options' => 'array<string,string>',
     ];
 
@@ -324,7 +324,7 @@ class IPAM implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets config.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\IPAMConfig[]
+     * @return null|\MatthewBaggett\Docker\Model\IPAMConfig[]
      */
     public function getConfig()
     {
@@ -334,7 +334,7 @@ class IPAM implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets config.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\IPAMConfig[] $config List of IPAM configuration options, specified as a map:  ``` {\"Subnet\": <CIDR>, \"IPRange\": <CIDR>, \"Gateway\": <IP address>, \"AuxAddress\": <device_name:IP address>} ```
+     * @param null|\MatthewBaggett\Docker\Model\IPAMConfig[] $config List of IPAM configuration options, specified as a map:  ``` {\"Subnet\": <CIDR>, \"IPRange\": <CIDR>, \"Gateway\": <IP address>, \"AuxAddress\": <device_name:IP address>} ```
      *
      * @return self
      */

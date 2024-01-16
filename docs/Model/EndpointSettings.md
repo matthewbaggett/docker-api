@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ipam_config** | [**\MatthewBaggett\Docker\Api\Model\EndpointIPAMConfig**](EndpointIPAMConfig.md) |  | [optional]
+**ipam_config** | [**\MatthewBaggett\Docker\Model\EndpointIPAMConfig**](EndpointIPAMConfig.md) |  | [optional]
 **links** | **string[]** |  | [optional]
 **aliases** | **string[]** |  | [optional]
 **network_id** | **string** | Unique ID of the network. | [optional]

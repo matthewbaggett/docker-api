@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * RegistryServiceConfig Class Doc Comment.
@@ -67,7 +67,7 @@ class RegistryServiceConfig implements ModelInterface, \ArrayAccess, \JsonSerial
         'allow_nondistributable_artifacts_cidrs'     => 'string[]',
         'allow_nondistributable_artifacts_hostnames' => 'string[]',
         'insecure_registry_cidrs'                    => 'string[]',
-        'index_configs'                              => 'array<string,\MatthewBaggett\Docker\Api\Model\IndexInfo>',
+        'index_configs'                              => 'array<string,\MatthewBaggett\Docker\Model\IndexInfo>',
         'mirrors'                                    => 'string[]',
     ];
 
@@ -394,7 +394,7 @@ class RegistryServiceConfig implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Gets index_configs.
      *
-     * @return null|array<string,\MatthewBaggett\Docker\Api\Model\IndexInfo>
+     * @return null|array<string,\MatthewBaggett\Docker\Model\IndexInfo>
      */
     public function getIndexConfigs()
     {
@@ -404,7 +404,7 @@ class RegistryServiceConfig implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets index_configs.
      *
-     * @param null|array<string,\MatthewBaggett\Docker\Api\Model\IndexInfo> $index_configs index_configs
+     * @param null|array<string,\MatthewBaggett\Docker\Model\IndexInfo> $index_configs index_configs
      *
      * @return self
      */

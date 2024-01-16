@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * FilesystemChange Class Doc Comment.
@@ -65,7 +65,7 @@ class FilesystemChange implements ModelInterface, \ArrayAccess, \JsonSerializabl
      */
     protected static $openAPITypes = [
         'path' => 'string',
-        'kind' => '\MatthewBaggett\Docker\Api\Model\ChangeType',
+        'kind' => '\MatthewBaggett\Docker\Model\ChangeType',
     ];
 
     /**

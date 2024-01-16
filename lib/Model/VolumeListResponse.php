@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * VolumeListResponse Class Doc Comment.
@@ -64,7 +64,7 @@ class VolumeListResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $openAPITypes = [
-        'volumes'  => '\MatthewBaggett\Docker\Api\Model\Volume[]',
+        'volumes'  => '\MatthewBaggett\Docker\Model\Volume[]',
         'warnings' => 'string[]',
     ];
 
@@ -292,7 +292,7 @@ class VolumeListResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Gets volumes.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\Volume[]
+     * @return null|\MatthewBaggett\Docker\Model\Volume[]
      */
     public function getVolumes()
     {
@@ -302,7 +302,7 @@ class VolumeListResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets volumes.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\Volume[] $volumes List of volumes
+     * @param null|\MatthewBaggett\Docker\Model\Volume[] $volumes List of volumes
      *
      * @return self
      */

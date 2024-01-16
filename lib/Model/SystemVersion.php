@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * SystemVersion Class Doc Comment.
@@ -64,8 +64,8 @@ class SystemVersion implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'platform'        => '\MatthewBaggett\Docker\Api\Model\SystemVersionPlatform',
-        'components'      => '\MatthewBaggett\Docker\Api\Model\SystemVersionComponentsInner[]',
+        'platform'        => '\MatthewBaggett\Docker\Model\SystemVersionPlatform',
+        'components'      => '\MatthewBaggett\Docker\Model\SystemVersionComponentsInner[]',
         'version'         => 'string',
         'api_version'     => 'string',
         'min_api_version' => 'string',
@@ -389,7 +389,7 @@ class SystemVersion implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets components.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\SystemVersionComponentsInner[]
+     * @return null|\MatthewBaggett\Docker\Model\SystemVersionComponentsInner[]
      */
     public function getComponents()
     {
@@ -399,7 +399,7 @@ class SystemVersion implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets components.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\SystemVersionComponentsInner[] $components Information about system components
+     * @param null|\MatthewBaggett\Docker\Model\SystemVersionComponentsInner[] $components Information about system components
      *
      * @return self
      */

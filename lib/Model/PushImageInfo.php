@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * PushImageInfo Class Doc Comment.
@@ -65,7 +65,7 @@ class PushImageInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
         'error'           => 'string',
         'status'          => 'string',
         'progress'        => 'string',
-        'progress_detail' => '\MatthewBaggett\Docker\Api\Model\ProgressDetail',
+        'progress_detail' => '\MatthewBaggett\Docker\Model\ProgressDetail',
     ];
 
     /**

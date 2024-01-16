@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * ContainerState Class Doc Comment.
@@ -75,7 +75,7 @@ class ContainerState implements ModelInterface, \ArrayAccess, \JsonSerializable
         'error'       => 'string',
         'started_at'  => 'string',
         'finished_at' => 'string',
-        'health'      => '\MatthewBaggett\Docker\Api\Model\Health',
+        'health'      => '\MatthewBaggett\Docker\Model\Health',
     ];
 
     /**

@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * TaskSpecPlacement Class Doc Comment.
@@ -63,9 +63,9 @@ class TaskSpecPlacement implements ModelInterface, \ArrayAccess, \JsonSerializab
      */
     protected static $openAPITypes = [
         'constraints'  => 'string[]',
-        'preferences'  => '\MatthewBaggett\Docker\Api\Model\TaskSpecPlacementPreferencesInner[]',
+        'preferences'  => '\MatthewBaggett\Docker\Model\TaskSpecPlacementPreferencesInner[]',
         'max_replicas' => 'int',
-        'platforms'    => '\MatthewBaggett\Docker\Api\Model\Platform[]',
+        'platforms'    => '\MatthewBaggett\Docker\Model\Platform[]',
     ];
 
     /**
@@ -331,7 +331,7 @@ class TaskSpecPlacement implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Gets preferences.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\TaskSpecPlacementPreferencesInner[]
+     * @return null|\MatthewBaggett\Docker\Model\TaskSpecPlacementPreferencesInner[]
      */
     public function getPreferences()
     {
@@ -341,7 +341,7 @@ class TaskSpecPlacement implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets preferences.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\TaskSpecPlacementPreferencesInner[] $preferences Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence.
+     * @param null|\MatthewBaggett\Docker\Model\TaskSpecPlacementPreferencesInner[] $preferences Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence.
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class TaskSpecPlacement implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Gets platforms.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\Platform[]
+     * @return null|\MatthewBaggett\Docker\Model\Platform[]
      */
     public function getPlatforms()
     {
@@ -395,7 +395,7 @@ class TaskSpecPlacement implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets platforms.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\Platform[] $platforms Platforms stores all the platforms that the service's image can run on. This field is used in the platform filter for scheduling. If empty, then the platform filter is off, meaning there are no scheduling restrictions.
+     * @param null|\MatthewBaggett\Docker\Model\Platform[] $platforms Platforms stores all the platforms that the service's image can run on. This field is used in the platform filter for scheduling. If empty, then the platform filter is off, meaning there are no scheduling restrictions.
      *
      * @return self
      */

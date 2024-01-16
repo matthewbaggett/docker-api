@@ -1,4 +1,4 @@
-# MatthewBaggett\Docker\Api\ContainerApi
+# MatthewBaggett\Docker\ContainerApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -49,7 +49,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -106,7 +106,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -163,7 +163,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -228,7 +228,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -280,7 +280,7 @@ No authorization required
 ## `containerChanges()`
 
 ```php
-containerChanges($id): \MatthewBaggett\Docker\Api\Model\FilesystemChange[]
+containerChanges($id): \MatthewBaggett\Docker\Model\FilesystemChange[]
 ```
 
 Get changes on a container’s filesystem
@@ -295,7 +295,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -318,7 +318,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\FilesystemChange[]**](../Model/FilesystemChange.md)
+[**\MatthewBaggett\Docker\Model\FilesystemChange[]**](../Model/FilesystemChange.md)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ No authorization required
 ## `containerCreate()`
 
 ```php
-containerCreate($body, $name, $platform): \MatthewBaggett\Docker\Api\Model\ContainerCreateResponse
+containerCreate($body, $name, $platform): \MatthewBaggett\Docker\Model\ContainerCreateResponse
 ```
 
 Create a container
@@ -349,12 +349,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \MatthewBaggett\Docker\Api\Model\ContainerCreateRequest(); // \MatthewBaggett\Docker\Api\Model\ContainerCreateRequest | Container to create
+$body = new \MatthewBaggett\Docker\Model\ContainerCreateRequest(); // \MatthewBaggett\Docker\Model\ContainerCreateRequest | Container to create
 $name = 'name_example'; // string | Assign the specified name to the container. Must match `/?[a-zA-Z0-9][a-zA-Z0-9_.-]+`.
 $platform = 'platform_example'; // string | Platform in the format `os[/arch[/variant]]` used for image lookup.  When specified, the daemon checks if the requested image is present in the local image cache with the given OS and Architecture, and otherwise returns a `404` status.  If the option is not set, the host's native OS and Architecture are used to look up the image in the image cache. However, if no platform is passed and the given image does exist in the local image cache, but its OS or architecture does not match, the container is created with the available image, and a warning is added to the `Warnings` field in the response, for example;      WARNING: The requested image's platform (linux/arm64/v8) does not              match the detected host platform (linux/amd64) and no              specific platform was requested
 
@@ -370,13 +370,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\MatthewBaggett\Docker\Api\Model\ContainerCreateRequest**](../Model/ContainerCreateRequest.md)| Container to create | |
+| **body** | [**\MatthewBaggett\Docker\Model\ContainerCreateRequest**](../Model/ContainerCreateRequest.md)| Container to create | |
 | **name** | **string**| Assign the specified name to the container. Must match &#x60;/?[a-zA-Z0-9][a-zA-Z0-9_.-]+&#x60;. | [optional] |
 | **platform** | **string**| Platform in the format &#x60;os[/arch[/variant]]&#x60; used for image lookup.  When specified, the daemon checks if the requested image is present in the local image cache with the given OS and Architecture, and otherwise returns a &#x60;404&#x60; status.  If the option is not set, the host&#39;s native OS and Architecture are used to look up the image in the image cache. However, if no platform is passed and the given image does exist in the local image cache, but its OS or architecture does not match, the container is created with the available image, and a warning is added to the &#x60;Warnings&#x60; field in the response, for example;      WARNING: The requested image&#39;s platform (linux/arm64/v8) does not              match the detected host platform (linux/amd64) and no              specific platform was requested | [optional] |
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ContainerCreateResponse**](../Model/ContainerCreateResponse.md)
+[**\MatthewBaggett\Docker\Model\ContainerCreateResponse**](../Model/ContainerCreateResponse.md)
 
 ### Authorization
 
@@ -407,7 +407,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -468,7 +468,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -508,7 +508,7 @@ No authorization required
 ## `containerInspect()`
 
 ```php
-containerInspect($id, $size): \MatthewBaggett\Docker\Api\Model\ContainerInspectResponse
+containerInspect($id, $size): \MatthewBaggett\Docker\Model\ContainerInspectResponse
 ```
 
 Inspect a container
@@ -523,7 +523,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -548,7 +548,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ContainerInspectResponse**](../Model/ContainerInspectResponse.md)
+[**\MatthewBaggett\Docker\Model\ContainerInspectResponse**](../Model/ContainerInspectResponse.md)
 
 ### Authorization
 
@@ -581,7 +581,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -623,7 +623,7 @@ No authorization required
 ## `containerList()`
 
 ```php
-containerList($all, $limit, $size, $filters): \MatthewBaggett\Docker\Api\Model\ContainerSummary[]
+containerList($all, $limit, $size, $filters): \MatthewBaggett\Docker\Model\ContainerSummary[]
 ```
 
 List containers
@@ -638,7 +638,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -667,7 +667,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ContainerSummary[]**](../Model/ContainerSummary.md)
+[**\MatthewBaggett\Docker\Model\ContainerSummary[]**](../Model/ContainerSummary.md)
 
 ### Authorization
 
@@ -700,7 +700,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -770,7 +770,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -810,7 +810,7 @@ No authorization required
 ## `containerPrune()`
 
 ```php
-containerPrune($filters): \MatthewBaggett\Docker\Api\Model\ContainerPruneResponse
+containerPrune($filters): \MatthewBaggett\Docker\Model\ContainerPruneResponse
 ```
 
 Delete stopped containers
@@ -823,7 +823,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -846,7 +846,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ContainerPruneResponse**](../Model/ContainerPruneResponse.md)
+[**\MatthewBaggett\Docker\Model\ContainerPruneResponse**](../Model/ContainerPruneResponse.md)
 
 ### Authorization
 
@@ -877,7 +877,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -934,7 +934,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -991,7 +991,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1048,7 +1048,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1105,7 +1105,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1163,7 +1163,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1207,7 +1207,7 @@ No authorization required
 ## `containerTop()`
 
 ```php
-containerTop($id, $ps_args): \MatthewBaggett\Docker\Api\Model\ContainerTopResponse
+containerTop($id, $ps_args): \MatthewBaggett\Docker\Model\ContainerTopResponse
 ```
 
 List processes running inside a container
@@ -1222,7 +1222,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1247,7 +1247,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ContainerTopResponse**](../Model/ContainerTopResponse.md)
+[**\MatthewBaggett\Docker\Model\ContainerTopResponse**](../Model/ContainerTopResponse.md)
 
 ### Authorization
 
@@ -1280,7 +1280,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1320,7 +1320,7 @@ No authorization required
 ## `containerUpdate()`
 
 ```php
-containerUpdate($id, $update): \MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse
+containerUpdate($id, $update): \MatthewBaggett\Docker\Model\ContainerUpdateResponse
 ```
 
 Update a container
@@ -1335,13 +1335,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | ID or name of the container
-$update = new \MatthewBaggett\Docker\Api\Model\ContainerUpdateRequest(); // \MatthewBaggett\Docker\Api\Model\ContainerUpdateRequest
+$update = new \MatthewBaggett\Docker\Model\ContainerUpdateRequest(); // \MatthewBaggett\Docker\Model\ContainerUpdateRequest
 
 try {
     $result = $apiInstance->containerUpdate($id, $update);
@@ -1356,11 +1356,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| ID or name of the container | |
-| **update** | [**\MatthewBaggett\Docker\Api\Model\ContainerUpdateRequest**](../Model/ContainerUpdateRequest.md)|  | |
+| **update** | [**\MatthewBaggett\Docker\Model\ContainerUpdateRequest**](../Model/ContainerUpdateRequest.md)|  | |
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ContainerUpdateResponse**](../Model/ContainerUpdateResponse.md)
+[**\MatthewBaggett\Docker\Model\ContainerUpdateResponse**](../Model/ContainerUpdateResponse.md)
 
 ### Authorization
 
@@ -1378,7 +1378,7 @@ No authorization required
 ## `containerWait()`
 
 ```php
-containerWait($id, $condition): \MatthewBaggett\Docker\Api\Model\ContainerWaitResponse
+containerWait($id, $condition): \MatthewBaggett\Docker\Model\ContainerWaitResponse
 ```
 
 Wait for a container
@@ -1393,7 +1393,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1418,7 +1418,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\ContainerWaitResponse**](../Model/ContainerWaitResponse.md)
+[**\MatthewBaggett\Docker\Model\ContainerWaitResponse**](../Model/ContainerWaitResponse.md)
 
 ### Authorization
 
@@ -1451,7 +1451,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\ContainerApi(
+$apiInstance = new MatthewBaggett\Docker\Api\ContainerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()

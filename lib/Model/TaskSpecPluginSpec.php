@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * TaskSpecPluginSpec Class Doc Comment.
@@ -67,7 +67,7 @@ class TaskSpecPluginSpec implements ModelInterface, \ArrayAccess, \JsonSerializa
         'name'             => 'string',
         'remote'           => 'string',
         'disabled'         => 'bool',
-        'plugin_privilege' => '\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]',
+        'plugin_privilege' => '\MatthewBaggett\Docker\Model\PluginPrivilege[]',
     ];
 
     /**
@@ -387,7 +387,7 @@ class TaskSpecPluginSpec implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Gets plugin_privilege.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\PluginPrivilege[]
+     * @return null|\MatthewBaggett\Docker\Model\PluginPrivilege[]
      */
     public function getPluginPrivilege()
     {
@@ -397,7 +397,7 @@ class TaskSpecPluginSpec implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets plugin_privilege.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\PluginPrivilege[] $plugin_privilege plugin_privilege
+     * @param null|\MatthewBaggett\Docker\Model\PluginPrivilege[] $plugin_privilege plugin_privilege
      *
      * @return self
      */

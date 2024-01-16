@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * SwarmInitRequest Class Doc Comment.
@@ -69,7 +69,7 @@ class SwarmInitRequest implements ModelInterface, \ArrayAccess, \JsonSerializabl
         'default_addr_pool' => 'string[]',
         'force_new_cluster' => 'bool',
         'subnet_size'       => 'int',
-        'spec'              => '\MatthewBaggett\Docker\Api\Model\SwarmSpec',
+        'spec'              => '\MatthewBaggett\Docker\Model\SwarmSpec',
     ];
 
     /**

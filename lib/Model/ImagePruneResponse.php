@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * ImagePruneResponse Class Doc Comment.
@@ -62,7 +62,7 @@ class ImagePruneResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $openAPITypes = [
-        'images_deleted'  => '\MatthewBaggett\Docker\Api\Model\ImageDeleteResponseItem[]',
+        'images_deleted'  => '\MatthewBaggett\Docker\Model\ImageDeleteResponseItem[]',
         'space_reclaimed' => 'int',
     ];
 
@@ -290,7 +290,7 @@ class ImagePruneResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Gets images_deleted.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\ImageDeleteResponseItem[]
+     * @return null|\MatthewBaggett\Docker\Model\ImageDeleteResponseItem[]
      */
     public function getImagesDeleted()
     {
@@ -300,7 +300,7 @@ class ImagePruneResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets images_deleted.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\ImageDeleteResponseItem[] $images_deleted Images that were deleted
+     * @param null|\MatthewBaggett\Docker\Model\ImageDeleteResponseItem[] $images_deleted Images that were deleted
      *
      * @return self
      */

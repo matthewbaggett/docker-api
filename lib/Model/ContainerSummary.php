@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * ContainerSummary Class Doc Comment.
@@ -68,15 +68,15 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
         'image_id'         => 'string',
         'command'          => 'string',
         'created'          => 'int',
-        'ports'            => '\MatthewBaggett\Docker\Api\Model\Port[]',
+        'ports'            => '\MatthewBaggett\Docker\Model\Port[]',
         'size_rw'          => 'int',
         'size_root_fs'     => 'int',
         'labels'           => 'array<string,string>',
         'state'            => 'string',
         'status'           => 'string',
-        'host_config'      => '\MatthewBaggett\Docker\Api\Model\ContainerSummaryHostConfig',
-        'network_settings' => '\MatthewBaggett\Docker\Api\Model\ContainerSummaryNetworkSettings',
-        'mounts'           => '\MatthewBaggett\Docker\Api\Model\MountPoint[]',
+        'host_config'      => '\MatthewBaggett\Docker\Model\ContainerSummaryHostConfig',
+        'network_settings' => '\MatthewBaggett\Docker\Model\ContainerSummaryNetworkSettings',
+        'mounts'           => '\MatthewBaggett\Docker\Model\MountPoint[]',
     ];
 
     /**
@@ -543,7 +543,7 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Gets ports.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\Port[]
+     * @return null|\MatthewBaggett\Docker\Model\Port[]
      */
     public function getPorts()
     {
@@ -553,7 +553,7 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets ports.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\Port[] $ports The ports exposed by this container
+     * @param null|\MatthewBaggett\Docker\Model\Port[] $ports The ports exposed by this container
      *
      * @return self
      */
@@ -759,7 +759,7 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Gets mounts.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\MountPoint[]
+     * @return null|\MatthewBaggett\Docker\Model\MountPoint[]
      */
     public function getMounts()
     {
@@ -769,7 +769,7 @@ class ContainerSummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets mounts.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\MountPoint[] $mounts mounts
+     * @param null|\MatthewBaggett\Docker\Model\MountPoint[] $mounts mounts
      *
      * @return self
      */

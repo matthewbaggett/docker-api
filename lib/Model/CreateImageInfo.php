@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * CreateImageInfo Class Doc Comment.
@@ -64,10 +64,10 @@ class CreateImageInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id'              => 'string',
         'error'           => 'string',
-        'error_detail'    => '\MatthewBaggett\Docker\Api\Model\ErrorDetail',
+        'error_detail'    => '\MatthewBaggett\Docker\Model\ErrorDetail',
         'status'          => 'string',
         'progress'        => 'string',
-        'progress_detail' => '\MatthewBaggett\Docker\Api\Model\ProgressDetail',
+        'progress_detail' => '\MatthewBaggett\Docker\Model\ProgressDetail',
     ];
 
     /**

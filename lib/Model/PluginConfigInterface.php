@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * PluginConfigInterface Class Doc Comment.
@@ -64,7 +64,7 @@ class PluginConfigInterface implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $openAPITypes = [
-        'types'           => '\MatthewBaggett\Docker\Api\Model\PluginInterfaceType[]',
+        'types'           => '\MatthewBaggett\Docker\Model\PluginInterfaceType[]',
         'socket'          => 'string',
         'protocol_scheme' => 'string',
     ];
@@ -332,7 +332,7 @@ class PluginConfigInterface implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Gets types.
      *
-     * @return \MatthewBaggett\Docker\Api\Model\PluginInterfaceType[]
+     * @return \MatthewBaggett\Docker\Model\PluginInterfaceType[]
      */
     public function getTypes()
     {
@@ -342,7 +342,7 @@ class PluginConfigInterface implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets types.
      *
-     * @param \MatthewBaggett\Docker\Api\Model\PluginInterfaceType[] $types types
+     * @param \MatthewBaggett\Docker\Model\PluginInterfaceType[] $types types
      *
      * @return self
      */

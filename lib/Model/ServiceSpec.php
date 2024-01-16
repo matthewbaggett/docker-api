@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * ServiceSpec Class Doc Comment.
@@ -66,12 +66,12 @@ class ServiceSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'name'            => 'string',
         'labels'          => 'array<string,string>',
-        'task_template'   => '\MatthewBaggett\Docker\Api\Model\TaskSpec',
-        'mode'            => '\MatthewBaggett\Docker\Api\Model\ServiceSpecMode',
-        'update_config'   => '\MatthewBaggett\Docker\Api\Model\ServiceSpecUpdateConfig',
-        'rollback_config' => '\MatthewBaggett\Docker\Api\Model\ServiceSpecRollbackConfig',
-        'networks'        => '\MatthewBaggett\Docker\Api\Model\NetworkAttachmentConfig[]',
-        'endpoint_spec'   => '\MatthewBaggett\Docker\Api\Model\EndpointSpec',
+        'task_template'   => '\MatthewBaggett\Docker\Model\TaskSpec',
+        'mode'            => '\MatthewBaggett\Docker\Model\ServiceSpecMode',
+        'update_config'   => '\MatthewBaggett\Docker\Model\ServiceSpecUpdateConfig',
+        'rollback_config' => '\MatthewBaggett\Docker\Model\ServiceSpecRollbackConfig',
+        'networks'        => '\MatthewBaggett\Docker\Model\NetworkAttachmentConfig[]',
+        'endpoint_spec'   => '\MatthewBaggett\Docker\Model\EndpointSpec',
     ];
 
     /**
@@ -496,7 +496,7 @@ class ServiceSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets networks.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\NetworkAttachmentConfig[]
+     * @return null|\MatthewBaggett\Docker\Model\NetworkAttachmentConfig[]
      */
     public function getNetworks()
     {
@@ -506,7 +506,7 @@ class ServiceSpec implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets networks.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\NetworkAttachmentConfig[] $networks specifies which networks the service should attach to
+     * @param null|\MatthewBaggett\Docker\Model\NetworkAttachmentConfig[] $networks specifies which networks the service should attach to
      *
      * @return self
      */

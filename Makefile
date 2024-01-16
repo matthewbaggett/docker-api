@@ -10,7 +10,7 @@ generate: download-spec
 		-g php \
 		--additional-properties=composerPackageName=matthewbaggett/docker-api-php-client \
 		--additional-properties=artifactVersion=1.43.0 \
-		--additional-properties=invokerPackage=MatthewBaggett\\Docker\\Api \
+		--additional-properties=invokerPackage=MatthewBaggett\\Docker \
 		-o /local
 
 	$(MAKE) fix

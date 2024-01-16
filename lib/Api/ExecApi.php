@@ -29,7 +29,7 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Api;
+namespace MatthewBaggett\Docker\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -38,14 +38,14 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use MatthewBaggett\Docker\Api\ApiException;
-use MatthewBaggett\Docker\Api\Configuration;
-use MatthewBaggett\Docker\Api\HeaderSelector;
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ApiException;
+use MatthewBaggett\Docker\Configuration;
+use MatthewBaggett\Docker\HeaderSelector;
+use MatthewBaggett\Docker\ObjectSerializer;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Utils;
-use MatthewBaggett\Docker\Api\Model\ExecConfig;
-use MatthewBaggett\Docker\Api\Model\ExecStartConfig;
+use MatthewBaggett\Docker\Model\ExecConfig;
+use MatthewBaggett\Docker\Model\ExecStartConfig;
 
 /**
  * ExecApi Class Doc Comment.
@@ -146,7 +146,7 @@ class ExecApi
      * @param ExecConfig $exec_config Exec configuration (required)
      * @param string     $contentType The value for the Content-Type header. Check self::contentTypes['containerExec'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\IdResponse
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\IdResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -167,7 +167,7 @@ class ExecApi
      * @param ExecConfig $exec_config Exec configuration (required)
      * @param string     $contentType The value for the Content-Type header. Check self::contentTypes['containerExec'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\IdResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\IdResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -214,11 +214,11 @@ class ExecApi
 
             switch ($statusCode) {
                 case 201:
-                    if ('\MatthewBaggett\Docker\Api\Model\IdResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\IdResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\IdResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\IdResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -236,17 +236,17 @@ class ExecApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\IdResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\IdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -264,17 +264,17 @@ class ExecApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 409:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -292,17 +292,17 @@ class ExecApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -320,13 +320,13 @@ class ExecApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\IdResponse';
+            $returnType = '\MatthewBaggett\Docker\Model\IdResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -358,7 +358,7 @@ class ExecApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\IdResponse',
+                        '\MatthewBaggett\Docker\Model\IdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -368,7 +368,7 @@ class ExecApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -378,7 +378,7 @@ class ExecApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -388,7 +388,7 @@ class ExecApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -437,7 +437,7 @@ class ExecApi
      */
     public function containerExecAsyncWithHttpInfo($id, $exec_config, string $contentType = self::contentTypes['containerExec'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\IdResponse';
+        $returnType = '\MatthewBaggett\Docker\Model\IdResponse';
         $request    = $this->containerExecRequest($id, $exec_config, $contentType);
 
         return $this->client
@@ -588,7 +588,7 @@ class ExecApi
      * @param string $id          Exec instance ID (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['execInspect'] to see the possible values for this operation
      *
-     * @return \MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ExecInspectResponse
+     * @return \MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ExecInspectResponse
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -608,7 +608,7 @@ class ExecApi
      * @param string $id          Exec instance ID (required)
      * @param string $contentType The value for the Content-Type header. Check self::contentTypes['execInspect'] to see the possible values for this operation
      *
-     * @return array of \MatthewBaggett\Docker\Api\Model\ExecInspectResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse|\MatthewBaggett\Docker\Api\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MatthewBaggett\Docker\Model\ExecInspectResponse|\MatthewBaggett\Docker\Model\ErrorResponse|\MatthewBaggett\Docker\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws ApiException              on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
@@ -655,11 +655,11 @@ class ExecApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\MatthewBaggett\Docker\Api\Model\ExecInspectResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ExecInspectResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ExecInspectResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ExecInspectResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -677,17 +677,17 @@ class ExecApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ExecInspectResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ExecInspectResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 404:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -705,17 +705,17 @@ class ExecApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
 
                 case 500:
-                    if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\MatthewBaggett\Docker\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\MatthewBaggett\Docker\Api\Model\ErrorResponse' !== 'string') {
+                        if ('\MatthewBaggett\Docker\Model\ErrorResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -733,13 +733,13 @@ class ExecApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Api\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\MatthewBaggett\Docker\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
             }
 
-            $returnType = '\MatthewBaggett\Docker\Api\Model\ExecInspectResponse';
+            $returnType = '\MatthewBaggett\Docker\Model\ExecInspectResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); // stream goes to serializer
             } else {
@@ -771,7 +771,7 @@ class ExecApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ExecInspectResponse',
+                        '\MatthewBaggett\Docker\Model\ExecInspectResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -781,7 +781,7 @@ class ExecApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -791,7 +791,7 @@ class ExecApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -838,7 +838,7 @@ class ExecApi
      */
     public function execInspectAsyncWithHttpInfo($id, string $contentType = self::contentTypes['execInspect'][0])
     {
-        $returnType = '\MatthewBaggett\Docker\Api\Model\ExecInspectResponse';
+        $returnType = '\MatthewBaggett\Docker\Model\ExecInspectResponse';
         $request    = $this->execInspectRequest($id, $contentType);
 
         return $this->client
@@ -1045,7 +1045,7 @@ class ExecApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1055,7 +1055,7 @@ class ExecApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1065,7 +1065,7 @@ class ExecApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1327,7 +1327,7 @@ class ExecApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1337,7 +1337,7 @@ class ExecApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MatthewBaggett\Docker\Api\Model\ErrorResponse',
+                        '\MatthewBaggett\Docker\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

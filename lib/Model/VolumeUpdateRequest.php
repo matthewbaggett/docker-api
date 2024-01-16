@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * VolumeUpdateRequest Class Doc Comment.
@@ -64,7 +64,7 @@ class VolumeUpdateRequest implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $openAPITypes = [
-        'spec' => '\MatthewBaggett\Docker\Api\Model\ClusterVolumeSpec',
+        'spec' => '\MatthewBaggett\Docker\Model\ClusterVolumeSpec',
     ];
 
     /**

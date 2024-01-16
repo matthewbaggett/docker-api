@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **stdin_once** | **bool** | Close &#x60;stdin&#x60; after one attached client disconnects | [optional] [default to false]
 **env** | **string[]** | A list of environment variables to set inside the container in the form &#x60;[\&quot;VAR&#x3D;value\&quot;, ...]&#x60;. A variable without &#x60;&#x3D;&#x60; is removed from the environment, rather than to have an empty value. | [optional]
 **cmd** | **string[]** | Command to run specified as a string or an array of strings. | [optional]
-**healthcheck** | [**\MatthewBaggett\Docker\Api\Model\HealthConfig**](HealthConfig.md) |  | [optional]
+**healthcheck** | [**\MatthewBaggett\Docker\Model\HealthConfig**](HealthConfig.md) |  | [optional]
 **args_escaped** | **bool** | Command is already escaped (Windows only) | [optional] [default to false]
 **image** | **string** | The name (or reference) of the image to use when creating the container, or which was used when the container was created. | [optional]
 **volumes** | **array<string,object>** | An object mapping mount point paths inside the container to empty objects. | [optional]
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **stop_signal** | **string** | Signal to stop a container as a string or unsigned integer. | [optional]
 **stop_timeout** | **int** | Timeout to stop a container in seconds. | [optional]
 **shell** | **string[]** | Shell for when &#x60;RUN&#x60;, &#x60;CMD&#x60;, and &#x60;ENTRYPOINT&#x60; uses a shell. | [optional]
-**host_config** | [**\MatthewBaggett\Docker\Api\Model\HostConfig**](HostConfig.md) |  | [optional]
-**networking_config** | [**\MatthewBaggett\Docker\Api\Model\NetworkingConfig**](NetworkingConfig.md) |  | [optional]
+**host_config** | [**\MatthewBaggett\Docker\Model\HostConfig**](HostConfig.md) |  | [optional]
+**networking_config** | [**\MatthewBaggett\Docker\Model\NetworkingConfig**](NetworkingConfig.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

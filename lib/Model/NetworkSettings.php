@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * NetworkSettings Class Doc Comment.
@@ -69,10 +69,10 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
         'hairpin_mode'               => 'bool',
         'link_local_ipv6_address'    => 'string',
         'link_local_ipv6_prefix_len' => 'int',
-        'ports'                      => 'array<string,\MatthewBaggett\Docker\Api\Model\PortBinding[]>',
+        'ports'                      => 'array<string,\MatthewBaggett\Docker\Model\PortBinding[]>',
         'sandbox_key'                => 'string',
-        'secondary_ip_addresses'     => '\MatthewBaggett\Docker\Api\Model\Address[]',
-        'secondary_ipv6_addresses'   => '\MatthewBaggett\Docker\Api\Model\Address[]',
+        'secondary_ip_addresses'     => '\MatthewBaggett\Docker\Model\Address[]',
+        'secondary_ipv6_addresses'   => '\MatthewBaggett\Docker\Model\Address[]',
         'endpoint_id'                => 'string',
         'gateway'                    => 'string',
         'global_ipv6_address'        => 'string',
@@ -81,7 +81,7 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
         'ip_prefix_len'              => 'int',
         'ipv6_gateway'               => 'string',
         'mac_address'                => 'string',
-        'networks'                   => 'array<string,\MatthewBaggett\Docker\Api\Model\EndpointSettings>',
+        'networks'                   => 'array<string,\MatthewBaggett\Docker\Model\EndpointSettings>',
     ];
 
     /**
@@ -539,7 +539,7 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets ports.
      *
-     * @return null|array<string,\MatthewBaggett\Docker\Api\Model\PortBinding[]>
+     * @return null|array<string,\MatthewBaggett\Docker\Model\PortBinding[]>
      */
     public function getPorts()
     {
@@ -549,7 +549,7 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets ports.
      *
-     * @param null|array<string,\MatthewBaggett\Docker\Api\Model\PortBinding[]> $ports PortMap describes the mapping of container ports to host ports, using the container's port-number and protocol as key in the format `<port>/<protocol>`, for example, `80/udp`.  If a container's port is mapped for multiple protocols, separate entries are added to the mapping table.
+     * @param null|array<string,\MatthewBaggett\Docker\Model\PortBinding[]> $ports PortMap describes the mapping of container ports to host ports, using the container's port-number and protocol as key in the format `<port>/<protocol>`, for example, `80/udp`.  If a container's port is mapped for multiple protocols, separate entries are added to the mapping table.
      *
      * @return self
      */
@@ -593,7 +593,7 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets secondary_ip_addresses.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\Address[]
+     * @return null|\MatthewBaggett\Docker\Model\Address[]
      */
     public function getSecondaryIpAddresses()
     {
@@ -603,7 +603,7 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets secondary_ip_addresses.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\Address[] $secondary_ip_addresses
+     * @param null|\MatthewBaggett\Docker\Model\Address[] $secondary_ip_addresses
      *
      * @return self
      */
@@ -627,7 +627,7 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets secondary_ipv6_addresses.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\Address[]
+     * @return null|\MatthewBaggett\Docker\Model\Address[]
      */
     public function getSecondaryIpv6Addresses()
     {
@@ -637,7 +637,7 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets secondary_ipv6_addresses.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\Address[] $secondary_ipv6_addresses
+     * @param null|\MatthewBaggett\Docker\Model\Address[] $secondary_ipv6_addresses
      *
      * @return self
      */
@@ -877,7 +877,7 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets networks.
      *
-     * @return null|array<string,\MatthewBaggett\Docker\Api\Model\EndpointSettings>
+     * @return null|array<string,\MatthewBaggett\Docker\Model\EndpointSettings>
      */
     public function getNetworks()
     {
@@ -887,7 +887,7 @@ class NetworkSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets networks.
      *
-     * @param null|array<string,\MatthewBaggett\Docker\Api\Model\EndpointSettings> $networks information about all networks that the container is connected to
+     * @param null|array<string,\MatthewBaggett\Docker\Model\EndpointSettings> $networks information about all networks that the container is connected to
      *
      * @return self
      */

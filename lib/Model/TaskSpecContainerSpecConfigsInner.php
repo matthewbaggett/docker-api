@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * TaskSpecContainerSpecConfigsInner Class Doc Comment.
@@ -62,7 +62,7 @@ class TaskSpecContainerSpecConfigsInner implements ModelInterface, \ArrayAccess,
      * @var string[]
      */
     protected static $openAPITypes = [
-        'file'        => '\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecConfigsInnerFile',
+        'file'        => '\MatthewBaggett\Docker\Model\TaskSpecContainerSpecConfigsInnerFile',
         'runtime'     => 'object',
         'config_id'   => 'string',
         'config_name' => 'string',

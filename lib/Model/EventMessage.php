@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * EventMessage Class Doc Comment.
@@ -66,7 +66,7 @@ class EventMessage implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'type'      => 'string',
         'action'    => 'string',
-        'actor'     => '\MatthewBaggett\Docker\Api\Model\EventActor',
+        'actor'     => '\MatthewBaggett\Docker\Model\EventActor',
         'scope'     => 'string',
         'time'      => 'int',
         'time_nano' => 'int',

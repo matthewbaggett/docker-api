@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * Network Class Doc Comment.
@@ -68,11 +68,11 @@ class Network implements ModelInterface, \ArrayAccess, \JsonSerializable
         'scope'       => 'string',
         'driver'      => 'string',
         'enable_ipv6' => 'bool',
-        'ipam'        => '\MatthewBaggett\Docker\Api\Model\IPAM',
+        'ipam'        => '\MatthewBaggett\Docker\Model\IPAM',
         'internal'    => 'bool',
         'attachable'  => 'bool',
         'ingress'     => 'bool',
-        'containers'  => 'array<string,\MatthewBaggett\Docker\Api\Model\NetworkContainer>',
+        'containers'  => 'array<string,\MatthewBaggett\Docker\Model\NetworkContainer>',
         'options'     => 'array<string,string>',
         'labels'      => 'array<string,string>',
     ];
@@ -637,7 +637,7 @@ class Network implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets containers.
      *
-     * @return null|array<string,\MatthewBaggett\Docker\Api\Model\NetworkContainer>
+     * @return null|array<string,\MatthewBaggett\Docker\Model\NetworkContainer>
      */
     public function getContainers()
     {
@@ -647,7 +647,7 @@ class Network implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets containers.
      *
-     * @param null|array<string,\MatthewBaggett\Docker\Api\Model\NetworkContainer> $containers containers
+     * @param null|array<string,\MatthewBaggett\Docker\Model\NetworkContainer> $containers containers
      *
      * @return self
      */

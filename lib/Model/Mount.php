@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * Mount Class Doc Comment.
@@ -67,9 +67,9 @@ class Mount implements ModelInterface, \ArrayAccess, \JsonSerializable
         'type'           => 'string',
         'read_only'      => 'bool',
         'consistency'    => 'string',
-        'bind_options'   => '\MatthewBaggett\Docker\Api\Model\MountBindOptions',
-        'volume_options' => '\MatthewBaggett\Docker\Api\Model\MountVolumeOptions',
-        'tmpfs_options'  => '\MatthewBaggett\Docker\Api\Model\MountTmpfsOptions',
+        'bind_options'   => '\MatthewBaggett\Docker\Model\MountBindOptions',
+        'volume_options' => '\MatthewBaggett\Docker\Model\MountVolumeOptions',
+        'tmpfs_options'  => '\MatthewBaggett\Docker\Model\MountTmpfsOptions',
     ];
 
     /**

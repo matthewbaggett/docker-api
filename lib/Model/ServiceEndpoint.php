@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * ServiceEndpoint Class Doc Comment.
@@ -62,9 +62,9 @@ class ServiceEndpoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'spec'        => '\MatthewBaggett\Docker\Api\Model\EndpointSpec',
-        'ports'       => '\MatthewBaggett\Docker\Api\Model\EndpointPortConfig[]',
-        'virtual_ips' => '\MatthewBaggett\Docker\Api\Model\ServiceEndpointVirtualIPsInner[]',
+        'spec'        => '\MatthewBaggett\Docker\Model\EndpointSpec',
+        'ports'       => '\MatthewBaggett\Docker\Model\EndpointPortConfig[]',
+        'virtual_ips' => '\MatthewBaggett\Docker\Model\ServiceEndpointVirtualIPsInner[]',
     ];
 
     /**
@@ -324,7 +324,7 @@ class ServiceEndpoint implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets ports.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\EndpointPortConfig[]
+     * @return null|\MatthewBaggett\Docker\Model\EndpointPortConfig[]
      */
     public function getPorts()
     {
@@ -334,7 +334,7 @@ class ServiceEndpoint implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets ports.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\EndpointPortConfig[] $ports ports
+     * @param null|\MatthewBaggett\Docker\Model\EndpointPortConfig[] $ports ports
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class ServiceEndpoint implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Gets virtual_ips.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\ServiceEndpointVirtualIPsInner[]
+     * @return null|\MatthewBaggett\Docker\Model\ServiceEndpointVirtualIPsInner[]
      */
     public function getVirtualIps()
     {
@@ -361,7 +361,7 @@ class ServiceEndpoint implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets virtual_ips.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\ServiceEndpointVirtualIPsInner[] $virtual_ips virtual_ips
+     * @param null|\MatthewBaggett\Docker\Model\ServiceEndpointVirtualIPsInner[] $virtual_ips virtual_ips
      *
      * @return self
      */

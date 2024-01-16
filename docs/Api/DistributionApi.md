@@ -1,4 +1,4 @@
-# MatthewBaggett\Docker\Api\DistributionApi
+# MatthewBaggett\Docker\DistributionApi
 
 All URIs are relative to http://localhost/v1.43, except if the operation defines another base path.
 
@@ -10,7 +10,7 @@ All URIs are relative to http://localhost/v1.43, except if the operation defines
 ## `distributionInspect()`
 
 ```php
-distributionInspect($name): \MatthewBaggett\Docker\Api\Model\DistributionInspect
+distributionInspect($name): \MatthewBaggett\Docker\Model\DistributionInspect
 ```
 
 Get image information from the registry
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new MatthewBaggett\Docker\Api\Api\DistributionApi(
+$apiInstance = new MatthewBaggett\Docker\Api\DistributionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -48,7 +48,7 @@ try {
 
 ### Return type
 
-[**\MatthewBaggett\Docker\Api\Model\DistributionInspect**](../Model/DistributionInspect.md)
+[**\MatthewBaggett\Docker\Model\DistributionInspect**](../Model/DistributionInspect.md)
 
 ### Authorization
 

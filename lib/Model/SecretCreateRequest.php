@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * SecretCreateRequest Class Doc Comment.
@@ -65,8 +65,8 @@ class SecretCreateRequest implements ModelInterface, \ArrayAccess, \JsonSerializ
         'name'       => 'string',
         'labels'     => 'array<string,string>',
         'data'       => 'string',
-        'driver'     => '\MatthewBaggett\Docker\Api\Model\Driver',
-        'templating' => '\MatthewBaggett\Docker\Api\Model\Driver',
+        'driver'     => '\MatthewBaggett\Docker\Model\Driver',
+        'templating' => '\MatthewBaggett\Docker\Model\Driver',
     ];
 
     /**

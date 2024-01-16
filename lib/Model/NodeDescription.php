@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * NodeDescription Class Doc Comment.
@@ -65,10 +65,10 @@ class NodeDescription implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'hostname'  => 'string',
-        'platform'  => '\MatthewBaggett\Docker\Api\Model\Platform',
-        'resources' => '\MatthewBaggett\Docker\Api\Model\ResourceObject',
-        'engine'    => '\MatthewBaggett\Docker\Api\Model\EngineDescription',
-        'tls_info'  => '\MatthewBaggett\Docker\Api\Model\TLSInfo',
+        'platform'  => '\MatthewBaggett\Docker\Model\Platform',
+        'resources' => '\MatthewBaggett\Docker\Model\ResourceObject',
+        'engine'    => '\MatthewBaggett\Docker\Model\EngineDescription',
+        'tls_info'  => '\MatthewBaggett\Docker\Model\TLSInfo',
     ];
 
     /**

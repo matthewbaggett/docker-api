@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * TaskSpecContainerSpec Class Doc Comment.
@@ -73,24 +73,24 @@ class TaskSpecContainerSpec implements ModelInterface, \ArrayAccess, \JsonSerial
         'dir'               => 'string',
         'user'              => 'string',
         'groups'            => 'string[]',
-        'privileges'        => '\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecPrivileges',
+        'privileges'        => '\MatthewBaggett\Docker\Model\TaskSpecContainerSpecPrivileges',
         'tty'               => 'bool',
         'open_stdin'        => 'bool',
         'read_only'         => 'bool',
-        'mounts'            => '\MatthewBaggett\Docker\Api\Model\Mount[]',
+        'mounts'            => '\MatthewBaggett\Docker\Model\Mount[]',
         'stop_signal'       => 'string',
         'stop_grace_period' => 'int',
-        'health_check'      => '\MatthewBaggett\Docker\Api\Model\HealthConfig',
+        'health_check'      => '\MatthewBaggett\Docker\Model\HealthConfig',
         'hosts'             => 'string[]',
-        'dns_config'        => '\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecDNSConfig',
-        'secrets'           => '\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecSecretsInner[]',
-        'configs'           => '\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecConfigsInner[]',
+        'dns_config'        => '\MatthewBaggett\Docker\Model\TaskSpecContainerSpecDNSConfig',
+        'secrets'           => '\MatthewBaggett\Docker\Model\TaskSpecContainerSpecSecretsInner[]',
+        'configs'           => '\MatthewBaggett\Docker\Model\TaskSpecContainerSpecConfigsInner[]',
         'isolation'         => 'string',
         'init'              => 'bool',
         'sysctls'           => 'array<string,string>',
         'capability_add'    => 'string[]',
         'capability_drop'   => 'string[]',
-        'ulimits'           => '\MatthewBaggett\Docker\Api\Model\ResourcesUlimitsInner[]',
+        'ulimits'           => '\MatthewBaggett\Docker\Model\ResourcesUlimitsInner[]',
     ];
 
     /**
@@ -847,7 +847,7 @@ class TaskSpecContainerSpec implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Gets mounts.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\Mount[]
+     * @return null|\MatthewBaggett\Docker\Model\Mount[]
      */
     public function getMounts()
     {
@@ -857,7 +857,7 @@ class TaskSpecContainerSpec implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets mounts.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\Mount[] $mounts specification for mounts to be added to containers created as part of the service
+     * @param null|\MatthewBaggett\Docker\Model\Mount[] $mounts specification for mounts to be added to containers created as part of the service
      *
      * @return self
      */
@@ -1009,7 +1009,7 @@ class TaskSpecContainerSpec implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Gets secrets.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecSecretsInner[]
+     * @return null|\MatthewBaggett\Docker\Model\TaskSpecContainerSpecSecretsInner[]
      */
     public function getSecrets()
     {
@@ -1019,7 +1019,7 @@ class TaskSpecContainerSpec implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets secrets.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecSecretsInner[] $secrets secrets contains references to zero or more secrets that will be exposed to the service
+     * @param null|\MatthewBaggett\Docker\Model\TaskSpecContainerSpecSecretsInner[] $secrets secrets contains references to zero or more secrets that will be exposed to the service
      *
      * @return self
      */
@@ -1036,7 +1036,7 @@ class TaskSpecContainerSpec implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Gets configs.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecConfigsInner[]
+     * @return null|\MatthewBaggett\Docker\Model\TaskSpecContainerSpecConfigsInner[]
      */
     public function getConfigs()
     {
@@ -1046,7 +1046,7 @@ class TaskSpecContainerSpec implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets configs.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\TaskSpecContainerSpecConfigsInner[] $configs configs contains references to zero or more configs that will be exposed to the service
+     * @param null|\MatthewBaggett\Docker\Model\TaskSpecContainerSpecConfigsInner[] $configs configs contains references to zero or more configs that will be exposed to the service
      *
      * @return self
      */
@@ -1215,7 +1215,7 @@ class TaskSpecContainerSpec implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Gets ulimits.
      *
-     * @return null|\MatthewBaggett\Docker\Api\Model\ResourcesUlimitsInner[]
+     * @return null|\MatthewBaggett\Docker\Model\ResourcesUlimitsInner[]
      */
     public function getUlimits()
     {
@@ -1225,7 +1225,7 @@ class TaskSpecContainerSpec implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets ulimits.
      *
-     * @param null|\MatthewBaggett\Docker\Api\Model\ResourcesUlimitsInner[] $ulimits A list of resource limits to set in the container. For example: `{\"Name\": \"nofile\", \"Soft\": 1024, \"Hard\": 2048}`\"
+     * @param null|\MatthewBaggett\Docker\Model\ResourcesUlimitsInner[] $ulimits A list of resource limits to set in the container. For example: `{\"Name\": \"nofile\", \"Soft\": 1024, \"Hard\": 2048}`\"
      *
      * @return self
      */

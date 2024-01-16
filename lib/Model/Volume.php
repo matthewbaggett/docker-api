@@ -30,9 +30,9 @@ declare(strict_types=1);
  * Do not edit the class manually.
  */
 
-namespace MatthewBaggett\Docker\Api\Model;
+namespace MatthewBaggett\Docker\Model;
 
-use MatthewBaggett\Docker\Api\ObjectSerializer;
+use MatthewBaggett\Docker\ObjectSerializer;
 
 /**
  * Volume Class Doc Comment.
@@ -69,9 +69,9 @@ class Volume implements ModelInterface, \ArrayAccess, \JsonSerializable
         'status'         => 'array<string,object>',
         'labels'         => 'array<string,string>',
         'scope'          => 'string',
-        'cluster_volume' => '\MatthewBaggett\Docker\Api\Model\ClusterVolume',
+        'cluster_volume' => '\MatthewBaggett\Docker\Model\ClusterVolume',
         'options'        => 'array<string,string>',
-        'usage_data'     => '\MatthewBaggett\Docker\Api\Model\VolumeUsageData',
+        'usage_data'     => '\MatthewBaggett\Docker\Model\VolumeUsageData',
     ];
 
     /**
